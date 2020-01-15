@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>VegaLite</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Timothy R. McNealy</Authors>
+    <PackageIcon>nindra.png</PackageIcon>
+    <PackageIconUrl />
+    <Description>C# Specification for https://github.com/vega/vega-lite</Description>
+    <Copyright>2020</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="VegaLite.NET.csproj.DotSettings" />
+    <None Include="nindra.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

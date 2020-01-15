@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaLite.NET", "VegaLite.NET\VegaLite.NET.csproj", "{4A729692-AE92-4990-BBC2-3314F3060834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaLite.NET.Test", "VegaLite.NET.Test\VegaLite.NET.Test.csproj", "{C7E38315-25C2-4307-9973-098F5B178B5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A729692-AE92-4990-BBC2-3314F3060834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A729692-AE92-4990-BBC2-3314F3060834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A729692-AE92-4990-BBC2-3314F3060834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A729692-AE92-4990-BBC2-3314F3060834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E38315-25C2-4307-9973-098F5B178B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E38315-25C2-4307-9973-098F5B178B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E38315-25C2-4307-9973-098F5B178B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E38315-25C2-4307-9973-098F5B178B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D991B38B-CEE3-43F4-BAF8-CC5A3F21457F}
+	EndGlobalSection
+EndGlobal
