@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 
+using Microsoft.DotNet.Interactive.Formatting;
+
 namespace VegaLite
 {
     public class Chart
@@ -10,6 +12,16 @@ namespace VegaLite
         public static string VegaUrl      = "https://cdn.jsdelivr.net/npm/vega@5.9.0";
         public static string VegaLiteUrl  = "https://cdn.jsdelivr.net/npm/vega-lite@4.0.2";
         public static string VegaEmbedUrl = "https://cdn.jsdelivr.net/npm/vega-embed@6.2.1";
+
+        static Chart()
+        {
+            Formatter<Chart>.Register((chart, writer) =>
+                                      {
+                                          writer.Write(chart.ToString());
+                                      },
+                                      HtmlFormatter.MimeType);
+
+        }
 
         public static Func<Guid, string, string, string> Content = (id,
                                                                     title,

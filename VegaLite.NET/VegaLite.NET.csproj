@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>VegaLite</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Timothy R. McNealy</Authors>
     <PackageIcon>nindra.png</PackageIcon>
     <PackageIconUrl />
@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.Interactive.Formatting" Version="1.0.0-beta.20065.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
