@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
+
+using Microsoft.AspNetCore.Html;
 
 using Microsoft.DotNet.Interactive.Formatting;
 
@@ -15,44 +18,87 @@ namespace VegaLite
 
         static Chart()
         {
-            Formatter<Chart>.Register((chart, writer) =>
+            Formatter<Chart>.Register((chart,
+                                       writer) =>
                                       {
                                           writer.Write(chart.ToString());
                                       },
                                       HtmlFormatter.MimeType);
-
         }
 
-        public static Func<Guid, string, string, string> Content = (id,
-                                                                    title,
-                                                                    spec) =>
-                                                                   {
-                                                                       string html = "<!DOCTYPE html>\n"                               +
-                                                                                     "<html>\n"                                        +
-                                                                                     "  <head>\n"                                      +
-                                                                                     "    <title>Vega-Lite Chart</title>\n"            +
-                                                                                     "    <meta charset=\"utf-8\" />\n"                +
-                                                                                     $"    <script src=\"{VegaUrl}\"></script>\n"      +
-                                                                                     $"    <script src=\"{VegaLiteUrl}\"></script>\n"  +
-                                                                                     $"    <script src=\"{VegaEmbedUrl}\"></script>\n" +
-                                                                                     "    <style media=\"screen\">\n"                  +
-                                                                                     "      .vega-actions a {\n"                       +
-                                                                                     "        margin-right: 5px;\n"                    +
-                                                                                     "      }\n"                                       +
-                                                                                     "    </style>\n"                                  +
-                                                                                     "  </head>\n"                                     +
-                                                                                     "  <body>\n"                                      +
-                                                                                     $"    <h1>{title}</h1>\n"                         +
-                                                                                     $"    <div id=\"vis{id}\"></div>\n"               +
-                                                                                     "    <script>\n"                                  +
-                                                                                     $"      var vlSpec = {spec};\n"                   +
-                                                                                     $"      vegaEmbed('#vis{id}', vlSpec);\n"         +
-                                                                                     "    </script>\n"                                 +
-                                                                                     "  </body>\n"                                     +
-                                                                                     "</html>\n";
+        //public static Func<Guid, string, string, string> Content = (id,
+        //                                                            title,
+        //                                                            spec) =>
+        //                                                           {
+        //                                                               string html = "<!DOCTYPE html>\n"                               +
+        //                                                                             "<html>\n"                                        +
+        //                                                                             "  <head>\n"                                      +
+        //                                                                             "    <title>Vega-Lite Chart</title>\n"            +
+        //                                                                             "    <meta charset=\"utf-8\" />\n"                +
+        //                                                                             $"    <script src=\"{VegaUrl}\"></script>\n"      +
+        //                                                                             $"    <script src=\"{VegaLiteUrl}\"></script>\n"  +
+        //                                                                             $"    <script src=\"{VegaEmbedUrl}\"></script>\n" +
+        //                                                                             "    <style media=\"screen\">\n"                  +
+        //                                                                             "      .vega-actions a {\n"                       +
+        //                                                                             "        margin-right: 5px;\n"                    +
+        //                                                                             "      }\n"                                       +
+        //                                                                             "    </style>\n"                                  +
+        //                                                                             "  </head>\n"                                     +
+        //                                                                             "  <body>\n"                                      +
+        //                                                                             $"    <h1>{title}</h1>\n"                         +
+        //                                                                             $"    <div id=\"vis{id}\"></div>\n"               +
+        //                                                                             "    <script>\n"                                  +
+        //                                                                             $"      var vlSpec = {spec};\n"                   +
+        //                                                                             $"      vegaEmbed('#vis{id}', vlSpec);\n"         +
+        //                                                                             "    </script>\n"                                 +
+        //                                                                             "  </body>\n"                                     +
+        //                                                                             "</html>\n";
+        //                                                               return html;
+        //                                                           };
 
-                                                                       return html;
-                                                                   };
+        public static string LoadScript = "        var loadScript = function(url) {\n"                                                 +
+                                          "            var script = document.createElement(\"script\");\n"                             +
+                                          "            script.setAttribute(\"type\", \"text/javascript\");\n"                          +
+                                          "            script.setAttribute(\"src\", url);\n"                                           +
+                                          "            return script;\n"                                                               +
+                                          "        };\n"                                                                               +
+                                          "        \n"                                                                                 +
+                                          $"        var vegaScript = loadScript(\"{VegaUrl}\");\n"                                     +
+                                          "        vegaScript.onload = function(){\n"                                                  +
+                                          $"            var vegaliteScript = loadScript(\"{VegaLiteUrl}\");\n"                         +
+                                          "            vegaliteScript.onload = function(){\n"                                          +
+                                          $"                var vegaembedScript = loadScript(\"{VegaEmbedUrl}\");\n"                   +
+                                          "                vegaembedScript.onload = function(){\n"                                     +
+                                          "                    renderVegaLite();\n"                                                    +
+                                          "                };\n"                                                                       +
+                                          "                document.getElementsByTagName(\"head\")[0].appendChild(vegaembedScript);\n" +
+                                          "            };\n"                                                                           +
+                                          "            document.getElementsByTagName(\"head\")[0].appendChild(vegaliteScript);\n"      +
+                                          "        };\n"                                                                               +
+                                          "        document.getElementsByTagName(\"head\")[0].appendChild(vegaScript);\n";
+
+        public static Func<Guid, string, string, int, int, string> LoadContent = (id,
+                                                                                  title,
+                                                                                  spec,
+                                                                                  width,
+                                                                                  height) =>
+                                                                                 {
+                                                                                     string html = $"<div id=\"{id}\" style=\"width: {width}px; height: {height}px;\">\n" +
+                                                                                                   $"    <h1>{title}</h1>\n"                                              +
+                                                                                                   $"    <div id=\"vis-{id}\"></div>\n"                                   +
+                                                                                                   "    <script type=\"text/javascript\">\n"                              +
+                                                                                                   "        var renderVegaLite = function() {"                            +
+                                                                                                   $"            var vlSpec = {spec};\n"                                  +
+                                                                                                   $"            vegaEmbed('#vis-{id}', vlSpec);\n"                       +
+                                                                                                   "        };"                                                           +
+                                                                                                   "\n"                                                                   +
+                                                                                                   LoadScript                                                             +
+                                                                                                   "\n"                                                                   +
+                                                                                                   "    </script>\n"                                                      +
+                                                                                                   "</div>\n";
+
+                                                                                     return html;
+                                                                                 };
 
         public Guid Id { get; }
 
@@ -130,9 +176,12 @@ namespace VegaLite
 
         public override string ToString()
         {
-            return Content(Id,
-                           Title,
-                           Specification.ToJson());
+            return GetHtml();
+        }
+
+        public string GetHtml()
+        {
+            return $"{new HtmlString(LoadContent(Id, Title, Specification.ToJson(), Width.HasValue ? (int)Width.Value : 500, Height.HasValue ? (int)Height.Value : 500))}";
         }
     }
 }
