@@ -574,7 +574,7 @@ namespace VegaLite.Test
         {
             VegaLiteSpecification vegaLiteSpecification = new VegaLiteSpecification
             {
-                Description = "Stock prices of 5 Tech Companies over Time.",
+                Description = "",
                 Data = new UrlData()
                 {
                     Values = VegaDataset

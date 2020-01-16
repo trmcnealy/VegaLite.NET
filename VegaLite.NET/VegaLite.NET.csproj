@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWPF>true</UseWPF>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>VegaLite</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Timothy R. McNealy</Authors>
@@ -12,11 +11,14 @@
     <Copyright>2020</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="VegaLite.NET.csproj.DotSettings" />
-    <None Include="nindra.png">
+    <None Include="..\..\nindra.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
