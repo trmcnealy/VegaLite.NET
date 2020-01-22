@@ -7,14 +7,14 @@ using Newtonsoft.Json.Converters;
 
 namespace VegaLite
 {
-    public partial class VegaLiteSpecification
+    public partial class Specification
     {
-        public static VegaLiteSpecification FromJson(string json) => JsonConvert.DeserializeObject<VegaLiteSpecification>(json, VegaLite.Converter.Settings);
+        public static Specification FromJson(string json) => JsonConvert.DeserializeObject<Specification>(json, VegaLite.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this VegaLiteSpecification self) => JsonConvert.SerializeObject(self, VegaLite.Converter.Settings);
+        public static string ToJson(this Specification self) => JsonConvert.SerializeObject(self, VegaLite.Converter.Settings);
     }
 
     internal static class Converter
@@ -31,7 +31,7 @@ namespace VegaLite
                 ContainsConverter.Singleton,
                 AutosizeTypeConverter.Singleton,
                 BoundsEnumConverter.Singleton,
-                VegaLiteSpecificationCenterConverter.Singleton,
+                SpecificationCenterConverter.Singleton,
                 DataFormatTypeConverter.Singleton,
                 GraticuleConverter.Singleton,
                 SphereUnionConverter.Singleton,
@@ -510,9 +510,9 @@ namespace VegaLite
         public static readonly BoundsEnumConverter Singleton = new BoundsEnumConverter();
     }
 
-    internal class VegaLiteSpecificationCenterConverter : JsonConverter
+    internal class SpecificationCenterConverter : JsonConverter
     {
-        public override bool CanConvert(Type t) => t == typeof(VegaLiteSpecificationCenter) || t == typeof(VegaLiteSpecificationCenter?);
+        public override bool CanConvert(Type t) => t == typeof(SpecificationCenter) || t == typeof(SpecificationCenter?);
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
@@ -520,17 +520,17 @@ namespace VegaLite
             {
                 case JsonToken.Boolean:
                     var boolValue = serializer.Deserialize<bool>(reader);
-                    return new VegaLiteSpecificationCenter { Bool = boolValue };
+                    return new SpecificationCenter { Bool = boolValue };
                 case JsonToken.StartObject:
                     var objectValue = serializer.Deserialize<RowColBoolean>(reader);
-                    return new VegaLiteSpecificationCenter { RowColBoolean = objectValue };
+                    return new SpecificationCenter { RowColBoolean = objectValue };
             }
-            throw new Exception("Cannot unmarshal type VegaLiteSpecificationCenter");
+            throw new Exception("Cannot unmarshal type SpecificationCenter");
         }
 
         public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
         {
-            var value = (VegaLiteSpecificationCenter)untypedValue;
+            var value = (SpecificationCenter)untypedValue;
             if (value.Bool != null)
             {
                 serializer.Serialize(writer, value.Bool.Value);
@@ -541,10 +541,10 @@ namespace VegaLite
                 serializer.Serialize(writer, value.RowColBoolean);
                 return;
             }
-            throw new Exception("Cannot marshal type VegaLiteSpecificationCenter");
+            throw new Exception("Cannot marshal type SpecificationCenter");
         }
 
-        public static readonly VegaLiteSpecificationCenterConverter Singleton = new VegaLiteSpecificationCenterConverter();
+        public static readonly SpecificationCenterConverter Singleton = new SpecificationCenterConverter();
     }
 
     internal class MinMaxLengthCheckConverter : JsonConverter

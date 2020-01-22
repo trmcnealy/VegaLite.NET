@@ -1,0 +1,1426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="airport_connections_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>airport_connections.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_cumulative_freq_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_cumulative_freq.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_density_facet_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_density_facet.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_density_stacked_fold_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_density_stacked_fold.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_density_stacked_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_density_stacked.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_density_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_density.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_gradient_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_gradient.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_horizon_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_horizon.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_temperature_range_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_temperature_range.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="area_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>area.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_1d_step_config_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_1d_step_config.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_1d_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_1d.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_count_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_count.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_format_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_format.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_size_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_size.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_sort_by_encoding_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_sort_by_encoding.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_sort_mean_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_sort_mean.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_argmax_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_argmax_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_argmax_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_argmax.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_array_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_array_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_binned_data_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_binned_data.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_color_disabled_scale_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_color_disabled_scale.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_column_fold_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_column_fold.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_column_pivot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_column_pivot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_count_minimap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_count_minimap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_custom_sort_full_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_custom_sort_full.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_custom_sort_partial_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_custom_sort_partial.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_distinct_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_distinct.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_diverging_stack_population_pyramid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_diverging_stack_population_pyramid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_diverging_stack_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_diverging_stack_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_filter_calc_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_filter_calc.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_fit_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_fit.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_gantt_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_gantt.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_grouped_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_grouped_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_grouped_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_grouped.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_layered_transparent_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_layered_transparent.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_layered_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_layered_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_month_band_config_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_month_band_config.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_month_band_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_month_band.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_month_temporal_initial_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_month_temporal_initial.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_month_temporal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_month_temporal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_month_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_month.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_multi_values_per_categories_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_multi_values_per_categories.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_size_default_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_size_default.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_size_explicit_bad_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_size_explicit_bad.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_size_fit_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_size_fit.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_size_responsive_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_size_responsive.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_size_step_small_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_size_step_small.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_sort_by_count_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_sort_by_count.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_swap_axes_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_swap_axes.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_swap_custom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_swap_custom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_title_start_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_title_start.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_title_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_title.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_tooltip_multi_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_tooltip_multi.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_yearmonth_custom_format_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_yearmonth_custom_format.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bar_yearmonth_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>bar_yearmonth.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_1D_horizontal_custom_mark_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_1D_horizontal_custom_mark.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_1D_horizontal_explicit_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_1D_horizontal_explicit.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_1D_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_1D_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_1D_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_1D_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_2D_horizontal_color_size_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_2D_horizontal_color_size.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_2D_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_2D_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_2D_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_2D_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_minmax_2D_horizontal_custom_midtick_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_minmax_2D_horizontal_custom_midtick_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_minmax_2D_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_minmax_2D_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_minmax_2D_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_minmax_2D_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_tooltip_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_tooltip_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boxplot_tooltip_not_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>boxplot_tooltip_not_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="brush_table_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>brush_table.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_binned_maxbins_20_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_binned_maxbins_20.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_binned_maxbins_2_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_binned_maxbins_2.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_binned_maxbins_5_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_binned_maxbins_5.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_binned_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_binned.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_bubble_health_income_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_bubble_health_income.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_flatten_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_flatten.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_github_punchcard_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_github_punchcard.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_natural_disasters_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_natural_disasters.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_opacity_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_opacity.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_scale_quantile_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_scale_quantile.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_scale_quantize_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_scale_quantize.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_scale_threshold_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_scale_threshold.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_wilkinson_dotplot_stacked_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_wilkinson_dotplot_stacked.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="circle_wilkinson_dotplot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>circle_wilkinson_dotplot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_bar_layer_circle_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_bar_layer_circle.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_bar_scales_discretize_2_cols_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_bar_scales_discretize_2_cols.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_bar_scales_discretize_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_bar_scales_discretize.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_hover_filter_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_hover_filter.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_hover_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_hover.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_layer_voyager_result_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_layer_voyager_result.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_marginal_histograms_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_marginal_histograms.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_population_pyramid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_population_pyramid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="concat_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>concat_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="connected_scatterplot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>connected_scatterplot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="embedded_csv_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>embedded_csv.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorband_2d_horizontal_color_encoding_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorband_2d_horizontal_color_encoding.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorband_2d_vertical_borders_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorband_2d_vertical_borders.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorband_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorband_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorbar_2d_vertical_ticks_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorbar_2d_vertical_ticks.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorbar_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorbar_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorbar_horizontal_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorbar_horizontal_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="errorbar_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>errorbar_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_bullet_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_bullet.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_column_facet_column_point_future_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_column_facet_column_point_future.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_column_facet_row_point_future_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_column_facet_row_point_future.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_cross_independent_scale_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_cross_independent_scale.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_custom_header_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_custom_header.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_custom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_custom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_independent_scale_layer_broken_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_independent_scale_layer_broken.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_independent_scale_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_independent_scale.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facet_row_facet_row_point_future_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>facet_row_facet_row_point_future.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_choropleth_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_choropleth.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_circle_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_circle.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_constant_value_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_constant_value.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_custom_projection_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_custom_projection.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_graticule_object_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_graticule_object.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_graticule_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_graticule.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_layer_line_london_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_layer_line_london.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_layer_multi_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_layer_multi.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_layer_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_layer.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_line_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_line.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_point_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_point.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_repeat_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_repeat.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_rule_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_rule.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_sphere_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_sphere.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_text_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_text.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="geo_trellis_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>geo_trellis.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hconcat_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>hconcat_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_bin_change_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_bin_change.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_bin_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_bin_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_log_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_log.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_no_spacing_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_no_spacing.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_ordinal_sort_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_ordinal_sort.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_ordinal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram_ordinal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="histogram_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>histogram.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_area_brush_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_area_brush.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_bar_select_highlight_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_bar_select_highlight.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_bin_extent_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_bin_extent.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_brush_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_brush.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_concat_layer_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_concat_layer.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_dashboard_europe_pop_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_dashboard_europe_pop.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_index_chart_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_index_chart.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_layered_crossfilter_discrete_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_layered_crossfilter_discrete.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_layered_crossfilter_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_layered_crossfilter.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_legend_dblclick_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_legend_dblclick.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_legend_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_legend.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_multi_line_label_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_multi_line_label.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_multi_line_pivot_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_multi_line_pivot_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_multi_line_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_multi_line_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_overview_detail_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_overview_detail.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_color_nearest_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush_color_nearest.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_interval_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush_interval.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_simple_all_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush_simple_all.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_simple_none_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush_simple_none.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_paintbrush_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_paintbrush.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_panzoom_splom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_panzoom_splom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_panzoom_vconcat_shared_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_panzoom_vconcat_shared.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_query_widgets_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_query_widgets.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_seattle_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_seattle_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_splom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_splom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="interactive_stocks_nearest_index_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>interactive_stocks_nearest_index.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="isotype_bar_chart_emoji_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>isotype_bar_chart_emoji.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="isotype_bar_chart_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>isotype_bar_chart.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="isotype_grid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>isotype_grid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="joinaggregate_mean_difference_by_year_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>joinaggregate_mean_difference_by_year.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="joinaggregate_mean_difference_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>joinaggregate_mean_difference.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="joinaggregate_percent_of_total_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>joinaggregate_percent_of_total.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="joinaggregate_residual_graph_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>joinaggregate_residual_graph.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_annotations_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_annotations.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_labels_grey_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_labels_grey.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_labels_style_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_labels_style.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_labels_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_labels.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_line_union_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_line_union.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_line_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_line.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_bar_month_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_bar_month.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_boxplot_circle_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_boxplot_circle.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_candlestick_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_candlestick.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_circle_independent_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_circle_independent_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_color_legend_left_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_color_legend_left.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_cumulative_histogram_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_cumulative_histogram.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_dual_axis_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_dual_axis.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_falkensee_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_falkensee.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_histogram_global_mean_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_histogram_global_mean.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_histogram_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_histogram.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_likert_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_likert.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_co2_concentration_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_co2_concentration.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_color_rule_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_color_rule.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_errorband_2d_horizontal_borders_strokedash_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_errorband_2d_horizontal_borders_strokedash.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_errorband_ci_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_errorband_ci.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_errorband_pre_aggregated_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_errorband_pre_aggregated.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_mean_point_raw_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_mean_point_raw.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_rolling_mean_point_raw_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_rolling_mean_point_raw.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_line_window_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_line_window.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_1d_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_1d_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_1d_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_1d_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_ci_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal_ci.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_color_encoding_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal_color_encoding.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_custom_ticks_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal_custom_ticks.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_iqr_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal_iqr.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_stdev_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal_stdev.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_horizontal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_horizontal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_2d_vertical_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_2d_vertical.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_ci_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_ci.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_pre_aggregated_asymmetric_error_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_pre_aggregated_asymmetric_error.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_pre_aggregated_symmetric_error_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_pre_aggregated_symmetric_error.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_pre_aggregated_upper_lower_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_pre_aggregated_upper_lower.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_errorbar_stdev_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_errorbar_stdev.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_line_loess_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_line_loess.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_point_line_regression_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_point_line_regression.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_precipitation_mean_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_precipitation_mean.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_ranged_dot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_ranged_dot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_rect_extent_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_rect_extent.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_scatter_errorband_1D_stdev_global_mean_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_scatter_errorband_1D_stdev_global_mean.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_scatter_errorband_1d_stdev_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_scatter_errorband_1d_stdev.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_single_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_single_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="layer_text_heatmap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>layer_text_heatmap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_calculate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_calculate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_color_binned_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_color_binned.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_conditional_grid_dash_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_conditional_grid_dash.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_detail_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_detail.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_encoding_impute_keyvals_sequence_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_encoding_impute_keyvals_sequence.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_encoding_impute_keyvals_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_encoding_impute_keyvals.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_frame_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_frame.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_keyvals_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_keyvals.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_method_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_method.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_transform_frame_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_transform_frame.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_transform_value_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_transform_value.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_impute_value_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_impute_value.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_inside_domain_using_clip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_inside_domain_using_clip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_inside_domain_using_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_inside_domain_using_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_max_year_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_max_year.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_mean_month_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_mean_month.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_mean_year_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_mean_year.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_monotone_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_monotone.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_month_center_band_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_month_center_band.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_month_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_month.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_outside_domain_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_outside_domain.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_overlay_stroked_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_overlay_stroked.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_quarter_legend_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_quarter_legend.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_shape_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_shape_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_skip_invalid_mid_cap_square_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_skip_invalid_mid_cap_square.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_skip_invalid_mid_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_skip_invalid_mid_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_skip_invalid_mid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_skip_invalid_mid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_skip_invalid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_skip_invalid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_slope_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_slope.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_sort_axis_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_sort_axis.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_step_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_step.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_timeunit_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line_timeunit_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>line.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lookup_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>lookup.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nested_concat_align_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>nested_concat_align.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="parallel_coordinate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>parallel_coordinate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_1d_array_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_1d_array.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_1d_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_1d.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_aggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d_aggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_array_named_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d_array_named.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_array_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d_array.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_tooltip_data_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d_tooltip_data.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_2d_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_2d.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_aggregate_detail_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_aggregate_detail.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_background_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_background.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_binned_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_binned_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_binned_opacity_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_binned_opacity.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_binned_size_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_binned_size.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_bubble_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_bubble.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_colorramp_size_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_colorramp_size.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_custom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color_custom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_ordinal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color_ordinal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_quantitative_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color_quantitative.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_shape_constant_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color_shape_constant.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_color_with_shape_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_color_with_shape.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_diverging_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_diverging_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_dot_timeunit_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_dot_timeunit_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_filled_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_filled.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_href_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_href.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_invalid_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_invalid_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_log_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_log.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_no_axis_domain_grid_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_no_axis_domain_grid.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_ordinal_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_ordinal_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_overlap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_overlap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_quantile_quantile_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_quantile_quantile.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_shape_custom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_shape_custom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="point_tooltip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>point_tooltip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_binned_heatmap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_binned_heatmap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_heatmap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_heatmap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_heatmap_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_heatmap_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_lasagna_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_lasagna.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_mosaic_labelled_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_mosaic_labelled.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_mosaic_labelled_with_offset_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_mosaic_labelled_with_offset.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rect_mosaic_simple_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rect_mosaic_simple.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_histogram_flights_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_histogram_flights.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_histogram_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_histogram.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_independent_colors_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_independent_colors.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_layer_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_layer.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_line_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_line_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_splom_cars_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_splom_cars.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="repeat_splom_iris_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>repeat_splom_iris.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rule_color_mean_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rule_color_mean.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rule_extent_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>rule_extent.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sample_scatterplot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sample_scatterplot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="scatter_image_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>scatter_image.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_bind_cylyr_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_bind_cylyr.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_bind_origin_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_bind_origin.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_brush_timeunit_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_brush_timeunit.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_clear_brush_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_clear_brush.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_composition_and_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_composition_and.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_composition_or_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_composition_or.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_concat_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_concat.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_filter_composition_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_filter_composition.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_filter_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_filter.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_heatmap_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_heatmap.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_insert_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_insert.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_interval_mark_style_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_interval_mark_style.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_layer.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_layer_bar_month_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_layer_bar_month.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_multi_condition_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_multi_condition.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_binned_interval_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_binned_interval.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_interval_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_interval.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_interval_x_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_interval_x.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_interval_x_y_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_interval_x_y.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_interval_y_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_interval_y.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_multi_cylinders_origin_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_multi_cylinders_origin.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_multi_cylinders_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_multi_cylinders.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_multi_origin_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_multi_origin.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_multi_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_multi.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_single_cylinders_origin_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_single_cylinders_origin.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_single_cylinders_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_single_cylinders.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_single_origin_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_single_origin.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_project_single_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_project_single.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_resolution_global_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_resolution_global.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_resolution_intersect_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_resolution_intersect.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_resolution_union_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_resolution_union.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_toggle_altKey_shiftKey_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_toggle_altKey_shiftKey.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_toggle_altKey_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_toggle_altKey.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_toggle_shiftKey_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_toggle_shiftKey.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_translate_brush_drag_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_translate_brush_drag.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_translate_brush_shift_drag_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_translate_brush_shift-drag.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_translate_scatterplot_drag_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_translate_scatterplot_drag.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_translate_scatterplot_shift_drag_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_translate_scatterplot_shift-drag.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_interval_invert_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_interval_invert.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_interval_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_interval.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_multi_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_multi.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_single_dblclick_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_single_dblclick.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_single_mouseover_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_single_mouseover.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_type_single_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_type_single.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_zoom_brush_shift_wheel_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_zoom_brush_shift-wheel.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_zoom_brush_wheel_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_zoom_brush_wheel.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_zoom_scatterplot_shift_wheel_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_zoom_scatterplot_shift-wheel.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection_zoom_scatterplot_wheel_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>selection_zoom_scatterplot_wheel.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sequence_line_fold_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sequence_line_fold.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sequence_line_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sequence_line.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="square_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>square.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_area_normalize_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_area_normalize.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_area_ordinal_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_area_ordinal.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_area_overlay_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_area_overlay.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_area_stream_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_area_stream.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_area_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_area.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_1d_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_1d.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_count_corner_radius_config_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_count_corner_radius_config.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_count_corner_radius_mark_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_count_corner_radius_mark.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_count_corner_radius_mark_x_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_count_corner_radius_mark_x.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_count_corner_radius_stroke_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_count_corner_radius_stroke.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_count_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_count.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_h_order_custom_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_h_order_custom.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_h_order_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_h_order.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_h_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_h.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_normalize_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_normalize.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_population_transform_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_population_transform.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_population_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_population.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_size_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_size.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_sum_opacity_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_sum_opacity.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_unaggregate_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_unaggregate.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_v_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_v.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stacked_bar_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stacked_bar_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_aggregate_nested_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_aggregate_nested.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_field_with_spaces_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_field_with_spaces.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_minimal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_minimal.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_single_point_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_single_point_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_subobject_missing_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_subobject_missing.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_subobject_nested_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_subobject_nested.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="test_subobject_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>test_subobject.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="text_format_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text_format.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="text_scatterplot_colored_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text_scatterplot_colored.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tick_dot_thickness_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tick_dot_thickness.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tick_dot_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tick_dot.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tick_sort_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tick_sort.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tick_strip_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tick_strip.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_output_utc_scale_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>time_output_utc_scale.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_output_utc_timeunit_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>time_output_utc_timeunit.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_parse_local_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>time_parse_local.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_parse_utc_format_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>time_parse_utc_format.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_parse_utc_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>time_parse_utc.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trail_color_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trail_color.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_anscombe_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_anscombe.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_area_sort_array_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_area_sort_array.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_area_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_area.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_barley_independent_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_barley_independent.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_barley_layer_median_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_barley_layer_median.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_barley_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_barley.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_bar_histogram_label_rotated_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_bar_histogram_label_rotated.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_bar_histogram_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_bar_histogram.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_bar_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_bar.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_column_year_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_column_year.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_cross_sort_array_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_cross_sort_array.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_cross_sort_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_cross_sort.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_line_quarter_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_line_quarter.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_row_column_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_row_column.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_scatter_binned_row_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_scatter_binned_row.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_scatter_small_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_scatter_small.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_scatter_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_scatter.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_selections_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_selections.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trellis_stacked_bar_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>trellis_stacked_bar.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vconcat_flatten_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>vconcat_flatten.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vconcat_weather_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>vconcat_weather.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="waterfall_chart_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>waterfall_chart.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wheat_wages_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>wheat_wages.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="window_cumulative_running_average_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>window_cumulative_running_average.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="window_percent_of_total_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>window_percent_of_total.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="window_rank_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>window_rank.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="window_top_k_others_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>window_top_k_others.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="window_top_k_vl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>window_top_k.vl.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

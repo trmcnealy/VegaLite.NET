@@ -34,7 +34,7 @@ namespace VegaLite
         /// If no data is set, it is derived from the parent.
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public UrlData Data { get; set; }
+        public DataSource DataSource { get; set; }
 
         /// <summary>
         /// Description of this mark for commenting purpose.
@@ -212,7 +212,7 @@ namespace VegaLite
         /// __Default value:__ `false`
         /// </summary>
         [JsonProperty("center", NullValueHandling = NullValueHandling.Ignore)]
-        public VegaLiteSpecificationCenter? Center { get; set; }
+        public SpecificationCenter? Center { get; set; }
 
         /// <summary>
         /// The number of columns to include in the view composition layout.

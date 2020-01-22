@@ -17,15 +17,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Specification\Specification.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="VegaLite.NET.csproj.DotSettings" />
     <None Include="..\..\nindra.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="Specification\Specification.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.Interactive.Formatting" Version="1.0.0-beta.20065.5" />
+    <PackageReference Include="Microsoft.DotNet.Interactive.Formatting" Version="1.0.0-beta.20067.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 

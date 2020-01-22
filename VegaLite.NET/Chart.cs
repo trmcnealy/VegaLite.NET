@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Net.Mime;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
@@ -101,7 +104,7 @@ namespace VegaLite
 
         public string Title { get; }
 
-        public VegaLiteSpecification Specification { get; }
+        public Specification Specification { get; }
 
         public double? Width { get { return Specification.Width?.Double; } set { Specification.Width = value; } }
 
@@ -109,21 +112,32 @@ namespace VegaLite
 
         public InlineDataset? Data { get { return Specification.Data.Values; } set { Specification.Data.Values = value; } }
 
-        public Chart(string                title,
-                     VegaLiteSpecification vegaLiteSpecification)
+        public Chart(string        title,
+                     Specification vegaLiteSpecification)
         {
             Id            = Guid.NewGuid();
             Title         = title;
             Specification = vegaLiteSpecification;
         }
 
-        public Chart(string                title,
-                     VegaLiteSpecification vegaLiteSpecification,
-                     int                   width,
-                     int                   height)
+        public Chart(string        title,
+                     Specification vegaLiteSpecification,
+                     int           width,
+                     int           height)
         {
             Id            = Guid.NewGuid();
             Title         = title;
+            Specification = vegaLiteSpecification;
+            Width         = width;
+            Height        = height;
+        }
+
+        public Chart(Specification vegaLiteSpecification,
+                     int           width,
+                     int           height)
+        {
+            Id            = Guid.NewGuid();
+            Title         = vegaLiteSpecification.Description;
             Specification = vegaLiteSpecification;
             Width         = width;
             Height        = height;
@@ -147,7 +161,13 @@ namespace VegaLite
                     FileName = text, UseShellExecute = true
                 };
 
-                Process.Start(startInfo);
+                Process p = Process.Start(startInfo);
+
+                if(p != null)
+                {
+                    p.EnableRaisingEvents = true;
+                    p.WaitForInputIdle();
+                }
 
                 return;
             }

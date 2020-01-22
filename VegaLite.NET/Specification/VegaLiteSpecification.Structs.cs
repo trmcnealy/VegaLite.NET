@@ -1,6 +1,8 @@
 ﻿
 using System.Collections.Generic;
 
+using Newtonsoft.Json;
+
 namespace VegaLite
 {
     /// <summary>
@@ -46,13 +48,13 @@ namespace VegaLite
         public static implicit operator Autosize(AutosizeType @enum) => new Autosize { Enum = @enum };
     }
 
-    public struct VegaLiteSpecificationCenter
+    public struct SpecificationCenter
     {
         public bool? Bool;
         public RowColBoolean RowColBoolean;
 
-        public static implicit operator VegaLiteSpecificationCenter(bool @bool) => new VegaLiteSpecificationCenter { Bool = @bool };
-        public static implicit operator VegaLiteSpecificationCenter(RowColBoolean rowColBoolean) => new VegaLiteSpecificationCenter { RowColBoolean = rowColBoolean };
+        public static implicit operator SpecificationCenter(bool @bool) => new SpecificationCenter { Bool = @bool };
+        public static implicit operator SpecificationCenter(RowColBoolean rowColBoolean) => new SpecificationCenter { RowColBoolean = rowColBoolean };
     }
 
     /// <summary>

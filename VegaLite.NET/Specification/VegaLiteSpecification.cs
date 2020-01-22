@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using System.Globalization;
+using System.Dynamic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -13,7 +13,7 @@ namespace VegaLite
     /// This is the root class for all Vega-Lite specifications.
     /// (The json schema is generated from this type.)
     /// </summary>
-    public partial class VegaLiteSpecification
+    public partial class Specification
     {
         /// <summary>
         /// URL to [JSON schema](http://json-schema.org/) for a Vega-Lite specification. Unless you
@@ -70,7 +70,7 @@ namespace VegaLite
         /// If no data is set, it is derived from the parent.
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public UrlData Data { get; set; }
+        public DataSource Data { get; set; }
 
         /// <summary>
         /// A global data store for named datasets. This is a mapping from names to inline datasets.
@@ -249,7 +249,7 @@ namespace VegaLite
         /// __Default value:__ `false`
         /// </summary>
         [JsonProperty("center", NullValueHandling = NullValueHandling.Ignore)]
-        public VegaLiteSpecificationCenter? Center { get; set; }
+        public SpecificationCenter? Center { get; set; }
 
         /// <summary>
         /// The number of columns to include in the view composition layout.
@@ -346,7 +346,7 @@ namespace VegaLite
         public List<Spec> Hconcat { get; set; }
     }
 
-    public partial class UrlData
+    public partial class DataSource : DynamicObject
     {
         /// <summary>
         /// An object that specifies the format for parsing the data.
@@ -374,7 +374,8 @@ namespace VegaLite
         /// parsed according to the specified format type.
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public InlineDataset? Values { get; set; }
+        
+        public dynamic? Values { get; set; }
 
         /// <summary>
         /// Generate a sequence of numbers.
@@ -1068,10 +1069,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -1709,10 +1710,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -2811,10 +2812,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -3226,10 +3227,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -3340,7 +3341,7 @@ namespace VegaLite
         /// __Default value:__ `false`
         /// </summary>
         [JsonProperty("center", NullValueHandling = NullValueHandling.Ignore)]
-        public VegaLiteSpecificationCenter? Center { get; set; }
+        public SpecificationCenter? Center { get; set; }
 
         /// <summary>
         /// The number of columns to include in the view composition layout.
@@ -3472,10 +3473,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -3725,10 +3726,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -3971,10 +3972,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -4167,10 +4168,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -4413,10 +4414,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -4550,10 +4551,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -4817,10 +4818,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -4956,10 +4957,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -5196,10 +5197,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -5442,10 +5443,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -5636,10 +5637,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -5860,10 +5861,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -6031,10 +6032,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -6223,10 +6224,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -6487,10 +6488,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -7657,10 +7658,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -7951,10 +7952,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -8130,10 +8131,10 @@ namespace VegaLite
         ///
         /// __Note:__
         ///
-        /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+        /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
         /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
         /// `1552199579097`).
-        /// - Data `type` describes the semantics of the data rather than the primitive data types
+        /// - DataSource `type` describes the semantics of the data rather than the primitive data types
         /// (number, string, etc.). The same primitive data type can have different types of
         /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
         /// data.
@@ -8183,7 +8184,7 @@ namespace VegaLite
         /// If no data is set, it is derived from the parent.
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public UrlData Data { get; set; }
+        public DataSource DataSource { get; set; }
 
         /// <summary>
         /// Description of this mark for commenting purpose.
@@ -11596,7 +11597,7 @@ namespace VegaLite
         public string Default { get; set; }
 
         /// <summary>
-        /// Data source or selection for secondary data reference.
+        /// DataSource source or selection for secondary data reference.
         /// </summary>
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public Lookup From { get; set; }
@@ -11767,7 +11768,7 @@ namespace VegaLite
     }
 
     /// <summary>
-    /// Data source or selection for secondary data reference.
+    /// DataSource source or selection for secondary data reference.
     /// </summary>
     public partial class Lookup
     {

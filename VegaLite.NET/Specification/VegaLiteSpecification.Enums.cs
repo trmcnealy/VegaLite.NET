@@ -333,10 +333,10 @@ namespace VegaLite
     ///
     /// __Note:__
     ///
-    /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+    /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
     /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
     /// `1552199579097`).
-    /// - Data `type` describes the semantics of the data rather than the primitive data types
+    /// - DataSource `type` describes the semantics of the data rather than the primitive data types
     /// (number, string, etc.). The same primitive data type can have different types of
     /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
     /// data.
@@ -370,10 +370,10 @@ namespace VegaLite
     ///
     /// __Note:__
     ///
-    /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+    /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
     /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
     /// `1552199579097`).
-    /// - Data `type` describes the semantics of the data rather than the primitive data types
+    /// - DataSource `type` describes the semantics of the data rather than the primitive data types
     /// (number, string, etc.). The same primitive data type can have different types of
     /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
     /// data.
@@ -405,10 +405,10 @@ namespace VegaLite
     ///
     /// __Note:__
     ///
-    /// - Data values for a temporal field can be either a date-time string (e.g., `"2015-03-07
+    /// - DataSource values for a temporal field can be either a date-time string (e.g., `"2015-03-07
     /// 12:32:17"`, `"17:01"`, `"2015-03-16"`. `"2015"`) or a timestamp number (e.g.,
     /// `1552199579097`).
-    /// - Data `type` describes the semantics of the data rather than the primitive data types
+    /// - DataSource `type` describes the semantics of the data rather than the primitive data types
     /// (number, string, etc.). The same primitive data type can have different types of
     /// measurement. For example, numeric data can represent quantitative, ordinal, or nominal
     /// data.
