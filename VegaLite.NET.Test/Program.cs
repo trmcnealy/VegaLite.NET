@@ -94,6 +94,7 @@ namespace VegaLite.Test
 
             //Chart         chart;
             Specification vegaLiteSpecification;
+            string        fileData;
 
             string tempPath = Path.GetTempPath();
 
@@ -107,21 +108,27 @@ namespace VegaLite.Test
             }
 
             int start = 0;
-            int count = ExampleResources.Length;
+            int count = 33*3;
 
             ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
                                                                   start,
                                                                   count);
 
             MultipleCharts charts = new MultipleCharts("MultipleCharts",
-                                                       tests.Count/3,
+                                                       33,
                                                        3);
 
             for(int i = 0; i < tests.Count; i++)
             {
-                vegaLiteSpecification = Specification.FromJson(System.Text.Encoding.UTF8.GetString(tests[i],
-                                                                                                   0,
-                                                                                                   tests[i].Length));
+                fileData = System.Text.Encoding.UTF8.GetString(tests[i],
+                                                               0,
+                                                               tests[i].Length);
+
+
+
+                fileData = fileData.Replace(@"""url"": ""data",
+                                            @"""url"": ""https://raw.githubusercontent.com/vega/vega-datasets/master/data",
+                                            StringComparison.InvariantCulture);
 
                 //if (vegaLiteSpecification.DataSource?.Url?.StartsWith("data") == true)
                 //{
@@ -137,6 +144,8 @@ namespace VegaLite.Test
                 //        }
                 //    }
                 //}
+
+                vegaLiteSpecification = Specification.FromJson(fileData);
 
                 charts[i] = new Chart(vegaLiteSpecification,
                                       500,

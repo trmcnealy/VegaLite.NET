@@ -67,21 +67,21 @@ namespace VegaLite
                                                                                                  spec,
                                                                                                  scripts) =>
                                                                                                 {
-                                                                                                    string html = $"<div id=\"{id}\">\n"                                  +
+                                                                                                    string html = $"{ind(3)}<div id=\"{id}\">\n"                                  +
                                                                                                                   scripts                                                 +
-                                                                                                                  $"{ind(1)}<h1>{title}</h1>\n"                           +
-                                                                                                                  $"{ind(1)}<div id=\"vis-{id}\"></div>\n"                +
-                                                                                                                  $"{ind(1)}<script type=\"text/javascript\">\n"          +
-                                                                                                                  $"{ind(1)}{ind(1)}var renderVegaLite = function() {{\n" +
+                                                                                                                  $"{ind(4)}<h1>{title}</h1>\n"                           +
+                                                                                                                  $"{ind(4)}<div id=\"vis-{id}\"></div>\n"                +
+                                                                                                                  $"{ind(4)}<script type=\"text/javascript\">\n"          +
+                                                                                                                  $"{ind(4)}{ind(1)}var renderVegaLite = function() {{\n" +
                                                                                                                   //$"{ind(1)}{ind(1)}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{\n" +
-                                                                                                                  $"{ind(1)}{ind(1)}{ind(1)}var vlSpec = {spec};\n"            +
-                                                                                                                  $"{ind(1)}{ind(1)}{ind(1)}vegaEmbed('#vis-{id}', vlSpec);\n" +
-                                                                                                                  $"{ind(1)}{ind(1)}}};"                                       +
+                                                                                                                  $"{ind(4)}{ind(1)}{ind(1)}var vlSpec = {spec};\n"            +
+                                                                                                                  $"{ind(4)}{ind(1)}{ind(1)}vegaEmbed('#vis-{id}', vlSpec);\n" +
+                                                                                                                  $"{ind(4)}{ind(1)}}};"                                       +
                                                                                                                   "\n"                                                         +
-                                                                                                                  $"{ind(3)}{ind(1)}renderVegaLite();\n"                       +
+                                                                                                                  $"{ind(4)}{ind(1)}renderVegaLite();\n"                       +
                                                                                                                   "\n"                                                         +
-                                                                                                                  $"{ind(1)}</script>\n"                                       +
-                                                                                                                  "</div>\n";
+                                                                                                                  $"{ind(4)}</script>\n"                                       +
+                                                                                                                  $"{ind(3)}</div>\n";
 
                                                                                                     return html;
                                                                                                 };
