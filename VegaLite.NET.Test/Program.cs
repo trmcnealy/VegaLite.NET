@@ -29,49 +29,7 @@ namespace VegaLite.Test
     {
         private static void Main(string[] args)
         {
-            //GenerateSchema();
-
             Test1();
-        }
-
-        private static void GenerateSchema()
-        {
-            HttpClient      client     = new HttpClient();
-            string          schemaData = client.GetStringAsync("https://vega.github.io/schema/vega-lite/v4.json").Result;
-            OpenApiDocument schema     = OpenApiDocument.FromJsonAsync(schemaData).Result;
-
-            //Newtonsoft.Json.Schema.JSchema schema = JSchema.Parse(schemaData);
-
-            //using (FileStream fs = new FileStream(@"C:\Users\tehgo\Desktop\Spec.cs", FileMode.OpenOrCreate))
-            //{
-            //    fs.Write(System.Text.Encoding.UTF8.GetBytes(code));
-            //}
-
-            CSharpClientGeneratorSettings clientSettings = new CSharpClientGeneratorSettings
-            {
-                CSharpGeneratorSettings =
-                {
-                    Namespace  = "VegaLite",
-                    ClassStyle = CSharpClassStyle.Poco,
-                    //GenerateJsonMethods = true,
-                    HandleReferences                     = true,
-                    InlineNamedAny                       = false,
-                    InlineNamedArrays                    = true,
-                    GenerateOptionalPropertiesAsNullable = true,
-                    ArrayType                            = "System.Collections.Generic.List"
-                }
-            };
-
-            CSharpClientGenerator clientGenerator = new CSharpClientGenerator(schema,
-                                                                              clientSettings);
-
-            string code = clientGenerator.GenerateFile();
-
-            using(FileStream fs = new FileStream(@"D:\TFS_Sources\Github\Compilation\Vega\ToTypeScript\Specification.cs",
-                                                 FileMode.OpenOrCreate))
-            {
-                fs.Write(System.Text.Encoding.UTF8.GetBytes(code));
-            }
         }
 
         private static void Test1()
@@ -79,7 +37,7 @@ namespace VegaLite.Test
             HttpClient client = new HttpClient();
             //string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/tree/master/examples/specs/bar.vl.json").Result;
 
-            Chart         chart;
+            Chart chart;
             Specification vegaLiteSpecification;
 
             string tempPath = Path.GetTempPath();
@@ -87,39 +45,39 @@ namespace VegaLite.Test
             string dataFile = Path.Combine(tempPath,
                                            "data");
 
-            if(!File.Exists(dataFile))
+            if (!File.Exists(dataFile))
             {
                 File.WriteAllBytes(dataFile,
                                    Examples.Resource.data);
             }
 
-            int start = 10;
+            int start = 12;
             int count = 1;
 
             ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
                                                                   start,
                                                                   count);
 
-            for(int i = 0; i < tests.Count; i++)
+            for (int i = 0; i < tests.Count; i++)
             {
                 vegaLiteSpecification = Specification.FromJson(System.Text.Encoding.UTF8.GetString(tests[i],
                                                                                                    0,
                                                                                                    tests[i].Length));
 
-                if(vegaLiteSpecification.Data?.Url?.StartsWith("data") == true)
-                {
-                    vegaLiteSpecification.Data.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.Data.Url;
-                }
-                else if(vegaLiteSpecification.Layer?.Count > 0)
-                {
-                    for(int j = tests.Offset; j < vegaLiteSpecification.Layer.Count; j++)
-                    {
-                        if(vegaLiteSpecification.Layer[j]?.DataSource?.Url?.StartsWith("data") == true)
-                        {
-                            vegaLiteSpecification.Layer[j].DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.Layer[j].DataSource.Url;
-                        }
-                    }
-                }
+                //if (vegaLiteSpecification.DataSource?.Url?.StartsWith("data") == true)
+                //{
+                //    vegaLiteSpecification.DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.DataSource.Url;
+                //}
+                //else if (vegaLiteSpecification.Layer?.Count > 0)
+                //{
+                //    for (int j = tests.Offset; j < vegaLiteSpecification.Layer.Count; j++)
+                //    {
+                //        if (vegaLiteSpecification.Layer[j]?.DataSource?.Url?.StartsWith("data") == true)
+                //        {
+                //            vegaLiteSpecification.Layer[j].DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.Layer[j].DataSource.Url;
+                //        }
+                //    }
+                //}
 
                 chart = new Chart(vegaLiteSpecification,
                                   500,

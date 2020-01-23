@@ -1,0 +1,199 @@
+﻿using System.Collections.Generic;
+
+using Newtonsoft.Json;
+
+namespace VegaLite
+{
+    public class SelectionDef
+    {
+        /// <summary>
+        /// When set, a selection is populated by input elements (also known as dynamic query
+        /// widgets)
+        /// or by interacting with the corresponding legend. Direct manipulation interaction is
+        /// disabled by default;
+        /// to re-enable it, set the selection's
+        /// [`on`](https://vega.github.io/vega-lite/docs/selection.html#common-selection-properties)
+        /// property.
+        ///
+        /// Legend bindings are restricted to selections that only specify a single field or
+        /// encoding.
+        ///
+        /// Query widget binding takes the form of Vega's [input element binding
+        /// definition](https://vega.github.io/vega/docs/signals/#bind)
+        /// or can be a mapping between projected field/encodings and binding definitions.
+        ///
+        /// __See also:__ [`bind`](https://vega.github.io/vega-lite/docs/bind.html) documentation.
+        ///
+        /// When set, a selection is populated by interacting with the corresponding legend. Direct
+        /// manipulation interaction is disabled by default;
+        /// to re-enable it, set the selection's
+        /// [`on`](https://vega.github.io/vega-lite/docs/selection.html#common-selection-properties)
+        /// property.
+        ///
+        /// Legend bindings are restricted to selections that only specify a single field or
+        /// encoding.
+        ///
+        /// Establishes a two-way binding between the interval selection and the scales
+        /// used within the same view. This allows a user to interactively pan and
+        /// zoom the view.
+        ///
+        /// __See also:__ [`bind`](https://vega.github.io/vega-lite/docs/bind.html) documentation.
+        /// </summary>
+        [JsonProperty("bind", NullValueHandling = NullValueHandling.Ignore)]
+        public BindUnion? Bind { get; set; }
+
+        /// <summary>
+        /// Clears the selection, emptying it of all values. Can be a
+        /// [Event Stream](https://vega.github.io/vega/docs/event-streams/) or `false` to disable.
+        ///
+        /// __Default value:__ `dblclick`.
+        ///
+        /// __See also:__ [`clear`](https://vega.github.io/vega-lite/docs/clear.html) documentation.
+        /// </summary>
+        [JsonProperty("clear", NullValueHandling = NullValueHandling.Ignore)]
+        public ClearUnion? Clear { get; set; }
+
+        /// <summary>
+        /// By default, `all` data values are considered to lie within an empty selection.
+        /// When set to `none`, empty selections contain no data values.
+        /// </summary>
+        [JsonProperty("empty", NullValueHandling = NullValueHandling.Ignore)]
+        public Empty? Empty { get; set; }
+
+        /// <summary>
+        /// An array of encoding channels. The corresponding data field values
+        /// must match for a data tuple to fall within the selection.
+        ///
+        /// __See also:__ [`encodings`](https://vega.github.io/vega-lite/docs/project.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("encodings", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SingleDefUnitChannel> Encodings { get; set; }
+
+        /// <summary>
+        /// An array of field names whose values must match for a data tuple to
+        /// fall within the selection.
+        ///
+        /// __See also:__ [`fields`](https://vega.github.io/vega-lite/docs/project.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Fields { get; set; }
+
+        /// <summary>
+        /// Initialize the selection with a mapping between [projected channels or field
+        /// names](https://vega.github.io/vega-lite/docs/project.html) and initial values.
+        ///
+        /// __See also:__ [`init`](https://vega.github.io/vega-lite/docs/init.html) documentation.
+        ///
+        /// Initialize the selection with a mapping between [projected channels or field
+        /// names](https://vega.github.io/vega-lite/docs/project.html) and an initial
+        /// value (or array of values).
+        ///
+        /// __See also:__ [`init`](https://vega.github.io/vega-lite/docs/init.html) documentation.
+        ///
+        /// Initialize the selection with a mapping between [projected channels or field
+        /// names](https://vega.github.io/vega-lite/docs/project.html) and arrays of
+        /// initial values.
+        ///
+        /// __See also:__ [`init`](https://vega.github.io/vega-lite/docs/init.html) documentation.
+        /// </summary>
+        [JsonProperty("init", NullValueHandling = NullValueHandling.Ignore)]
+        public Init? Init { get; set; }
+
+        /// <summary>
+        /// When true, an invisible voronoi diagram is computed to accelerate discrete
+        /// selection. The data value _nearest_ the mouse cursor is added to the selection.
+        ///
+        /// __See also:__ [`nearest`](https://vega.github.io/vega-lite/docs/nearest.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("nearest", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Nearest { get; set; }
+
+        /// <summary>
+        /// A [Vega event stream](https://vega.github.io/vega/docs/event-streams/) (object or
+        /// selector) that triggers the selection.
+        /// For interval selections, the event stream must specify a [start and
+        /// end](https://vega.github.io/vega/docs/event-streams/#between-filters).
+        /// </summary>
+        [JsonProperty("on", NullValueHandling = NullValueHandling.Ignore)]
+        public OnUnion? On { get; set; }
+
+        /// <summary>
+        /// With layered and multi-view displays, a strategy that determines how
+        /// selections' data queries are resolved when applied in a filter transform,
+        /// conditional encoding rule, or scale domain.
+        ///
+        /// __See also:__ [`resolve`](https://vega.github.io/vega-lite/docs/selection-resolve.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("resolve", NullValueHandling = NullValueHandling.Ignore)]
+        public SelectionResolution? Resolve { get; set; }
+
+        /// <summary>
+        /// Determines the default event processing and data query for the selection. Vega-Lite
+        /// currently supports three selection types:
+        ///
+        /// - `"single"` -- to select a single discrete data value on `click`.
+        /// - `"multi"` -- to select multiple discrete data value; the first value is selected on
+        /// `click` and additional values toggled on shift-`click`.
+        /// - `"interval"` -- to select a continuous range of data values on `drag`.
+        /// </summary>
+        [JsonProperty("type", Required = Required.Always)]
+        public SelectionDefType Type { get; set; }
+
+        /// <summary>
+        /// Controls whether data values should be toggled or only ever inserted into
+        /// multi selections. Can be `true`, `false` (for insertion only), or a
+        /// [Vega expression](https://vega.github.io/vega/docs/expressions/).
+        ///
+        /// __Default value:__ `true`, which corresponds to `event.shiftKey` (i.e.,
+        /// data values are toggled when a user interacts with the shift-key pressed).
+        ///
+        /// __See also:__ [`toggle`](https://vega.github.io/vega-lite/docs/toggle.html) documentation.
+        /// </summary>
+        [JsonProperty("toggle", NullValueHandling = NullValueHandling.Ignore)]
+        public Translate? Toggle { get; set; }
+
+        /// <summary>
+        /// An interval selection also adds a rectangle mark to depict the
+        /// extents of the interval. The `mark` property can be used to customize the
+        /// appearance of the mark.
+        ///
+        /// __See also:__ [`mark`](https://vega.github.io/vega-lite/docs/selection-mark.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("mark", NullValueHandling = NullValueHandling.Ignore)]
+        public BrushConfig Mark { get; set; }
+
+        /// <summary>
+        /// When truthy, allows a user to interactively move an interval selection
+        /// back-and-forth. Can be `true`, `false` (to disable panning), or a
+        /// [Vega event stream definition](https://vega.github.io/vega/docs/event-streams/)
+        /// which must include a start and end event to trigger continuous panning.
+        ///
+        /// __Default value:__ `true`, which corresponds to
+        /// `[mousedown, window:mouseup] > window:mousemove!` which corresponds to
+        /// clicks and dragging within an interval selection to reposition it.
+        ///
+        /// __See also:__ [`translate`](https://vega.github.io/vega-lite/docs/translate.html)
+        /// documentation.
+        /// </summary>
+        [JsonProperty("translate", NullValueHandling = NullValueHandling.Ignore)]
+        public Translate? Translate { get; set; }
+
+        /// <summary>
+        /// When truthy, allows a user to interactively resize an interval selection.
+        /// Can be `true`, `false` (to disable zooming), or a [Vega event stream
+        /// definition](https://vega.github.io/vega/docs/event-streams/). Currently,
+        /// only `wheel` events are supported.
+        ///
+        /// __Default value:__ `true`, which corresponds to `wheel!`.
+        ///
+        /// __See also:__ [`zoom`](https://vega.github.io/vega-lite/docs/zoom.html) documentation.
+        /// </summary>
+        [JsonProperty("zoom", NullValueHandling = NullValueHandling.Ignore)]
+        public Translate? Zoom { get; set; }
+    }
+}

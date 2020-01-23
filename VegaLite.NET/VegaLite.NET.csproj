@@ -13,25 +13,170 @@
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Specification\Specification.cs" />
+    <Compile Remove="VegaLite\AggregateTransform.cs" />
+    <Compile Remove="VegaLite\AllSortString.cs" />
+    <Compile Remove="VegaLite\ArgmaxDef.cs" />
+    <Compile Remove="VegaLite\ArgminDef.cs" />
+    <Compile Remove="VegaLite\AxisOrient.cs" />
+    <Compile Remove="VegaLite\BaseTitleNoValueRefs.cs" />
+    <Compile Remove="VegaLite\BindCheckbox.cs" />
+    <Compile Remove="VegaLite\BindRadioSelect.cs" />
+    <Compile Remove="VegaLite\BindRange.cs" />
+    <Compile Remove="VegaLite\BinTransform.cs" />
+    <Compile Remove="VegaLite\BoxPlotDef.cs" />
+    <Compile Remove="VegaLite\CalculateTransform.cs" />
+    <Compile Remove="VegaLite\Categorical.cs" />
+    <Compile Remove="VegaLite\ColorGradientFieldDefWithCondition.cs" />
+    <Compile Remove="VegaLite\ColorGradientValueDefWithCondition.cs" />
+    <Compile Remove="VegaLite\ColorName.cs" />
+    <Compile Remove="VegaLite\CompositeMark.cs" />
+    <Compile Remove="VegaLite\CompositeMarkDef.cs" />
+    <Compile Remove="VegaLite\ConcatSpec.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisColor.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisLabelBaseline.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisLabelFontStyle.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisLabelFontWeight.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisNumber.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisNumberArray.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisProperty.cs" />
+    <Compile Remove="VegaLite\ConditionalAxisPropertyOf.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicate.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateColor.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateFontStyle.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateFontWeight.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateGradientString.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateNumber.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateNumberArray.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfMarkPropFieldDef.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfMarkPropFieldDefOfTypeForShape.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfNumberValueDef.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfStringFieldDef.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfStringValueDef.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfValueDefOfString.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateOfValueDefOfText.cs" />
+    <Compile Remove="VegaLite\ConditionalPredicateTextBaseline.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfMarkPropFieldDef.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfMarkPropFieldDefOfTypeForShape.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfNumberValueDef.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfStringFieldDef.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfStringValueDef.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfValueDefOf.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfValueDefOfString.cs" />
+    <Compile Remove="VegaLite\ConditionalSelectionOfValueDefOfText.cs" />
+    <Compile Remove="VegaLite\CsvDataFormat.cs" />
+    <Compile Remove="VegaLite\Cyclical.cs" />
+    <Compile Remove="VegaLite\Datasets.cs" />
+    <Compile Remove="VegaLite\DensityTransform.cs" />
+    <Compile Remove="VegaLite\DerivedStream.cs" />
+    <Compile Remove="VegaLite\DictOfSelectionInit.cs" />
+    <Compile Remove="VegaLite\DictOfSelectionInitInterval.cs" />
+    <Compile Remove="VegaLite\Diverging.cs" />
+    <Compile Remove="VegaLite\DsvDataFormat.cs" />
+    <Compile Remove="VegaLite\ErrorBand.cs" />
+    <Compile Remove="VegaLite\ErrorBandDef.cs" />
+    <Compile Remove="VegaLite\ErrorBar.cs" />
+    <Compile Remove="VegaLite\ErrorBarDef.cs" />
+    <Compile Remove="VegaLite\ErrorBarExtent.cs" />
+    <Compile Remove="VegaLite\EventType.cs" />
+    <Compile Remove="VegaLite\FacetedEncoding.cs" />
+    <Compile Remove="VegaLite\FacetedUnitSpec.cs" />
+    <Compile Remove="VegaLite\FacetMapping.cs" />
+    <Compile Remove="VegaLite\FacetSpec.cs" />
+    <Compile Remove="VegaLite\FieldDefWithConditionOfMarkPropFieldDefAndNumber.cs" />
+    <Compile Remove="VegaLite\FieldDefWithConditionOfMarkPropFieldDefOfTypeForShapeAnd.cs" />
+    <Compile Remove="VegaLite\FieldDefWithConditionOfStringFieldDefAndString.cs" />
+    <Compile Remove="VegaLite\FieldDefWithConditionOfStringFieldDefAndText.cs" />
+    <Compile Remove="VegaLite\FieldDefWithoutScale.cs" />
+    <Compile Remove="VegaLite\FieldEqualPredicate.cs" />
+    <Compile Remove="VegaLite\FieldGTEPredicate.cs" />
+    <Compile Remove="VegaLite\FieldGTPredicate.cs" />
+    <Compile Remove="VegaLite\FieldLTEPredicate.cs" />
+    <Compile Remove="VegaLite\FieldLTPredicate.cs" />
+    <Compile Remove="VegaLite\FieldOneOfPredicate.cs" />
+    <Compile Remove="VegaLite\FieldRangePredicate.cs" />
+    <Compile Remove="VegaLite\FieldValidPredicate.cs" />
+    <Compile Remove="VegaLite\FilterTransform.cs" />
+    <Compile Remove="VegaLite\FlattenTransform.cs" />
+    <Compile Remove="VegaLite\FoldTransform.cs" />
+    <Compile Remove="VegaLite\Generator.cs" />
+    <Compile Remove="VegaLite\GenericUnitSpecOfEncodingAndAnyMark.cs" />
+    <Compile Remove="VegaLite\GraticuleGenerator.cs" />
+    <Compile Remove="VegaLite\HConcatSpec.cs" />
+    <Compile Remove="VegaLite\HexColor.cs" />
+    <Compile Remove="VegaLite\ImputeMethod.cs" />
+    <Compile Remove="VegaLite\ImputeTransform.cs" />
+    <Compile Remove="VegaLite\InlineData.cs" />
+    <Compile Remove="VegaLite\InputBinding.cs" />
+    <Compile Remove="VegaLite\IntervalSelection.cs" />
+    <Compile Remove="VegaLite\InvalidEnum.cs" />
+    <Compile Remove="VegaLite\JoinAggregateTransform.cs" />
+    <Compile Remove="VegaLite\JsonDataFormat.cs" />
+    <Compile Remove="VegaLite\LatLongFieldDef.cs" />
+    <Compile Remove="VegaLite\LinearGradient.cs" />
+    <Compile Remove="VegaLite\LinearGradientGradient.cs" />
+    <Compile Remove="VegaLite\LocalMultiTimeUnit.cs" />
+    <Compile Remove="VegaLite\LocalSingleTimeUnit.cs" />
+    <Compile Remove="VegaLite\LoessTransform.cs" />
+    <Compile Remove="VegaLite\LogicalAndOfPredicate.cs" />
+    <Compile Remove="VegaLite\LogicalNotOfPredicate.cs" />
+    <Compile Remove="VegaLite\LogicalOrOfPredicate.cs" />
+    <Compile Remove="VegaLite\LookupData.cs" />
+    <Compile Remove="VegaLite\LookupSelection.cs" />
+    <Compile Remove="VegaLite\LookupTransform.cs" />
+    <Compile Remove="VegaLite\Mark.cs" />
+    <Compile Remove="VegaLite\MarkDef.cs" />
+    <Compile Remove="VegaLite\MergedStream.cs" />
+    <Compile Remove="VegaLite\MultiSelection.cs" />
+    <Compile Remove="VegaLite\NamedData.cs" />
+    <Compile Remove="VegaLite\Null.cs" />
+    <Compile Remove="VegaLite\NumberValueDef.cs" />
+    <Compile Remove="VegaLite\NumericValueDefWithCondition.cs" />
+    <Compile Remove="VegaLite\Parse.cs" />
+    <Compile Remove="VegaLite\PartsMixinsOfBoxPlotPart.cs" />
+    <Compile Remove="VegaLite\PartsMixinsOfErrorBandPart.cs" />
+    <Compile Remove="VegaLite\PartsMixinsOfErrorBarPart.cs" />
+    <Compile Remove="VegaLite\PivotTransform.cs" />
+    <Compile Remove="VegaLite\PositionFieldDef.cs" />
+    <Compile Remove="VegaLite\QuantileTransform.cs" />
+    <Compile Remove="VegaLite\RadialGradient.cs" />
+    <Compile Remove="VegaLite\RadialGradientGradient.cs" />
+    <Compile Remove="VegaLite\RegressionTransform.cs" />
+    <Compile Remove="VegaLite\RepeatSpec.cs" />
+    <Compile Remove="VegaLite\RowColOfBoolean.cs" />
+    <Compile Remove="VegaLite\RowColOfLayoutAlign.cs" />
+    <Compile Remove="VegaLite\RowColOfNumber.cs" />
+    <Compile Remove="VegaLite\SampleTransform.cs" />
+    <Compile Remove="VegaLite\SecondaryFieldDef.cs" />
+    <Compile Remove="VegaLite\SelectionAnd.cs" />
+    <Compile Remove="VegaLite\SelectionNot.cs" />
+    <Compile Remove="VegaLite\SelectionOr.cs" />
+    <Compile Remove="VegaLite\SelectionPredicate.cs" />
+    <Compile Remove="VegaLite\SequenceGenerator.cs" />
+    <Compile Remove="VegaLite\SequentialMultiHue.cs" />
+    <Compile Remove="VegaLite\SequentialSingleHue.cs" />
+    <Compile Remove="VegaLite\ShapeValueDefWithCondition.cs" />
+    <Compile Remove="VegaLite\SignalRef.cs" />
+    <Compile Remove="VegaLite\SingleSelection.cs" />
+    <Compile Remove="VegaLite\SortByChannelDesc.cs" />
+    <Compile Remove="VegaLite\SortByEncoding.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="VegaLite.NET.csproj.DotSettings" />
-    <None Include="..\..\nindra.png">
+    <None Include="..\..\trmcnealy.github.io\assets\nindra.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="Specification\Specification.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.Interactive.Formatting" Version="1.0.0-beta.20067.2" />
+    <PackageReference Include="Microsoft.DotNet.Interactive.Formatting" Version="1.0.0-beta.20072.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
 </Project>
