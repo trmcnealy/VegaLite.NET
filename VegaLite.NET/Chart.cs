@@ -10,95 +10,21 @@ using System.Threading;
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
 
+using static VegaLite.HtmlChart;
+
 namespace VegaLite
 {
     public class Chart
     {
-        public static string VegaUrl      = "https://cdn.jsdelivr.net/npm/vega@5.9.0";
-        public static string VegaLiteUrl  = "https://cdn.jsdelivr.net/npm/vega-lite@4.0.2";
-        public static string VegaEmbedUrl = "https://cdn.jsdelivr.net/npm/vega-embed@6.2.1";
-
-        static Chart()
-        {
-            Formatter<Chart>.Register((chart,
-                                       writer) =>
-                                      {
-                                          writer.Write(chart.ToString());
-                                      },
-                                      HtmlFormatter.MimeType);
-        }
-
-        //public static Func<Guid, string, string, string> Content = (id,
-        //                                                            title,
-        //                                                            spec) =>
-        //                                                           {
-        //                                                               string html = "<!DOCTYPE html>\n"                               +
-        //                                                                             "<html>\n"                                        +
-        //                                                                             "  <head>\n"                                      +
-        //                                                                             "    <title>Vega-Lite Chart</title>\n"            +
-        //                                                                             "    <meta charset=\"utf-8\" />\n"                +
-        //                                                                             $"    <script src=\"{VegaUrl}\"></script>\n"      +
-        //                                                                             $"    <script src=\"{VegaLiteUrl}\"></script>\n"  +
-        //                                                                             $"    <script src=\"{VegaEmbedUrl}\"></script>\n" +
-        //                                                                             "    <style media=\"screen\">\n"                  +
-        //                                                                             "      .vega-actions a {\n"                       +
-        //                                                                             "        margin-right: 5px;\n"                    +
-        //                                                                             "      }\n"                                       +
-        //                                                                             "    </style>\n"                                  +
-        //                                                                             "  </head>\n"                                     +
-        //                                                                             "  <body>\n"                                      +
-        //                                                                             $"    <h1>{title}</h1>\n"                         +
-        //                                                                             $"    <div id=\"vis{id}\"></div>\n"               +
-        //                                                                             "    <script>\n"                                  +
-        //                                                                             $"      var vlSpec = {spec};\n"                   +
-        //                                                                             $"      vegaEmbed('#vis{id}', vlSpec);\n"         +
-        //                                                                             "    </script>\n"                                 +
-        //                                                                             "  </body>\n"                                     +
-        //                                                                             "</html>\n";
-        //                                                               return html;
-        //                                                           };
-
-        public static string LoadScript = "        var loadScript = function(url) {\n"                                                 +
-                                          "            var script = document.createElement(\"script\");\n"                             +
-                                          "            script.setAttribute(\"type\", \"text/javascript\");\n"                          +
-                                          "            script.setAttribute(\"src\", url);\n"                                           +
-                                          "            return script;\n"                                                               +
-                                          "        };\n"                                                                               +
-                                          "        \n"                                                                                 +
-                                          $"        var vegaScript = loadScript(\"{VegaUrl}\");\n"                                     +
-                                          "        vegaScript.onload = function(){\n"                                                  +
-                                          $"            var vegaliteScript = loadScript(\"{VegaLiteUrl}\");\n"                         +
-                                          "            vegaliteScript.onload = function(){\n"                                          +
-                                          $"                var vegaembedScript = loadScript(\"{VegaEmbedUrl}\");\n"                   +
-                                          "                vegaembedScript.onload = function(){\n"                                     +
-                                          "                    renderVegaLite();\n"                                                    +
-                                          "                };\n"                                                                       +
-                                          "                document.getElementsByTagName(\"head\")[0].appendChild(vegaembedScript);\n" +
-                                          "            };\n"                                                                           +
-                                          "            document.getElementsByTagName(\"head\")[0].appendChild(vegaliteScript);\n"      +
-                                          "        };\n"                                                                               +
-                                          "        document.getElementsByTagName(\"head\")[0].appendChild(vegaScript);\n";
-
-        public static Func<Guid, string, string, string> LoadContent = (id,
-                                                                        title,
-                                                                        spec) =>
-                                                                       {
-                                                                           string html = $"<div id=\"{id}\">\n"                           +
-                                                                                         $"    <h1>{title}</h1>\n"                        +
-                                                                                         $"    <div id=\"vis-{id}\"></div>\n"             +
-                                                                                         "    <script type=\"text/javascript\">\n"        +
-                                                                                         "        var renderVegaLite = function() {"      +
-                                                                                         $"            var vlSpec = {spec};\n"            +
-                                                                                         $"            vegaEmbed('#vis-{id}', vlSpec);\n" +
-                                                                                         "        };"                                     +
-                                                                                         "\n"                                             +
-                                                                                         LoadScript                                       +
-                                                                                         "\n"                                             +
-                                                                                         "    </script>\n"                                +
-                                                                                         "</div>\n";
-
-                                                                           return html;
-                                                                       };
+        //static Chart()
+        //{
+        //    Formatter<Chart>.Register((chart,
+        //                               writer) =>
+        //                              {
+        //                                  writer.Write(chart.ToString());
+        //                              },
+        //                              HtmlFormatter.MimeType);
+        //}
 
         public Guid Id { get; }
 
@@ -141,6 +67,23 @@ namespace VegaLite
             Specification = vegaLiteSpecification;
             Width         = width;
             Height        = height;
+        }
+
+        public override string ToString()
+        {
+            return GetHtml();
+        }
+
+        public string GetHtmlContent(string scripts = "")
+        {
+            return LoadContentTemplate(Id,
+                                       Title,
+                                       Specification.ToJson(), scripts);
+        }
+
+        public string GetHtml()
+        {
+            return $"{new HtmlString(GetHtmlContent(ScriptNodes))}";
         }
 
         public void ShowInBrowser()
@@ -189,16 +132,6 @@ namespace VegaLite
             }
 
             throw new InvalidOperationException("Not supported OS platform");
-        }
-
-        public override string ToString()
-        {
-            return GetHtml();
-        }
-
-        public string GetHtml()
-        {
-            return $"{new HtmlString(LoadContent(Id, Title, Specification.ToJson()))}";
         }
     }
 }

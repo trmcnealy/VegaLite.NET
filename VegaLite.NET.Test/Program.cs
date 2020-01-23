@@ -29,15 +29,15 @@ namespace VegaLite.Test
     {
         private static void Main(string[] args)
         {
-            Test1();
+            TestMultipleCharts();
         }
 
-        private static void Test1()
+        private static void TestChart()
         {
             HttpClient client = new HttpClient();
             //string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/tree/master/examples/specs/bar.vl.json").Result;
 
-            Chart chart;
+            Chart         chart;
             Specification vegaLiteSpecification;
 
             string tempPath = Path.GetTempPath();
@@ -45,7 +45,7 @@ namespace VegaLite.Test
             string dataFile = Path.Combine(tempPath,
                                            "data");
 
-            if (!File.Exists(dataFile))
+            if(!File.Exists(dataFile))
             {
                 File.WriteAllBytes(dataFile,
                                    Examples.Resource.data);
@@ -58,7 +58,7 @@ namespace VegaLite.Test
                                                                   start,
                                                                   count);
 
-            for (int i = 0; i < tests.Count; i++)
+            for(int i = 0; i < tests.Count; i++)
             {
                 vegaLiteSpecification = Specification.FromJson(System.Text.Encoding.UTF8.GetString(tests[i],
                                                                                                    0,
@@ -85,6 +85,65 @@ namespace VegaLite.Test
 
                 chart.ShowInBrowser();
             }
+        }
+
+        private static void TestMultipleCharts()
+        {
+            HttpClient client = new HttpClient();
+            //string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/tree/master/examples/specs/bar.vl.json").Result;
+
+            //Chart         chart;
+            Specification vegaLiteSpecification;
+
+            string tempPath = Path.GetTempPath();
+
+            string dataFile = Path.Combine(tempPath,
+                                           "data");
+
+            if(!File.Exists(dataFile))
+            {
+                File.WriteAllBytes(dataFile,
+                                   Examples.Resource.data);
+            }
+
+            int start = 0;
+            int count = ExampleResources.Length;
+
+            ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
+                                                                  start,
+                                                                  count);
+
+            MultipleCharts charts = new MultipleCharts("MultipleCharts",
+                                                       tests.Count/3,
+                                                       3);
+
+            for(int i = 0; i < tests.Count; i++)
+            {
+                vegaLiteSpecification = Specification.FromJson(System.Text.Encoding.UTF8.GetString(tests[i],
+                                                                                                   0,
+                                                                                                   tests[i].Length));
+
+                //if (vegaLiteSpecification.DataSource?.Url?.StartsWith("data") == true)
+                //{
+                //    vegaLiteSpecification.DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.DataSource.Url;
+                //}
+                //else if (vegaLiteSpecification.Layer?.Count > 0)
+                //{
+                //    for (int j = tests.Offset; j < vegaLiteSpecification.Layer.Count; j++)
+                //    {
+                //        if (vegaLiteSpecification.Layer[j]?.DataSource?.Url?.StartsWith("data") == true)
+                //        {
+                //            vegaLiteSpecification.Layer[j].DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.Layer[j].DataSource.Url;
+                //        }
+                //    }
+                //}
+
+                charts[i] = new Chart(vegaLiteSpecification,
+                                      500,
+                                      500);
+            }
+
+            charts.ShowInBrowser();
         }
 
         //VegaLiteSpecification vegaLiteSpecification = new VegaLiteSpecification
