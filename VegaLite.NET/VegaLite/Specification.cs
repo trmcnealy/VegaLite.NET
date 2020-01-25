@@ -67,7 +67,7 @@ namespace VegaLite
         /// If no data is set, it is derived from the parent.
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public DataSource DataSource { get; set; }
+        public DataSource Data { get; set; }
 
         /// <summary>
         /// A global data store for named datasets. This is a mapping from names to inline datasets.

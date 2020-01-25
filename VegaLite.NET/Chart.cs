@@ -32,7 +32,7 @@ namespace VegaLite
 
         public double? Height { get { return Specification.Height?.Double; } set { Specification.Height = value; } }
 
-        public InlineDataset? Data { get { return Specification.DataSource.Values; } set { Specification.DataSource.Values = value; } }
+        public InlineDataset? Data { get { return Specification.Data.Values; } set { Specification.Data.Values = value; } }
 
         public Chart(string        title,
                      Specification vegaLiteSpecification)
