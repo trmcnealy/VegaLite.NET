@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Net.Mime;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
 
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
@@ -16,15 +12,15 @@ namespace VegaLite
 {
     public class Chart
     {
-        //static Chart()
-        //{
-        //    Formatter<Chart>.Register((chart,
-        //                               writer) =>
-        //                              {
-        //                                  writer.Write(chart.ToString());
-        //                              },
-        //                              HtmlFormatter.MimeType);
-        //}
+        static Chart()
+        {
+            Formatter<Chart>.Register((chart,
+                                       writer) =>
+                                      {
+                                          writer.Write(chart.ToString());
+                                      },
+                                      HtmlFormatter.MimeType);
+        }
 
         public Guid Id { get; }
 

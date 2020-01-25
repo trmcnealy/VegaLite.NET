@@ -1,32 +1,27 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Net.Mime;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
 
 using static VegaLite.HtmlChart;
 
-using static Microsoft.DotNet.Interactive.Formatting.PocketViewTags;
-
 namespace VegaLite
 {
     public class MultipleCharts
     {
-        //static MultipleCharts()
-        //{
-        //    Formatter<MultipleCharts>.Register((chart,
-        //                                        writer) =>
-        //                                       {
-        //                                           writer.Write(chart.ToString());
-        //                                       },
-        //                                       HtmlFormatter.MimeType);
-        //}
+        static MultipleCharts()
+        {
+            Formatter<MultipleCharts>.Register((chart,
+                                                writer) =>
+                                               {
+                                                   writer.Write(chart.ToString());
+                                               },
+                                               HtmlFormatter.MimeType);
+        }
 
         public Guid Id { get; }
 
@@ -85,17 +80,17 @@ namespace VegaLite
                 content.AppendLine($"{ind(1)}<h1>{Title}</h1>\n");
             }
 
-            content.AppendLine($"{ind(1)}<table border=\"1\" style=\"width: 100%\">");
+            content.AppendLine($"{ind(1)}<table style=\"overflow-x:auto;border:1px solid black;width:100%\">");
 
             int fraction = 100 / Columns;
 
             for(int row = 0; row < Rows; ++row)
             {
-                content.AppendLine($"{ind(1)}{ind(1)}<tr>");
+                content.AppendLine($"{ind(1)}{ind(1)}<tr style=\"border:1px solid black\">");
 
                 for(int column = 0; column < Columns; ++column)
                 {
-                    content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}<td width=\"{fraction:D0}%\">");
+                    content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
 
                     content.AppendLine(Charts[row * Columns + column].GetHtmlContent().Replace("renderVegaLite",
                                                                                                $"renderVegaLite{row * Columns + column}"));

@@ -107,7 +107,7 @@ namespace VegaLite.Test
                                    Examples.Resource.data);
             }
 
-            int start = 0;
+            int start = 300;
             int count = 33*3;
 
             ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
@@ -123,7 +123,6 @@ namespace VegaLite.Test
                 fileData = System.Text.Encoding.UTF8.GetString(tests[i],
                                                                0,
                                                                tests[i].Length);
-
 
 
                 fileData = fileData.Replace(@"""url"": ""data",
@@ -147,7 +146,8 @@ namespace VegaLite.Test
 
                 vegaLiteSpecification = Specification.FromJson(fileData);
 
-                charts[i] = new Chart(vegaLiteSpecification,
+                charts[i] = new Chart($"{i}",
+                                      vegaLiteSpecification,
                                       500,
                                       500);
             }

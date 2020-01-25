@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-
-using Microsoft.AspNetCore.Html;
-using Microsoft.CSharp.RuntimeBinder;
-using Microsoft.DotNet.Interactive.Formatting;
 
 namespace VegaLite
 {
