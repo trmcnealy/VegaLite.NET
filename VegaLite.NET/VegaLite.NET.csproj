@@ -8,12 +8,12 @@
     <PackageIcon>nindra.png</PackageIcon>
     <PackageIconUrl />
     <Description>C# Specification for https://github.com/vega/vega-lite</Description>
-    <Copyright>2020</Copyright>
+    <Copyright>© Timothy R. McNealy</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
   </PropertyGroup>
 
   <ItemGroup>

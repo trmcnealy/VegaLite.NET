@@ -13,13 +13,10 @@ namespace VegaLite
     public class Specification
     {
         /// <summary>
-        /// URL to [JSON schema](http://json-schema.org/) for a Vega-Lite specification. Unless you
-        /// have a reason to change this, use `https://vega.github.io/schema/vega-lite/v4.json`.
-        /// Setting the `$schema` property allows automatic validation and autocomplete in editors
-        /// that support JSON schema.
+        /// https://vega.github.io/schema/vega-lite/v4.json
         /// </summary>
-        [JsonProperty("$schema", NullValueHandling = NullValueHandling.Ignore)]
-        public Uri Schema { get; set; }
+        [JsonProperty("$schema", Required = Required.Always)]
+        public Uri Schema { get; set; } = new Uri("https://vega.github.io/schema/vega-lite/v4.json");
 
         /// <summary>
         /// How the visualization size should be determined. If a string, should be one of `"pad"`,
