@@ -108,7 +108,7 @@ namespace VegaLite.Test
             }
 
             int start = 300;
-            int count = 33*3;
+            int count = 33 * 3;
 
             ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
                                                                   start,
@@ -123,7 +123,6 @@ namespace VegaLite.Test
                 fileData = System.Text.Encoding.UTF8.GetString(tests[i],
                                                                0,
                                                                tests[i].Length);
-
 
                 fileData = fileData.Replace(@"""url"": ""data",
                                             @"""url"": ""https://raw.githubusercontent.com/vega/vega-datasets/master/data",

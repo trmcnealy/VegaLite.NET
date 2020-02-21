@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -13,6 +14,7 @@ namespace VegaLite
 {
     public class MultipleCharts
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static MultipleCharts()
         {
             Formatter<MultipleCharts>.Register((chart,
@@ -23,15 +25,35 @@ namespace VegaLite
                                                HtmlFormatter.MimeType);
         }
 
-        public Guid Id { get; }
+        public Guid Id
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
-        public string Title { get; }
+        public string Title
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
-        public int Rows { get; }
+        public int Rows
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
-        public int Columns { get; }
+        public int Columns
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
-        public Chart[] Charts { get; }
+        public Chart[] Charts
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
         public MultipleCharts(int rows,
                               int columns)
@@ -57,16 +79,30 @@ namespace VegaLite
             Charts = new Chart[Rows * Columns];
         }
 
-        public Chart this[int index] { get { return Charts[index]; } set { Charts[index] = value; } }
+        public Chart this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return Charts[index]; }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set { Charts[index] = value; }
+        }
 
         public Chart this[int row,
-                          int column] { get { return Charts[row * Columns + column]; } set { Charts[row * Columns + column] = value; } }
+                          int column]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return Charts[row * Columns + column]; }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set { Charts[row * Columns + column] = value; }
+        }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return GetHtml();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtmlContent()
         {
             StringBuilder content = new StringBuilder();
@@ -111,12 +147,14 @@ namespace VegaLite
             return content.ToString();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtml()
         {
             //return $"{new HtmlString("<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\"/>\n" + SetPageEncoding + "</head>\n<body>\n" + GetHtmlContent() + "</body>\n</html>")}";
-            return $"{new HtmlString(GetHtmlContent())}";
+            return new HtmlString(GetHtmlContent()).ToString();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void ShowInBrowser()
         {
             string tempPath = Path.GetTempPath();
