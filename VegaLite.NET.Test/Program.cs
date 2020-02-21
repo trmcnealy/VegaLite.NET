@@ -89,7 +89,7 @@ namespace VegaLite.Test
 
         private static void TestMultipleCharts()
         {
-            HttpClient client = new HttpClient();
+            //HttpClient client = new HttpClient();
             //string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/tree/master/examples/specs/bar.vl.json").Result;
 
             //Chart         chart;
@@ -118,7 +118,7 @@ namespace VegaLite.Test
                                                        33,
                                                        3);
 
-            for(int i = 0; i < tests.Count; i++)
+            for(int i = 0; i < /*tests.Count*/10; i++)
             {
                 fileData = System.Text.Encoding.UTF8.GetString(tests[i],
                                                                0,

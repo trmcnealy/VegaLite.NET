@@ -90,12 +90,15 @@ namespace VegaLite
 
                 for(int column = 0; column < Columns; ++column)
                 {
-                    content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
+                    if(Charts[row * Columns + column] != null)
+                    {
+                        content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
 
-                    content.AppendLine(Charts[row * Columns + column].GetHtmlContent().Replace("renderVegaLite",
-                                                                                               $"renderVegaLite{row * Columns + column}"));
+                        content.AppendLine(Charts[row * Columns + column].GetHtmlContent().Replace("renderVegaLite",
+                                                                                                   $"renderVegaLite{row * Columns + column}"));
 
-                    content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}</td>");
+                        content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}</td>");
+                    }
                 }
 
                 content.AppendLine($"{ind(1)}{ind(1)}</tr>");
