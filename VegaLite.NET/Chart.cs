@@ -13,17 +13,6 @@ namespace VegaLite
 {
     public class Chart
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static Chart()
-        {
-            Formatter<Chart>.Register((chart,
-                                       writer) =>
-                                      {
-                                          writer.Write(chart.ToString());
-                                      },
-                                      HtmlFormatter.MimeType);
-        }
-
         public Guid Id
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +55,17 @@ namespace VegaLite
             set { Specification.Data.Values = value; }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static Chart()
+        {
+            Formatter<Chart>.Register((chart,
+                                       writer) =>
+                                      {
+                                          writer.Write(chart.ToString());
+                                      },
+                                      HtmlFormatter.MimeType);
+        }
+
         public Chart(string        title,
                      Specification vegaLiteSpecification)
         {
@@ -104,18 +104,18 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public string GetHtmlContent(string scripts = "")
+        public string GetHtmlContent()
         {
-            return LoadContentTemplate(Id,
-                                       Title,
-                                       Specification.ToJson(),
-                                       scripts);
+            return ElementContentTemplate(Id,
+                                          Title,
+                                          Specification.ToJson());
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtml()
         {
-            return new HtmlString(GetHtmlContent(ScriptNodes)).ToString();
+            return new HtmlString(HtmlTemplateSingleId(Id,
+                                                       GetHtmlContent())).ToString();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

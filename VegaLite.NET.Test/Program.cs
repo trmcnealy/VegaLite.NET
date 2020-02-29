@@ -29,27 +29,28 @@ namespace VegaLite.Test
     {
         private static void Main(string[] args)
         {
+            //TestChart();
             TestMultipleCharts();
         }
 
         private static void TestChart()
         {
             HttpClient client = new HttpClient();
-            //string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/tree/master/examples/specs/bar.vl.json").Result;
+            string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/bar.vl.json").Result;
 
             Chart         chart;
             Specification vegaLiteSpecification;
 
-            string tempPath = Path.GetTempPath();
+            //string tempPath = Path.GetTempPath();
 
-            string dataFile = Path.Combine(tempPath,
-                                           "data");
+            //string dataFile = Path.Combine(tempPath,
+            //                               "data");
 
-            if(!File.Exists(dataFile))
-            {
-                File.WriteAllBytes(dataFile,
-                                   Examples.Resource.data);
-            }
+            //if(!File.Exists(dataFile))
+            //{
+            //    File.WriteAllBytes(dataFile,
+            //                       Examples.Resource.data);
+            //}
 
             int start = 12;
             int count = 1;
@@ -108,17 +109,17 @@ namespace VegaLite.Test
             }
 
             int start = 300;
-            int count = 33 * 3;
+            int count = 30 * 3;
 
             ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
                                                                   start,
                                                                   count);
 
             MultipleCharts charts = new MultipleCharts("MultipleCharts",
-                                                       33,
+                                                       count / 3,
                                                        3);
 
-            for(int i = 0; i < /*tests.Count*/10; i++)
+            for(int i = 0; i < tests.Count; i++)
             {
                 fileData = System.Text.Encoding.UTF8.GetString(tests[i],
                                                                0,
@@ -145,7 +146,7 @@ namespace VegaLite.Test
 
                 vegaLiteSpecification = Specification.FromJson(fileData);
 
-                charts[i] = new Chart($"{i}",
+                charts[i] = new Chart(vegaLiteSpecification.Description,
                                       vegaLiteSpecification,
                                       500,
                                       500);

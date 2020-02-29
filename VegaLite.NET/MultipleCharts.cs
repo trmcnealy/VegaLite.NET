@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -14,15 +15,21 @@ namespace VegaLite
 {
     public class MultipleCharts
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static MultipleCharts()
+        public Chart this[int index]
         {
-            Formatter<MultipleCharts>.Register((chart,
-                                                writer) =>
-                                               {
-                                                   writer.Write(chart.ToString());
-                                               },
-                                               HtmlFormatter.MimeType);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return Charts[index]; }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set { Charts[index] = value; }
+        }
+
+        public Chart this[int row,
+                          int column]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return Charts[row * Columns + column]; }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set { Charts[row * Columns + column] = value; }
         }
 
         public Guid Id
@@ -55,6 +62,17 @@ namespace VegaLite
             get;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static MultipleCharts()
+        {
+            Formatter<MultipleCharts>.Register((chart,
+                                                writer) =>
+                                               {
+                                                   writer.Write(chart.ToString());
+                                               },
+                                               HtmlFormatter.MimeType);
+        }
+
         public MultipleCharts(int rows,
                               int columns)
         {
@@ -79,23 +97,6 @@ namespace VegaLite
             Charts = new Chart[Rows * Columns];
         }
 
-        public Chart this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get { return Charts[index]; }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set { Charts[index] = value; }
-        }
-
-        public Chart this[int row,
-                          int column]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get { return Charts[row * Columns + column]; }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set { Charts[row * Columns + column] = value; }
-        }
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
@@ -109,38 +110,47 @@ namespace VegaLite
 
             content.AppendLine($"<div id=\"{Id}\">\n");
 
-            content.AppendLine(ScriptNodes);
+            content.AppendLine();
 
             if(!string.IsNullOrEmpty(Title))
             {
-                content.AppendLine($"{ind(1)}<h1>{Title}</h1>\n");
+                content.AppendLine($"{____}<h1>{Title}</h1>\n");
             }
 
-            content.AppendLine($"{ind(1)}<table style=\"overflow-x:auto;border:1px solid black;width:100%\">");
+            content.AppendLine($"{____}<table style=\"overflow-x:auto;border:1px solid black;width:100%\">");
 
             int fraction = 100 / Columns;
 
+            List<Guid> ids = new List<Guid>(Rows * Columns);
+
             for(int row = 0; row < Rows; ++row)
             {
-                content.AppendLine($"{ind(1)}{ind(1)}<tr style=\"border:1px solid black\">");
+                content.AppendLine($"{________}<tr style=\"border:1px solid black\">");
 
                 for(int column = 0; column < Columns; ++column)
                 {
                     if(Charts[row * Columns + column] != null)
                     {
-                        content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
+                        ids.Add(Charts[row * Columns + column].Id);
 
-                        content.AppendLine(Charts[row * Columns + column].GetHtmlContent().Replace("renderVegaLite",
-                                                                                                   $"renderVegaLite{row * Columns + column}"));
+                        content.AppendLine($"{____________}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
 
-                        content.AppendLine($"{ind(1)}{ind(1)}{ind(1)}</td>");
+                        content.AppendLine(Charts[row * Columns + column].GetHtmlContent());
+
+                        // content.AppendLine(Charts[row * Columns + column].GetHtmlContent().Replace("renderVegaLite",
+                        //                                                                            $"renderVegaLite{Charts[row * Columns + column].Id.ToString().Replace("-", "")}"));
+
+                        content.AppendLine($"{____________}</td>");
                     }
                 }
 
-                content.AppendLine($"{ind(1)}{ind(1)}</tr>");
+                content.AppendLine($"{________}</tr>");
             }
 
-            content.AppendLine($"{ind(1)}</table>\n");
+            content.AppendLine($"{____}</table>\n");
+
+            content.AppendLine(RequireJavaScriptFunction(____,
+                                                         ids.ToArray()));
 
             content.AppendLine("</div>\n");
 
@@ -150,8 +160,9 @@ namespace VegaLite
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtml()
         {
-            //return $"{new HtmlString("<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\"/>\n" + SetPageEncoding + "</head>\n<body>\n" + GetHtmlContent() + "</body>\n</html>")}";
-            return new HtmlString(GetHtmlContent()).ToString();
+            return new HtmlString("<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\"/>\n" + "</head>\n<body>\n" + GetHtmlContent() + "</body>\n</html>").ToString();
+
+            //return new HtmlString(GetHtmlContent()).ToString();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
