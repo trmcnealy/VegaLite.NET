@@ -13,6 +13,8 @@ namespace VegaLite
         public static string VegaUrl      = "https://cdn.jsdelivr.net/npm/vega?noext";
         public static string VegaLiteUrl  = "https://cdn.jsdelivr.net/npm/vega-lite?noext";
         public static string VegaEmbedUrl = "https://cdn.jsdelivr.net/npm/vega-embed?noext";
+        public static string VegaWebglUrl = "https://unpkg.com/vega-webgl-renderer/build/vega-webgl-renderer";
+        public static string D3ColorUrl   = "https://d3js.org/d3-color.v1.min";
 
         internal static readonly Func<int, string> indent = amount => string.Empty.PadLeft(amount * 4,
                                                                                            '\u0020');
@@ -34,33 +36,38 @@ namespace VegaLite
                                                                                       ids) =>
                                                                                      {
                                                                                          string script =
-                                                                                             $"{base_indent}<script language=\"javascript\">{LE}"                                                                         +
-                                                                                             $"{base_indent}{____}var requireVega = function() {OB}{LE}"                                                                  +
-                                                                                             $"{base_indent}{________}var requireVegaScriptsConfig = requirejs.config({OB}context:\"vega\",{LE}"                          +
-                                                                                             $"{base_indent}{________}                                                  paths:{OB}\"vega\":\"{VegaUrl}\",{LE}"            +
-                                                                                             $"{base_indent}{________}                                                         \"vega-lite\":\"{VegaLiteUrl}\",{LE}"      +
-                                                                                             $"{base_indent}{________}                                                         \"vega-embed\":\"{VegaEmbedUrl}\"{CB}{LE}" +
-                                                                                             $"{base_indent}{________}                                                {CB});{LE}"                                         +
-                                                                                             $"{base_indent}{________}requireVegaScriptsConfig([\"vega-embed\"], function(vegaEmbed) {OB}{LE}";
+                                                                                             $"{base_indent}<script language=\"javascript\">{LE}"                                                                      +
+                                                                                             $"{base_indent}{____}var requireVega = function() {OB}{LE}"                                                               +
+                                                                                             $"{base_indent}{________}var requireVegaScriptsConfig = requirejs.config({OB}context:\"vega\",{LE}"                       +
+                                                                                             $"{base_indent}{________}                                                  paths:{OB}\"vega\":\"{VegaUrl}\",{LE}"         +
+                                                                                             $"{base_indent}{________}                                                         \"vega-lite\":\"{VegaLiteUrl}\",{LE}"   +
+                                                                                             $"{base_indent}{________}                                                         \"vega-embed\":\"{VegaEmbedUrl}\",{LE}" +
+                                                                                             $"{base_indent}{________}                                                         \"vega-webgl\":\"{VegaWebglUrl}\",{LE}" +
+                                                                                             $"{base_indent}{________}                                                         \"d3-color\":\"{D3ColorUrl}\"{CB},{LE}" +
+                                                                                             $"{base_indent}{________}                                                  map: {OB}{LE}"                                 +
+                                                                                             $"{base_indent}{________}                                                  '*': {OB} 'vega-scenegraph': 'vega' {CB}{LE}"  +
+                                                                                             $"{base_indent}{________}                                                      {CB}{LE}"                                  +
+                                                                                             $"{base_indent}{________}                                                  {CB});{LE}"                                    +
+                                                                                             $"{base_indent}{________}requireVegaScriptsConfig([\"d3-color\", \"vega\", \"vega-lite\", \"vega-embed\", \"vega-webgl\"], function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {OB}{LE}";
 
                                                                                          foreach(Guid id in ids)
                                                                                          {
                                                                                              script +=
-                                                                                                 $"{base_indent}{____________}renderVegaLite{id.ToString().Replace("-", "")}(vegaEmbed);{LE}";
+                                                                                                 $"{base_indent}{____________}renderVegaLite{id.ToString().Replace("-", "")}(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl);{LE}";
                                                                                          }
 
                                                                                          string createAndLoad =
-                                                                                             $"{base_indent}{____}if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {OB}{LE}"         +
-                                                                                             $"{base_indent}{________}var script = document.createElement(\"script\"); {LE}"                                                          +
-                                                                                             $"{base_indent}{________}script.setAttribute(\"type\", \"text/javascript\");{LE}"                                                        +
-                                                                                             $"{base_indent}{________}script.setAttribute(\"src\", \"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\"); {LE}" +
-                                                                                             $"{base_indent}{________}script.onload = function(){OB}{LE}"                                                                             +
-                                                                                             $"{base_indent}{____________}requireVega();{LE}"                                                                                         +
-                                                                                             $"{base_indent}{________}{CB};{LE}"                                                                                                      +
-                                                                                             $"{base_indent}{________}document.getElementsByTagName(\"head\")[0].appendChild(script); {LE}"                                           +
-                                                                                             $"{base_indent}{____}{CB}else{OB}{LE}"                                                                                                   +
-                                                                                             $"{base_indent}{________}requireVega();{LE}"                                                                                             +
-                                                                                             $"{base_indent}{____}{CB}{LE}";
+                                                                                             $"{base_indent}{________}if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {OB}{LE}"         +
+                                                                                             $"{base_indent}{____________}var script = document.createElement(\"script\"); {LE}"                                                          +
+                                                                                             $"{base_indent}{____________}script.setAttribute(\"type\", \"text/javascript\");{LE}"                                                        +
+                                                                                             $"{base_indent}{____________}script.setAttribute(\"src\", \"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\"); {LE}" +
+                                                                                             $"{base_indent}{____________}script.onload = function(){OB}{LE}"                                                                             +
+                                                                                             $"{base_indent}{________________}requireVega();{LE}"                                                                                         +
+                                                                                             $"{base_indent}{____________}{CB};{LE}"                                                                                                      +
+                                                                                             $"{base_indent}{____________}document.getElementsByTagName(\"head\")[0].appendChild(script); {LE}"                                           +
+                                                                                             $"{base_indent}{________}{CB}else{OB}{LE}"                                                                                                   +
+                                                                                             $"{base_indent}{____________}requireVega();{LE}"                                                                                             +
+                                                                                             $"{base_indent}{________}{CB}{LE}";
 
                                                                                          script += $"{base_indent}{________}{CB});{LE}"                  +
                                                                                                    $"{base_indent}{____}{CB};{LE}"                       +
@@ -125,16 +132,16 @@ namespace VegaLite
                                                                                             title,
                                                                                             spec) =>
                                                                                            {
-                                                                                               string html = $"{____________}<div id=\"{id}\">{LE}"                     +
-                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                  +
-                                                                                                             $"{________________}<div id=\"vis-{id}\"></div>{LE}"       +
-                                                                                                             $"{________________}<script type=\"text/javascript\">{LE}" +
+                                                                                               string html = $"{____________}<div id=\"{id}\">{LE}"                    +
+                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                 +
+                                                                                                             $"{________________}<div id=\"vis-{id}\"></div>{LE}"      +
+                                                                                                             $"{________________}<script language=\"javascript\">{LE}" +
                                                                                                              //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
-                                                                                                             $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(vegaEmbed) {OB}{LE}" +
+                                                                                                             $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {OB}{LE}" +
                                                                                                              //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
                                                                                                              $"{________________________}var vlSpec = {spec};{LE}"                 +
                                                                                                              $"{________________________}var opt = {OB}{LE}"                       +
-                                                                                                             $"{____________________________}renderer: 'svg',{LE}"                 +
+                                                                                                             $"{____________________________}renderer: 'webgl',{LE}"               +
                                                                                                              $"{____________________________}logLevel: vegaEmbed.Warn{LE}"         +
                                                                                                              $"{________________________}{CB}{LE}"                                 +
                                                                                                              $"{________________________}vegaEmbed('#vis-{id}', vlSpec, opt);{LE}" +
@@ -155,7 +162,7 @@ namespace VegaLite
                                                                                                    $"{________}<meta charset=\"utf-8\" />{LE}" +
                                                                                                    $"{____}</head>{LE}"                        +
                                                                                                    $"{____}<body>{LE}"                         +
-                                                                                                   RequireJavaScriptFunction(________________,
+                                                                                                   RequireJavaScriptFunction(____________,
                                                                                                                              id) +
                                                                                                    $"{content}{LE}"              +
                                                                                                    $"{____}</body>{LE}"          +
