@@ -7,5 +7,5 @@
     ///
     /// __See also:__ [`bind`](https://vega.github.io/vega-lite/docs/bind.html) documentation.
     /// </summary>
-    public enum PurpleLegendBinding { Legend, Scales };
+    public enum SelectionLegendBinding { Legend, Scales };
 }

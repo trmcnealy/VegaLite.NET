@@ -29,8 +29,8 @@ namespace VegaLite.Test
     {
         private static void Main(string[] args)
         {
-            //TestChart();
-            TestMultipleCharts();
+            TestChart();
+            //TestMultipleCharts();
         }
 
         private static void TestChart()

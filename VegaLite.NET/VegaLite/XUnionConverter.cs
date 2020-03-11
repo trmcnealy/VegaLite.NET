@@ -21,7 +21,7 @@ namespace VegaLite
                     var stringValue = serializer.Deserialize<string>(reader);
                     if (stringValue == "width")
                     {
-                        return new XUnion { Enum = PurpleValue.Width };
+                        return new XUnion { Enum = WidthValue.Width };
                     }
                     break;
             }
@@ -38,7 +38,7 @@ namespace VegaLite
             }
             if (value.Enum != null)
             {
-                if (value.Enum == PurpleValue.Width)
+                if (value.Enum == WidthValue.Width)
                 {
                     serializer.Serialize(writer, "width");
                     return;

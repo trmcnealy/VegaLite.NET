@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace VegaLite
 {
-    internal class PurpleFontWeightConverter : JsonConverter
+    internal class FontWeightEnumConverter : JsonConverter
     {
-        public override bool CanConvert(Type t) => t == typeof(PurpleFontWeight) || t == typeof(PurpleFontWeight?);
+        public override bool CanConvert(Type t) => t == typeof(FontWeightEnum) || t == typeof(FontWeightEnum?);
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
@@ -15,13 +15,13 @@ namespace VegaLite
             switch (value)
             {
                 case "bold":
-                    return PurpleFontWeight.Bold;
+                    return FontWeightEnum.Bold;
                 case "bolder":
-                    return PurpleFontWeight.Bolder;
+                    return FontWeightEnum.Bolder;
                 case "lighter":
-                    return PurpleFontWeight.Lighter;
+                    return FontWeightEnum.Lighter;
                 case "normal":
-                    return PurpleFontWeight.Normal;
+                    return FontWeightEnum.Normal;
             }
             throw new Exception("Cannot unmarshal type PurpleFontWeight");
         }
@@ -33,25 +33,25 @@ namespace VegaLite
                 serializer.Serialize(writer, null);
                 return;
             }
-            var value = (PurpleFontWeight)untypedValue;
+            var value = (FontWeightEnum)untypedValue;
             switch (value)
             {
-                case PurpleFontWeight.Bold:
+                case FontWeightEnum.Bold:
                     serializer.Serialize(writer, "bold");
                     return;
-                case PurpleFontWeight.Bolder:
+                case FontWeightEnum.Bolder:
                     serializer.Serialize(writer, "bolder");
                     return;
-                case PurpleFontWeight.Lighter:
+                case FontWeightEnum.Lighter:
                     serializer.Serialize(writer, "lighter");
                     return;
-                case PurpleFontWeight.Normal:
+                case FontWeightEnum.Normal:
                     serializer.Serialize(writer, "normal");
                     return;
             }
             throw new Exception("Cannot marshal type PurpleFontWeight");
         }
 
-        public static readonly PurpleFontWeightConverter Singleton = new PurpleFontWeightConverter();
+        public static readonly FontWeightEnumConverter Singleton = new FontWeightEnumConverter();
     }
 }

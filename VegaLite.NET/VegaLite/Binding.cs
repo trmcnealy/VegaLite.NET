@@ -22,10 +22,10 @@ namespace VegaLite
     /// </summary>
     public struct Binding
     {
-        public Dictionary<string, FluffyStream> AnythingMap;
+        public Dictionary<string, AnyStream> AnythingMap;
         public LegendBindingEnum?               Enum;
 
-        public static implicit operator Binding(Dictionary<string, FluffyStream> AnythingMap) => new Binding { AnythingMap = AnythingMap };
+        public static implicit operator Binding(Dictionary<string, AnyStream> AnythingMap) => new Binding { AnythingMap = AnythingMap };
         public static implicit operator Binding(LegendBindingEnum                Enum)        => new Binding { Enum        = Enum };
     }
 }

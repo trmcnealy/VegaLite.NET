@@ -22,13 +22,13 @@ namespace VegaLite
                     switch (stringValue)
                     {
                         case "bold":
-                            return new FontWeight { Enum = PurpleFontWeight.Bold };
+                            return new FontWeight { Enum = FontWeightEnum.Bold };
                         case "bolder":
-                            return new FontWeight { Enum = PurpleFontWeight.Bolder };
+                            return new FontWeight { Enum = FontWeightEnum.Bolder };
                         case "lighter":
-                            return new FontWeight { Enum = PurpleFontWeight.Lighter };
+                            return new FontWeight { Enum = FontWeightEnum.Lighter };
                         case "normal":
-                            return new FontWeight { Enum = PurpleFontWeight.Normal };
+                            return new FontWeight { Enum = FontWeightEnum.Normal };
                     }
                     break;
             }
@@ -47,16 +47,16 @@ namespace VegaLite
             {
                 switch (value.Enum)
                 {
-                    case PurpleFontWeight.Bold:
+                    case FontWeightEnum.Bold:
                         serializer.Serialize(writer, "bold");
                         return;
-                    case PurpleFontWeight.Bolder:
+                    case FontWeightEnum.Bolder:
                         serializer.Serialize(writer, "bolder");
                         return;
-                    case PurpleFontWeight.Lighter:
+                    case FontWeightEnum.Lighter:
                         serializer.Serialize(writer, "lighter");
                         return;
-                    case PurpleFontWeight.Normal:
+                    case FontWeightEnum.Normal:
                         serializer.Serialize(writer, "normal");
                         return;
                 }

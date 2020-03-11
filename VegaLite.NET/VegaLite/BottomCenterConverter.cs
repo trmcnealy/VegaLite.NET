@@ -16,8 +16,8 @@ namespace VegaLite
                     var boolValue = serializer.Deserialize<bool>(reader);
                     return new BottomCenter { Bool = boolValue };
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new BottomCenter { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new BottomCenter { SignalRef = objectValue };
             }
             throw new Exception("Cannot unmarshal type BottomCenter");
         }
@@ -30,9 +30,9 @@ namespace VegaLite
                 serializer.Serialize(writer, value.Bool.Value);
                 return;
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type BottomCenter");

@@ -22,7 +22,7 @@ namespace VegaLite
                     }
                     break;
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<Dictionary<string, FluffyStream>>(reader);
+                    var objectValue = serializer.Deserialize<Dictionary<string, AnyStream>>(reader);
                     return new Binding { AnythingMap = objectValue };
             }
             throw new Exception("Cannot unmarshal type Binding");

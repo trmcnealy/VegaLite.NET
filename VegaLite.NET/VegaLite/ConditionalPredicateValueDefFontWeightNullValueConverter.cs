@@ -24,13 +24,13 @@ namespace VegaLite
                     switch (stringValue)
                     {
                         case "bold":
-                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = PurpleFontWeight.Bold };
+                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = FontWeightEnum.Bold };
                         case "bolder":
-                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = PurpleFontWeight.Bolder };
+                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = FontWeightEnum.Bolder };
                         case "lighter":
-                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = PurpleFontWeight.Lighter };
+                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = FontWeightEnum.Lighter };
                         case "normal":
-                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = PurpleFontWeight.Normal };
+                            return new ConditionalPredicateValueDefFontWeightNullValue { Enum = FontWeightEnum.Normal };
                     }
                     break;
             }
@@ -54,16 +54,16 @@ namespace VegaLite
             {
                 switch (value.Enum)
                 {
-                    case PurpleFontWeight.Bold:
+                    case FontWeightEnum.Bold:
                         serializer.Serialize(writer, "bold");
                         return;
-                    case PurpleFontWeight.Bolder:
+                    case FontWeightEnum.Bolder:
                         serializer.Serialize(writer, "bolder");
                         return;
-                    case PurpleFontWeight.Lighter:
+                    case FontWeightEnum.Lighter:
                         serializer.Serialize(writer, "lighter");
                         return;
-                    case PurpleFontWeight.Normal:
+                    case FontWeightEnum.Normal:
                         serializer.Serialize(writer, "normal");
                         return;
                 }

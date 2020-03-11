@@ -18,8 +18,8 @@ namespace VegaLite
                     var stringValue = serializer.Deserialize<string>(reader);
                     return new ColorScheme { String = stringValue };
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new ColorScheme { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new ColorScheme { SignalRef = objectValue };
                 case JsonToken.StartArray:
                     var arrayValue = serializer.Deserialize<List<string>>(reader);
                     return new ColorScheme { StringArray = arrayValue };
@@ -40,9 +40,9 @@ namespace VegaLite
                 serializer.Serialize(writer, value.StringArray);
                 return;
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type ColorScheme");

@@ -21,7 +21,7 @@ namespace VegaLite
                     var stringValue = serializer.Deserialize<string>(reader);
                     if (stringValue == "height")
                     {
-                        return new YUnion { Enum = FluffyValue.Height };
+                        return new YUnion { Enum = HeightValue.Height };
                     }
                     break;
             }
@@ -38,7 +38,7 @@ namespace VegaLite
             }
             if (value.Enum != null)
             {
-                if (value.Enum == FluffyValue.Height)
+                if (value.Enum == HeightValue.Height)
                 {
                     serializer.Serialize(writer, "height");
                     return;

@@ -19,13 +19,13 @@ namespace VegaLite
                     switch (stringValue)
                     {
                         case "legend":
-                            return new BindUnion { Enum = PurpleLegendBinding.Legend };
+                            return new BindUnion { Enum = SelectionLegendBinding.Legend };
                         case "scales":
-                            return new BindUnion { Enum = PurpleLegendBinding.Scales };
+                            return new BindUnion { Enum = SelectionLegendBinding.Scales };
                     }
                     break;
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<Dictionary<string, PurpleStream>>(reader);
+                    var objectValue = serializer.Deserialize<Dictionary<string, AnyStream>>(reader);
                     return new BindUnion { AnythingMap = objectValue };
             }
             throw new Exception("Cannot unmarshal type BindUnion");
@@ -38,10 +38,10 @@ namespace VegaLite
             {
                 switch (value.Enum)
                 {
-                    case PurpleLegendBinding.Legend:
+                    case SelectionLegendBinding.Legend:
                         serializer.Serialize(writer, "legend");
                         return;
-                    case PurpleLegendBinding.Scales:
+                    case SelectionLegendBinding.Scales:
                         serializer.Serialize(writer, "scales");
                         return;
                 }

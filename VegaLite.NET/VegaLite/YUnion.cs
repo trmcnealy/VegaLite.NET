@@ -3,9 +3,9 @@
     public struct YUnion
     {
         public double?      Double;
-        public FluffyValue? Enum;
+        public HeightValue? Enum;
 
         public static implicit operator YUnion(double      Double) => new YUnion { Double = Double };
-        public static implicit operator YUnion(FluffyValue Enum)   => new YUnion { Enum   = Enum };
+        public static implicit operator YUnion(HeightValue Enum)   => new YUnion { Enum   = Enum };
     }
 }

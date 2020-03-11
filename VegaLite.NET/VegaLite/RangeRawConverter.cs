@@ -27,8 +27,8 @@ namespace VegaLite
                     var stringValue = serializer.Deserialize<string>(reader);
                     return new RangeRaw { String = stringValue };
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new RangeRaw { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new RangeRaw { SignalRef = objectValue };
                 case JsonToken.StartArray:
                     var arrayValue = serializer.Deserialize<List<RangeRawArray>>(reader);
                     return new RangeRaw { AnythingArray = arrayValue };
@@ -64,9 +64,9 @@ namespace VegaLite
                 serializer.Serialize(writer, value.AnythingArray);
                 return;
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type RangeRaw");

@@ -6,10 +6,10 @@
     public struct AnchorUnion
     {
         public TitleAnchorEnum? Enum;
-        public PurpleSignalRef  PurpleSignalRef;
+        public SignalRef  SignalRef;
 
         public static implicit operator AnchorUnion(TitleAnchorEnum Enum)            => new AnchorUnion { Enum            = Enum };
-        public static implicit operator AnchorUnion(PurpleSignalRef PurpleSignalRef) => new AnchorUnion { PurpleSignalRef = PurpleSignalRef };
-        public                          bool IsNull                                  => PurpleSignalRef == null && Enum == null;
+        public static implicit operator AnchorUnion(SignalRef SignalRef) => new AnchorUnion { SignalRef = SignalRef };
+        public                          bool IsNull                                  => SignalRef == null && Enum == null;
     }
 }

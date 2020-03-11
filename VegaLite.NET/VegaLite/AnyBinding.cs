@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace VegaLite
 {
-    public class PurpleBinding
+    public class AnyBinding
     {
         [JsonProperty("debounce", NullValueHandling = NullValueHandling.Ignore)]
         public double? Debounce { get; set; }

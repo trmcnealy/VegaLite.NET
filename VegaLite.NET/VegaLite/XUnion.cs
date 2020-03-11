@@ -3,9 +3,9 @@
     public struct XUnion
     {
         public double?      Double;
-        public PurpleValue? Enum;
+        public WidthValue? Enum;
 
         public static implicit operator XUnion(double      Double) => new XUnion { Double = Double };
-        public static implicit operator XUnion(PurpleValue Enum)   => new XUnion { Enum   = Enum };
+        public static implicit operator XUnion(WidthValue Enum)   => new XUnion { Enum   = Enum };
     }
 }

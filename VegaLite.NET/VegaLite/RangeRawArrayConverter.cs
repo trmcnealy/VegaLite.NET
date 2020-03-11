@@ -17,8 +17,8 @@ namespace VegaLite
                     var doubleValue = serializer.Deserialize<double>(reader);
                     return new RangeRawArray { Double = doubleValue };
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new RangeRawArray { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new RangeRawArray { SignalRef = objectValue };
             }
             throw new Exception("Cannot unmarshal type RangeRawArray");
         }
@@ -31,9 +31,9 @@ namespace VegaLite
                 serializer.Serialize(writer, value.Double.Value);
                 return;
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type RangeRawArray");

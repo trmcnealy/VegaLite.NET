@@ -4,19 +4,19 @@ using Newtonsoft.Json;
 
 namespace VegaLite
 {
-    internal class PurpleValueConverter : JsonConverter
+    internal class HeightValueConverter : JsonConverter
     {
-        public override bool CanConvert(Type t) => t == typeof(PurpleValue) || t == typeof(PurpleValue?);
+        public override bool CanConvert(Type t) => t == typeof(HeightValue) || t == typeof(HeightValue?);
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.Null) return null;
             var value = serializer.Deserialize<string>(reader);
-            if (value == "width")
+            if (value == "height")
             {
-                return PurpleValue.Width;
+                return HeightValue.Height;
             }
-            throw new Exception("Cannot unmarshal type PurpleValue");
+            throw new Exception("Cannot unmarshal type FluffyValue");
         }
 
         public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
@@ -26,15 +26,15 @@ namespace VegaLite
                 serializer.Serialize(writer, null);
                 return;
             }
-            var value = (PurpleValue)untypedValue;
-            if (value == PurpleValue.Width)
+            var value = (HeightValue)untypedValue;
+            if (value == HeightValue.Height)
             {
-                serializer.Serialize(writer, "width");
+                serializer.Serialize(writer, "height");
                 return;
             }
-            throw new Exception("Cannot marshal type PurpleValue");
+            throw new Exception("Cannot marshal type FluffyValue");
         }
 
-        public static readonly PurpleValueConverter Singleton = new PurpleValueConverter();
+        public static readonly HeightValueConverter Singleton = new HeightValueConverter();
     }
 }

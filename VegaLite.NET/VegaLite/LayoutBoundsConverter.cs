@@ -24,8 +24,8 @@ namespace VegaLite
                     }
                     break;
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new LayoutBounds { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new LayoutBounds { SignalRef = objectValue };
             }
             throw new Exception("Cannot unmarshal type LayoutBounds");
         }
@@ -45,9 +45,9 @@ namespace VegaLite
                         return;
                 }
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type LayoutBounds");

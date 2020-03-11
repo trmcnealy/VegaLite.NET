@@ -2,7 +2,7 @@
 
 namespace VegaLite
 {
-    public class PurpleSignalRef
+    public class SignalRef
     {
         [JsonProperty("signal", Required = Required.Always)]
         public string Signal { get; set; }

@@ -17,12 +17,13 @@ namespace VegaLite
         internal static readonly Func<int, string> indent = amount => string.Empty.PadLeft(amount * 4,
                                                                                            '\u0020');
 
-        internal static readonly string ____                     = indent(1);
-        internal static readonly string ________                 = indent(2);
-        internal static readonly string ____________             = indent(3);
-        internal static readonly string ________________         = indent(4);
-        internal static readonly string ____________________     = indent(5);
-        internal static readonly string ________________________ = indent(6);
+        internal static readonly string ____                         = indent(1);
+        internal static readonly string ________                     = indent(2);
+        internal static readonly string ____________                 = indent(3);
+        internal static readonly string ________________             = indent(4);
+        internal static readonly string ____________________         = indent(5);
+        internal static readonly string ________________________     = indent(6);
+        internal static readonly string ____________________________ = indent(7);
 
         internal static readonly string OB = "{";
         internal static readonly string CB = "}";
@@ -33,7 +34,7 @@ namespace VegaLite
                                                                                       ids) =>
                                                                                      {
                                                                                          string script =
-                                                                                             $"{base_indent}<script type=\"text/javascript\">{LE}"                                                                        +
+                                                                                             $"{base_indent}<script language=\"javascript\">{LE}"                                                                         +
                                                                                              $"{base_indent}{____}var requireVega = function() {OB}{LE}"                                                                  +
                                                                                              $"{base_indent}{________}var requireVegaScriptsConfig = requirejs.config({OB}context:\"vega\",{LE}"                          +
                                                                                              $"{base_indent}{________}                                                  paths:{OB}\"vega\":\"{VegaUrl}\",{LE}"            +
@@ -48,11 +49,8 @@ namespace VegaLite
                                                                                                  $"{base_indent}{____________}renderVegaLite{id.ToString().Replace("-", "")}(vegaEmbed);{LE}";
                                                                                          }
 
-                                                                                         script +=
-                                                                                             $"{base_indent}{________}{CB});{LE}"                                                                                                     +
-                                                                                             $"{base_indent}{____}{CB};{LE}"                                                                                                          +
-                                                                                             $"{base_indent}{____}{LE}"                                                                                                               +
-                                                                                             $"{base_indent}{____}if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {OB} {LE}"        +
+                                                                                         string createAndLoad =
+                                                                                             $"{base_indent}{____}if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {OB}{LE}"         +
                                                                                              $"{base_indent}{________}var script = document.createElement(\"script\"); {LE}"                                                          +
                                                                                              $"{base_indent}{________}script.setAttribute(\"type\", \"text/javascript\");{LE}"                                                        +
                                                                                              $"{base_indent}{________}script.setAttribute(\"src\", \"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\"); {LE}" +
@@ -62,46 +60,66 @@ namespace VegaLite
                                                                                              $"{base_indent}{________}document.getElementsByTagName(\"head\")[0].appendChild(script); {LE}"                                           +
                                                                                              $"{base_indent}{____}{CB}else{OB}{LE}"                                                                                                   +
                                                                                              $"{base_indent}{________}requireVega();{LE}"                                                                                             +
-                                                                                             $"{base_indent}{____}{CB}"                                                                                                               +
-                                                                                             $"{base_indent}</script>";
+                                                                                             $"{base_indent}{____}{CB}{LE}";
+
+                                                                                         script += $"{base_indent}{________}{CB});{LE}"                  +
+                                                                                                   $"{base_indent}{____}{CB};{LE}"                       +
+                                                                                                   $"{base_indent}</script>{LE}"                         +
+                                                                                                   $"{base_indent}<script>{LE}"                          +
+                                                                                                   $"{base_indent}{____}{LE}"                            +
+                                                                                                   $"{base_indent}{____}try {OB}{LE}"                    +
+                                                                                                   $"{base_indent}{________}(async function () {OB}{LE}" +
+                                                                                                   createAndLoad                                         +
+                                                                                                   $"{base_indent}{________}{CB})();{LE}"                +
+                                                                                                   $"{base_indent}{____}{CB}"                            +
+                                                                                                   $"{base_indent}{____}catch(err){OB}"                  +
+                                                                                                   $"{base_indent}{________}(function () {OB}{LE}"       +
+                                                                                                   createAndLoad                                         +
+                                                                                                   $"{base_indent}{________}{CB})();{LE}"                +
+                                                                                                   $"{base_indent}{____}{CB}{LE}"                        +
+                                                                                                   $"{base_indent}</script>{LE}";
 
                                                                                          return script;
                                                                                      };
 
-        public static readonly string LoadScriptFunction = $"{________}var loadScript = function(url, uid) {{{LE}"               +
-                                                           $"{____________}var script = document.getElementById(uid);{LE}"       +
-                                                           $"{____________}if(script == null) {{{LE}"                            +
-                                                           $"{________________}script = document.createElement(\"script\");{LE}" +
-                                                           //$"{________}{________}script.setAttribute(\"id\", uid);{LE}"                               +
-                                                           $"{________________}script.setAttribute(\"type\", \"text/javascript\");{LE}"             +
-                                                           $"{________________}script.setAttribute(\"src\", url);{LE}"                              +
-                                                           $"{________________}document.getElementsByTagName(\"head\")[0].appendChild(script);{LE}" +
-                                                           $"{____________}{CB}{LE}"                                                                +
-                                                           $"{____________}return script;{LE}"                                                      +
-                                                           $"{________}{CB};{LE}";
+        //public static readonly string LoadScriptFunction = $"{________}var loadScript = function(url, uid) {{{LE}"               +
+        //                                                   $"{____________}var script = document.getElementById(uid);{LE}"       +
+        //                                                   $"{____________}if(script == null) {{{LE}"                            +
+        //                                                   $"{________________}script = document.createElement(\"script\");{LE}" +
+        //                                                   //$"{________}{________}script.setAttribute(\"id\", uid);{LE}"                               +
+        //                                                   $"{________________}script.setAttribute(\"type\", \"text/javascript\");{LE}"             +
+        //                                                   $"{________________}script.setAttribute(\"src\", url);{LE}"                              +
+        //                                                   $"{________________}document.getElementsByTagName(\"head\")[0].appendChild(script);{LE}" +
+        //                                                   $"{____________}{CB}{LE}"                                                                +
+        //                                                   $"{____________}return script;{LE}"                                                      +
+        //                                                   $"{________}{CB};{LE}";
 
-        public static readonly Func<Guid, string, string, string> LoadContentTemplate = (id,
-                                                                                         title,
-                                                                                         spec) =>
-                                                                                        {
-                                                                                            string html = $"{____________}<div id=\"{id}\">{LE}" +
-                                                                                                          RequireJavaScriptFunction(________________,
-                                                                                                                                    id)                              +
-                                                                                                          $"{________________}<h1>{title}</h1>{LE}"                  +
-                                                                                                          $"{________________}<div id=\"vis-{id}\"></div>{LE}"       +
-                                                                                                          $"{________________}<script type=\"text/javascript\">{LE}" +
-                                                                                                          //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
-                                                                                                          $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(vegaEmbed) {{{LE}" +
-                                                                                                          //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
-                                                                                                          $"{________________________}var vlSpec = {spec};{LE}"            +
-                                                                                                          $"{________________________}vegaEmbed('#vis-{id}', vlSpec);{LE}" +
-                                                                                                          $"{____________________}{CB};"                                   +
-                                                                                                          $"{LE}"                                                          +
-                                                                                                          $"{________________}</script>{LE}"                               +
-                                                                                                          $"{____________}</div>{LE}";
+        //public static readonly Func<Guid, string, string, string> LoadContentTemplate = (id,
+        //                                                                                 title,
+        //                                                                                 spec) =>
+        //                                                                                {
+        //                                                                                    string html = $"{____________}<div id=\"{id}\">{LE}" +
+        //                                                                                                  RequireJavaScriptFunction(________________,
+        //                                                                                                                            id)                                       +
+        //                                                                                                  $"{________________}<h1>{title}</h1>{LE}"                           +
+        //                                                                                                  $"{________________}<div id=\"vis-{id}\" class=\"view\"></div>{LE}" +
+        //                                                                                                  $"{________________}<script type=\"text/javascript\">{LE}"          +
+        //                                                                                                  //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
+        //                                                                                                  $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(vegaEmbed) {{{LE}" +
+        //                                                                                                  //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
+        //                                                                                                  $"{________________________}var vlSpec = {spec};{LE}"                 +
+        //                                                                                                  $"{________________________}var opt = {OB}"                           +
+        //                                                                                                  $"{____________________________}renderer: 'svg',"                     +
+        //                                                                                                  $"{____________________________}logLevel: vegaEmbed.Warn"             +
+        //                                                                                                  $"{________________________}{CB}"                                     +
+        //                                                                                                  $"{________________________}vegaEmbed('#vis-{id}', vlSpec, opt);{LE}" +
+        //                                                                                                  $"{____________________}{CB};"                                        +
+        //                                                                                                  $"{LE}"                                                               +
+        //                                                                                                  $"{________________}</script>{LE}"                                    +
+        //                                                                                                  $"{____________}</div>{LE}";
 
-                                                                                            return html;
-                                                                                        };
+        //                                                                                    return html;
+        //                                                                                };
 
         public static readonly Func<Guid, string, string, string> ElementContentTemplate = (id,
                                                                                             title,
@@ -112,19 +130,24 @@ namespace VegaLite
                                                                                                              $"{________________}<div id=\"vis-{id}\"></div>{LE}"       +
                                                                                                              $"{________________}<script type=\"text/javascript\">{LE}" +
                                                                                                              //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
-                                                                                                             $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(vegaEmbed) {{{LE}" +
+                                                                                                             $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(vegaEmbed) {OB}{LE}" +
                                                                                                              //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
-                                                                                                             $"{________________________}var vlSpec = {spec};{LE}"            +
-                                                                                                             $"{________________________}vegaEmbed('#vis-{id}', vlSpec);{LE}" +
-                                                                                                             $"{____________________}{CB};"                                   +
-                                                                                                             $"{LE}"                                                          +
-                                                                                                             $"{________________}</script>{LE}"                               +
+                                                                                                             $"{________________________}var vlSpec = {spec};{LE}"                 +
+                                                                                                             $"{________________________}var opt = {OB}{LE}"                       +
+                                                                                                             $"{____________________________}renderer: 'svg',{LE}"                 +
+                                                                                                             $"{____________________________}logLevel: vegaEmbed.Warn{LE}"         +
+                                                                                                             $"{________________________}{CB}{LE}"                                 +
+                                                                                                             $"{________________________}vegaEmbed('#vis-{id}', vlSpec, opt);{LE}" +
+                                                                                                             $"{____________________}{CB};{LE}"                                    +
+                                                                                                             $"{LE}"                                                               +
+                                                                                                             $"{________________}</script>{LE}"                                    +
                                                                                                              $"{____________}</div>{LE}";
 
                                                                                                return html;
                                                                                            };
 
-        public static readonly Func<Guid, string, string> HtmlTemplateSingleId = (id,content) =>
+        public static readonly Func<Guid, string, string> HtmlTemplateSingleId = (id,
+                                                                                  content) =>
                                                                                  {
                                                                                      string html = $"<!DOCTYPE html>{LE}"                      +
                                                                                                    $"<html>{LE}"                               +
@@ -134,43 +157,43 @@ namespace VegaLite
                                                                                                    $"{____}<body>{LE}"                         +
                                                                                                    RequireJavaScriptFunction(________________,
                                                                                                                              id) +
-                                                                                                   $"{content}{LE}"                            +
-                                                                                                   $"{____}</body>{LE}"                        +
+                                                                                                   $"{content}{LE}"              +
+                                                                                                   $"{____}</body>{LE}"          +
                                                                                                    $"</html>{LE}";
 
                                                                                      return html;
                                                                                  };
 
-        public static readonly Func<Guid, string, string, string> HtmlContentTemplate = (id,
-                                                                                         title,
-                                                                                         spec) =>
-                                                                                        {
-                                                                                            string html = $"<!DOCTYPE html>{LE}"                                    +
-                                                                                                          $"<html>{LE}"                                             +
-                                                                                                          $"{____}<head>{LE}"                                       +
-                                                                                                          $"{________}<title>Vega-Lite Chart</title>{LE}"           +
-                                                                                                          $"{________}<meta charset=\"utf-8\" />{LE}"               +
-                                                                                                          $"{________}<script src=\"{VegaUrl}\"></script>{LE}"      +
-                                                                                                          $"{________}<script src=\"{VegaLiteUrl}\"></script>{LE}"  +
-                                                                                                          $"{________}<script src=\"{VegaEmbedUrl}\"></script>{LE}" +
-                                                                                                          $"{________}<style media=\"screen\">{LE}"                 +
-                                                                                                          $"      .vega-actions a {{{LE}"                           +
-                                                                                                          $"        margin-right: 5px;{LE}"                         +
-                                                                                                          $"      }}{LE}"                                           +
-                                                                                                          $"{________}</style>{LE}"                                 +
-                                                                                                          $"{____}</head>{LE}"                                      +
-                                                                                                          $"{____}<body>{LE}"                                       +
-                                                                                                          $"{________}<h1>{title}</h1>{LE}"                         +
-                                                                                                          $"{________}<div id=\"vis{id}\"></div>{LE}"               +
-                                                                                                          $"{________}<script>{LE}"                                 +
-                                                                                                          $"      var vlSpec = {spec};{LE}"                         +
-                                                                                                          $"      vegaEmbed('#vis{id}', vlSpec);{LE}"               +
-                                                                                                          $"{________}</script>{LE}"                                +
-                                                                                                          $"{____}</body>{LE}"                                      +
-                                                                                                          $"</html>{LE}";
+        //public static readonly Func<Guid, string, string, string> HtmlContentTemplate = (id,
+        //                                                                                 title,
+        //                                                                                 spec) =>
+        //                                                                                {
+        //                                                                                    string html = $"<!DOCTYPE html>{LE}"                                    +
+        //                                                                                                  $"<html>{LE}"                                             +
+        //                                                                                                  $"{____}<head>{LE}"                                       +
+        //                                                                                                  $"{________}<title>Vega-Lite Chart</title>{LE}"           +
+        //                                                                                                  $"{________}<meta charset=\"utf-8\" />{LE}"               +
+        //                                                                                                  $"{________}<script src=\"{VegaUrl}\"></script>{LE}"      +
+        //                                                                                                  $"{________}<script src=\"{VegaLiteUrl}\"></script>{LE}"  +
+        //                                                                                                  $"{________}<script src=\"{VegaEmbedUrl}\"></script>{LE}" +
+        //                                                                                                  $"{________}<style media=\"screen\">{LE}"                 +
+        //                                                                                                  $"      .vega-actions a {{{LE}"                           +
+        //                                                                                                  $"        margin-right: 5px;{LE}"                         +
+        //                                                                                                  $"      }}{LE}"                                           +
+        //                                                                                                  $"{________}</style>{LE}"                                 +
+        //                                                                                                  $"{____}</head>{LE}"                                      +
+        //                                                                                                  $"{____}<body>{LE}"                                       +
+        //                                                                                                  $"{________}<h1>{title}</h1>{LE}"                         +
+        //                                                                                                  $"{________}<div id=\"vis{id}\"></div>{LE}"               +
+        //                                                                                                  $"{________}<script>{LE}"                                 +
+        //                                                                                                  $"      var vlSpec = {spec};{LE}"                         +
+        //                                                                                                  $"      vegaEmbed('#vis{id}', vlSpec);{LE}"               +
+        //                                                                                                  $"{________}</script>{LE}"                                +
+        //                                                                                                  $"{____}</body>{LE}"                                      +
+        //                                                                                                  $"</html>{LE}";
 
-                                                                                            return html;
-                                                                                        };
+        //                                                                                    return html;
+        //                                                                                };
     }
 }
 

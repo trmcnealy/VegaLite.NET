@@ -32,9 +32,9 @@
     public struct FontWeight
     {
         public double?           Double;
-        public PurpleFontWeight? Enum;
+        public FontWeightEnum? Enum;
 
         public static implicit operator FontWeight(double           Double) => new FontWeight { Double = Double };
-        public static implicit operator FontWeight(PurpleFontWeight Enum)   => new FontWeight { Enum   = Enum };
+        public static implicit operator FontWeight(FontWeightEnum Enum)   => new FontWeight { Enum   = Enum };
     }
 }

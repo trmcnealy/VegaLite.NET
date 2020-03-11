@@ -14,8 +14,8 @@ namespace VegaLite
             switch (reader.TokenType)
             {
                 case JsonToken.StartObject:
-                    var objectValue = serializer.Deserialize<PurpleSignalRef>(reader);
-                    return new SignalRefExtent { PurpleSignalRef = objectValue };
+                    var objectValue = serializer.Deserialize<SignalRef>(reader);
+                    return new SignalRefExtent { SignalRef = objectValue };
                 case JsonToken.StartArray:
                     var arrayValue = serializer.Deserialize<List<RangeRawArray>>(reader);
                     return new SignalRefExtent { AnythingArray = arrayValue };
@@ -31,9 +31,9 @@ namespace VegaLite
                 serializer.Serialize(writer, value.AnythingArray);
                 return;
             }
-            if (value.PurpleSignalRef != null)
+            if (value.SignalRef != null)
             {
-                serializer.Serialize(writer, value.PurpleSignalRef);
+                serializer.Serialize(writer, value.SignalRef);
                 return;
             }
             throw new Exception("Cannot marshal type SignalRefExtent");
