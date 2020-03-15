@@ -90,6 +90,13 @@ namespace VegaLite.Test
                             Type = BoxPlot.Point
                         }
                     }
+                },
+                Config = new Config()
+                {
+                    Legend = new LegendConfig()
+                    {
+                        Orient = LegendOrient.Top
+                    }
                 }
             };
 

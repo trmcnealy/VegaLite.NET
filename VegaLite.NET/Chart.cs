@@ -68,20 +68,30 @@ namespace VegaLite
 
         public Chart(Specification vegaLiteSpecification)
         {
-            Id                      = Guid.NewGuid();
-            Specification           = vegaLiteSpecification;
+            Id            = Guid.NewGuid();
+            Specification = vegaLiteSpecification;
 
             if(string.IsNullOrEmpty(Specification.Data.Name))
             {
                 Specification.Data.Name = $"dataset_{Id.ToString().Replace("-", "")}";
             }
+
+            if(Specification.Config == null)
+            {
+                Specification.Config = new Config()
+                {
+                    Legend = new LegendConfig()
+                    {
+                        Orient = LegendOrient.Top
+                    }
+                };
+            }
         }
 
         public Chart(Specification vegaLiteSpecification,
                      string        datasetName)
+            : this(vegaLiteSpecification)
         {
-            Id                      = Guid.NewGuid();
-            Specification           = vegaLiteSpecification;
             Specification.Data.Name = datasetName;
         }
 

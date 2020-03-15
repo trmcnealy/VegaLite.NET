@@ -98,10 +98,10 @@ namespace VegaLite
                                                                                             title,
                                                                                             spec) =>
                                                                                            {
-                                                                                               string html = $"{____________}<div id=\"{id}\" style=\"width:100%\">{LE}"                         +
-                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                                           +
-                                                                                                             $"{________________}<div id=\"vis-{id}\" class=\"view\" style=\"width:100%\"/>{LE}" +
-                                                                                                             $"{________________}<script language=\"javascript\">{LE}"                           +
+                                                                                               string html = $"{____________}<div id=\"{id}\">{LE}"                         +
+                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                      +
+                                                                                                             $"{________________}<div id=\"vis-{id}\" class=\"view\"/>{LE}" +
+                                                                                                             $"{________________}<script language=\"javascript\">{LE}"      +
                                                                                                              //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
                                                                                                              $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {OB}{LE}" +
                                                                                                              //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
