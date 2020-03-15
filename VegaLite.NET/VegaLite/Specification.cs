@@ -340,5 +340,10 @@ namespace VegaLite
         public List<Spec> Hconcat { get; set; }
         
         public static Specification FromJson(string json) => JsonConvert.DeserializeObject<Specification>(json, VegaLite.Converter.Settings);
+
+        public override string ToString()
+        {
+            return this.ToJson();
+        }
     }
 }
