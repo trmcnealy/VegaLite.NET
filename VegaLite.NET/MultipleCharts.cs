@@ -62,23 +62,24 @@ namespace VegaLite
             get;
         }
 
-        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //static MultipleCharts()
-        //{
-        //    Formatter<MultipleCharts>.Register((chart,
-        //                                        writer) =>
-        //                                       {
-        //                                           writer.Write(chart.ToString());
-        //                                       },
-        //                                       HtmlFormatter.MimeType);
-        //}
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static MultipleCharts()
+        {
+            Formatter<MultipleCharts>.Register((chart,
+                                                writer) =>
+                                               {
+                                                   writer.Write(chart.ToString());
+                                               },
+                                               HtmlFormatter.MimeType);
+        }
+
         //private MultipleCharts()
         //{
         //    Id            = Guid.NewGuid();
-
+        //
         //    Rows    = 0;
         //    Columns = 0;
-
+        //
         //    Charts = new Chart[Rows * Columns];
         //}
 

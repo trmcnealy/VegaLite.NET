@@ -55,16 +55,16 @@ namespace VegaLite
             set { Specification.Data.Values = value; }
         }
 
-        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //static Chart()
-        //{
-        //    Formatter<Chart>.Register((chart,
-        //                               writer) =>
-        //                              {
-        //                                  writer.Write(chart.ToString());
-        //                              },
-        //                              HtmlFormatter.MimeType);
-        //}
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static Chart()
+        {
+            Formatter<Chart>.Register((chart,
+                                       writer) =>
+                                      {
+                                          writer.Write(chart.ToString());
+                                      },
+                                      HtmlFormatter.MimeType);
+        }
 
         //private Chart()
         //{
