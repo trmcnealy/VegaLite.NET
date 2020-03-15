@@ -66,35 +66,85 @@ namespace VegaLite
                                       HtmlFormatter.MimeType);
         }
 
+        public Chart(Specification vegaLiteSpecification)
+        {
+            Id                      = Guid.NewGuid();
+            Specification           = vegaLiteSpecification;
+
+            if(string.IsNullOrEmpty(Specification.Data.Name))
+            {
+                Specification.Data.Name = $"dataset_{Id.ToString().Replace("-", "")}";
+            }
+        }
+
+        public Chart(Specification vegaLiteSpecification,
+                     string        datasetName)
+        {
+            Id                      = Guid.NewGuid();
+            Specification           = vegaLiteSpecification;
+            Specification.Data.Name = datasetName;
+        }
+
         public Chart(string        title,
                      Specification vegaLiteSpecification)
+            : this(vegaLiteSpecification)
         {
-            Id            = Guid.NewGuid();
-            Title         = title;
-            Specification = vegaLiteSpecification;
+            Title = title;
+        }
+
+        public Chart(string        title,
+                     Specification vegaLiteSpecification,
+                     string        datasetName)
+            : this(vegaLiteSpecification,
+                   datasetName)
+        {
+            Title = title;
         }
 
         public Chart(string        title,
                      Specification vegaLiteSpecification,
                      int           width,
                      int           height)
+            : this(vegaLiteSpecification)
         {
-            Id            = Guid.NewGuid();
-            Title         = title;
-            Specification = vegaLiteSpecification;
-            Width         = width;
-            Height        = height;
+            Title  = title;
+            Width  = width;
+            Height = height;
+        }
+
+        public Chart(string        title,
+                     Specification vegaLiteSpecification,
+                     string        datasetName,
+                     int           width,
+                     int           height)
+            : this(vegaLiteSpecification,
+                   datasetName)
+        {
+            Title  = title;
+            Width  = width;
+            Height = height;
         }
 
         public Chart(Specification vegaLiteSpecification,
                      int           width,
                      int           height)
+            : this(vegaLiteSpecification)
         {
-            Id            = Guid.NewGuid();
-            Title         = vegaLiteSpecification.Description;
-            Specification = vegaLiteSpecification;
-            Width         = width;
-            Height        = height;
+            Title  = vegaLiteSpecification.Description;
+            Width  = width;
+            Height = height;
+        }
+
+        public Chart(Specification vegaLiteSpecification,
+                     string        datasetName,
+                     int           width,
+                     int           height)
+            : this(vegaLiteSpecification,
+                   datasetName)
+        {
+            Title  = vegaLiteSpecification.Description;
+            Width  = width;
+            Height = height;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,7 +164,7 @@ namespace VegaLite
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtml()
         {
-            return new HtmlString(HtmlTemplateSingleId(Id,
+            return new HtmlString(HtmlTemplateSingleId(this,
                                                        GetHtmlContent())).ToString();
         }
 

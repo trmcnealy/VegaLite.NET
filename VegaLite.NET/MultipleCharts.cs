@@ -121,7 +121,7 @@ namespace VegaLite
 
             int fraction = 100 / Columns;
 
-            List<Guid> ids = new List<Guid>(Rows * Columns);
+            List<Chart> charts = new List<Chart>(Rows * Columns);
 
             for(int row = 0; row < Rows; ++row)
             {
@@ -131,7 +131,7 @@ namespace VegaLite
                 {
                     if(Charts[row * Columns + column] != null)
                     {
-                        ids.Add(Charts[row * Columns + column].Id);
+                        charts.Add(Charts[row * Columns + column]);
 
                         content.AppendLine($"{____________}<td style=\"border:1px solid black;width:{fraction:D0}%\">");
 
@@ -150,7 +150,7 @@ namespace VegaLite
             content.AppendLine($"{____}</table>\n");
 
             content.AppendLine(RequireJavaScriptFunction(____,
-                                                         ids.ToArray()));
+                                                         charts.ToArray()));
 
             content.AppendLine("</div>\n");
 

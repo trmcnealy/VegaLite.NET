@@ -1,0 +1,82 @@
+﻿#!html
+<script language="javascript">
+    var requireVega = function() {
+        var requireVegaScriptsConfig = requirejs.config({context:"vega",
+                                                          paths:{"vega":"https://cdn.jsdelivr.net/npm/vega?noext",
+                                                                 "vega-lite":"https://cdn.jsdelivr.net/npm/vega-lite?noext",
+                                                                 "vega-embed":"https://cdn.jsdelivr.net/npm/vega-embed?noext",
+                                                                 "vega-webgl":"https://unpkg.com/vega-webgl-renderer/build/vega-webgl-renderer",
+                                                                 "d3-color":"https://d3js.org/d3-color.v1.min"},
+                                                          map: {
+                                                          '*': { 'vega-scenegraph': 'vega' }
+                                                              }
+                                                          });
+
+        requireVegaScriptsConfig(["d3-color", "vega", "vega-lite", "vega-embed", "vega-webgl"], function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {
+
+            renderVegaLited8bc908148954c308e5837b1978c50e1(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl).then(function(result) {
+                interactive.csharp.getVariable("string_map").then(function(string_map) {
+                    result.view.data('dataset_d8bc908148954c308e5837b1978c50e1', string_map);
+                });
+            });
+
+        });
+    };
+</script>
+<script>
+    try {
+        (async function () {
+            if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {
+                var script = document.createElement("script");
+                script.setAttribute("type", "text/javascript");
+                script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
+                script.onload = function(){
+                    requireVega();
+                };
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }else{
+                requireVega();
+            }
+        })();
+    } catch(err) {
+        (function () {
+            if ((typeof(requirejs) !==  typeof(Function)) || (typeof(requirejs.config) !== typeof(Function))) {
+                var script = document.createElement("script");
+                script.setAttribute("type", "text/javascript");
+                script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
+                script.onload = function(){
+                    requireVega();
+                };
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }else{
+                requireVega();
+            }
+        })();
+    }
+</script>
+<div id="d8bc9081-4895-4c30-8e58-37b1978c50e1">
+    <h1>TriplePorosityModel</h1>
+    <div id="vis-d8bc9081-4895-4c30-8e58-37b1978c50e1"></div>
+    <script language="javascript">
+
+        async function renderVegaLited8bc908148954c308e5837b1978c50e1 (d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {
+
+            var vlSpec = {
+                "$schema":"https://vega.github.io/schema/vega-lite/v4.json",
+                "data":{
+                    "name":"dataset_d8bc908148954c308e5837b1978c50e1"
+                },
+                "height":750.0,
+                "width":1000.0,
+                "layer":[{"encoding":{"color":{"field":"Type","type":"nominal"},"x":{"field":"Day","type":"quantitative"},"y":{"field":"Rate","type":"quantitative"}},"layer":[{"mark":"line"},{"mark":"point"}]}]
+            };
+
+            var opt = {
+                renderer: 'webgl',
+                logLevel: vegaEmbed.Info
+            }
+
+            return vegaEmbed('#vis-d8bc9081-4895-4c30-8e58-37b1978c50e1', vlSpec, opt);
+        };
+    </script>
+</div>

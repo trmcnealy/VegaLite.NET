@@ -1,12 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
+    <UseWPF>true</UseWPF>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>VegaLite.Test</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="0.9.430" />
     <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.2.2" />
     <PackageReference Include="NSwag.Core" Version="13.2.2" />
   </ItemGroup>
