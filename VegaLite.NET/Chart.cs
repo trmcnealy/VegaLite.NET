@@ -50,26 +50,37 @@ namespace VegaLite
         public InlineDataset? Data
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get { return Specification.Data.Values; }
+            get { return Specification.Data?.Values; }
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { Specification.Data.Values = value; }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static Chart()
-        {
-            Formatter<Chart>.Register((chart,
-                                       writer) =>
-                                      {
-                                          writer.Write(chart.ToString());
-                                      },
-                                      HtmlFormatter.MimeType);
-        }
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //static Chart()
+        //{
+        //    Formatter<Chart>.Register((chart,
+        //                               writer) =>
+        //                              {
+        //                                  writer.Write(chart.ToString());
+        //                              },
+        //                              HtmlFormatter.MimeType);
+        //}
+
+        //private Chart()
+        //{
+        //    Id            = Guid.NewGuid();
+        //    Specification = new Specification();
+        //}
 
         public Chart(Specification vegaLiteSpecification)
         {
             Id            = Guid.NewGuid();
             Specification = vegaLiteSpecification;
+
+            if(Specification.Data == null)
+            {
+                Specification.Data = new DataSource();
+            }
 
             if(string.IsNullOrEmpty(Specification.Data.Name))
             {

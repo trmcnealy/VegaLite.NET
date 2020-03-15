@@ -32,7 +32,7 @@ namespace VegaLite.Test
         [STAThread]
         private static void Main(string[] args)
         {
-            TestChart();
+            TestMultipleChart();
             //TestMultipleCharts();
         }
 
@@ -49,7 +49,6 @@ namespace VegaLite.Test
             Chart         chart;
             Specification vegaLiteSpecification;
 
-
             Specification specification = new Specification
             {
                 Data = new DataSource()
@@ -60,18 +59,15 @@ namespace VegaLite.Test
                 {
                     Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
                     {
-                        Type = StandardType.Nominal,
-                        Field = "Type"
+                        Type = StandardType.Nominal, Field = "Type"
                     },
                     X = new XClass()
                     {
-                        Type = StandardType.Quantitative,
-                        Field = "Day"
+                        Type = StandardType.Quantitative, Field = "Day"
                     },
                     Y = new YClass()
                     {
-                        Type  = StandardType.Quantitative,
-                        Field = "Rate"
+                        Type = StandardType.Quantitative, Field = "Rate"
                     }
                 },
                 Layer = new List<LayerSpec>()
@@ -99,7 +95,6 @@ namespace VegaLite.Test
                     }
                 }
             };
-
 
             //string tempPath = Path.GetTempPath();
 
@@ -158,6 +153,58 @@ namespace VegaLite.Test
 
                 //chart.ShowInBrowser();
             }
+        }
+
+        private static void TestMultipleChart()
+        {
+            MultipleCharts multicharts = new MultipleCharts("MultipleCharts",
+                                                            4,
+                                                            4);
+
+            string[] chartSpecs = new string[]
+            {
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/area_density_stacked.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/area_gradient.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/bar_diverging_stack_transform.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/circle_natural_disasters.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/concat_marginal_histograms.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/geo_choropleth.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/geo_circle.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/geo_layer_line_london.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/interactive_legend.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/interactive_paintbrush.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/interactive_paintbrush_color.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/stacked_bar_count_corner_radius_mark.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/layer_circle_independent_color.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/layer_color_legend_left.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/layer_point_line_loess.vl.json",
+                "https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/parallel_coordinate.vl.json"
+            };
+
+            Specification vegaLiteSpecification;
+
+            HttpClient client = new HttpClient();
+            string     chartSpec;
+
+            for(int i = 0; i < chartSpecs.Length; i++)
+            {
+                chartSpec = client.GetStringAsync(chartSpecs[i]).Result;
+
+                if(!string.IsNullOrEmpty(chartSpec))
+                {
+                    chartSpec = chartSpec.Replace(@"""url"": ""data",
+                                                  @"""url"": ""https://raw.githubusercontent.com/vega/vega-datasets/master/data",
+                                                  StringComparison.InvariantCulture);
+
+                    vegaLiteSpecification = Specification.FromJson(chartSpec);
+
+                    multicharts[i] = new Chart(vegaLiteSpecification,
+                                               300,
+                                               300);
+                }
+            }
+
+            multicharts.ShowInBrowser();
         }
 
         private static void TestMultipleCharts()
