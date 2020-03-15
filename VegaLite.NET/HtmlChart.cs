@@ -58,7 +58,7 @@ namespace VegaLite
                                                                                              script +=
                                                                                                  $"{base_indent}{____________}renderVegaLite{chart.Id.ToString().Replace("-", "")}(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl).then(function(result) {OB}{LE}" +
                                                                                                  $"{base_indent}{________________}interactive.csharp.getVariable(\"{chart.Specification.Data.Name}\").then(function(csharp_variable) {OB}{LE}"                    +
-                                                                                                 $"{base_indent}{________________}    result.view.data(\"{chart.Specification.Data.Name}\", csharp_variable);{LE}"                                   +
+                                                                                                 $"{base_indent}{________________}    result.view.data(\"{chart.Specification.Data.Name}\", csharp_variable);{LE}"                                                +
                                                                                                  $"{base_indent}{________________}{CB});{LE}"                                                                                                                     +
                                                                                                  $"{base_indent}{____________}{CB});{LE}";
                                                                                          }
@@ -98,10 +98,10 @@ namespace VegaLite
                                                                                             title,
                                                                                             spec) =>
                                                                                            {
-                                                                                               string html = $"{____________}<div id=\"{id}\">{LE}"                         +
-                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                      +
-                                                                                                             $"{________________}<div id=\"vis-{id}\" class=\"view\"/>{LE}" +
-                                                                                                             $"{________________}<script language=\"javascript\">{LE}"      +
+                                                                                               string html = $"{____________}<div id=\"{id}\" style=\"width:100%\">{LE}"                         +
+                                                                                                             $"{________________}<h1>{title}</h1>{LE}"                                           +
+                                                                                                             $"{________________}<div id=\"vis-{id}\" class=\"view\" style=\"width:100%\"/>{LE}" +
+                                                                                                             $"{________________}<script language=\"javascript\">{LE}"                           +
                                                                                                              //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
                                                                                                              $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {OB}{LE}" +
                                                                                                              //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
