@@ -31,6 +31,30 @@ namespace VegaLite
             get;
         }
 
+        public string DataSetName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                if(!string.IsNullOrEmpty(Specification.Data?.Name))
+                {
+                    return Specification.Data.Name;
+                }
+
+                if(!string.IsNullOrEmpty(Specification.Spec?.DataSource?.Name))
+                {
+                    return Specification.Spec.DataSource.Name;
+                }
+
+                Specification.Data = new DataSource
+                {
+                    Name = $"dataset_{Id.ToString().Replace("-", "")}"
+                };
+                
+                return Specification.Data.Name;
+            }
+        }
+
         public double? Width
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -77,14 +101,12 @@ namespace VegaLite
             Id            = Guid.NewGuid();
             Specification = vegaLiteSpecification;
 
-            if(Specification.Data == null)
+            if(string.IsNullOrEmpty(Specification.Data?.Name) && string.IsNullOrEmpty(Specification.Spec?.DataSource?.Name))
             {
-                Specification.Data = new DataSource();
-            }
-
-            if(string.IsNullOrEmpty(Specification.Data.Name))
-            {
-                Specification.Data.Name = $"dataset_{Id.ToString().Replace("-", "")}";
+                Specification.Data = new DataSource
+                {
+                    Name = $"dataset_{Id.ToString().Replace("-", "")}"
+                };
             }
 
             if(Specification.Config == null)

@@ -3,9 +3,6 @@
 using System;
 using System.Runtime.InteropServices;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
 namespace VegaLite
 {
     internal static class HtmlChart
@@ -17,7 +14,8 @@ namespace VegaLite
         public static string VegaLiteUrl  = "https://cdn.jsdelivr.net/npm/vega-lite?noext";
         public static string VegaEmbedUrl = "https://cdn.jsdelivr.net/npm/vega-embed?noext";
         public static string VegaWebglUrl = "https://unpkg.com/vega-webgl-renderer/build/vega-webgl-renderer";
-        public static string D3ColorUrl   = "https://d3js.org/d3-color.v1.min";
+        public static string D3ColorUrl = "https://d3js.org/d3-color.v1.min";
+        public static string EdgeJsUrl = "https://cdn.jsdelivr.net/npm/edge-js?noext";
 
         internal static readonly Func<int, string> indent = amount => string.Empty.PadLeft(amount * 4,
                                                                                            '\u0020');
@@ -57,8 +55,8 @@ namespace VegaLite
                                                                                          {
                                                                                              script +=
                                                                                                  $"{base_indent}{____________}renderVegaLite{chart.Id.ToString().Replace("-", "")}(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl).then(function(result) {OB}{LE}" +
-                                                                                                 $"{base_indent}{________________}interactive.csharp.getVariable(\"{chart.Specification.Data.Name}\").then(function(csharp_variable) {OB}{LE}"                    +
-                                                                                                 $"{base_indent}{________________}    result.view.data(\"{chart.Specification.Data.Name}\", csharp_variable);{LE}"                                                +
+                                                                                                 $"{base_indent}{________________}interactive.csharp.getVariable(\"{chart.DataSetName}\").then(function(csharp_variable) {OB}{LE}"                                +
+                                                                                                 $"{base_indent}{________________}    result.view.data(\"{chart.DataSetName}\", csharp_variable);{LE}"                                                            +
                                                                                                  $"{base_indent}{________________}{CB});{LE}"                                                                                                                     +
                                                                                                  $"{base_indent}{____________}{CB});{LE}";
                                                                                          }
@@ -105,15 +103,15 @@ namespace VegaLite
                                                                                                              //$"{____________________}var renderVegaLite = function(vegaEmbed) {{{LE}" +
                                                                                                              $"{____________________}var renderVegaLite{id.ToString().Replace("-", "")} = function(d3Color, vega, vegaLite, vegaEmbed, vegaWebgl) {OB}{LE}" +
                                                                                                              //$"{________}var renderVegaLite{id.ToString().Replace("-", "")} = function() {{{LE}" +
-                                                                                                             $"{________________________}var vlSpec = {spec};{LE}"                        +
-                                                                                                             $"{________________________}var opt = {OB}{LE}"                              +
-                                                                                                             $"{____________________________}renderer: 'webgl',{LE}"                      +
-                                                                                                             $"{____________________________}logLevel: vegaEmbed.Warn{LE}"                +
-                                                                                                             $"{________________________}{CB};{LE}"                                       +
-                                                                                                             $"{________________________}return vegaEmbed('#vis-{id}', vlSpec, opt);{LE}" +
-                                                                                                             $"{____________________}{CB};{LE}"                                           +
-                                                                                                             $"{LE}"                                                                      +
-                                                                                                             $"{________________}</script>{LE}"                                           +
+                                                                                                             $"{________________________}var vlSpec = {spec.Replace(LE, LE + ________________________)};{LE}" +
+                                                                                                             $"{________________________}var opt = {OB}{LE}"                                                  +
+                                                                                                             $"{____________________________}renderer: 'webgl',{LE}"                                          +
+                                                                                                             $"{____________________________}logLevel: vegaEmbed.Warn{LE}"                                    +
+                                                                                                             $"{________________________}{CB};{LE}"                                                           +
+                                                                                                             $"{________________________}return vegaEmbed('#vis-{id}', vlSpec, opt);{LE}"                     +
+                                                                                                             $"{____________________}{CB};{LE}"                                                               +
+                                                                                                             $"{LE}"                                                                                          +
+                                                                                                             $"{________________}</script>{LE}"                                                               +
                                                                                                              $"{____________}</div>{LE}";
 
                                                                                                return html;

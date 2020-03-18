@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Xml;
 using System.Xml.Serialization;
@@ -34,6 +35,73 @@ namespace VegaLite.Test
         {
             TestMultipleChart();
             //TestMultipleCharts();
+        }
+
+        private static Random random = new Random();
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static double gaussianRand()
+        {
+            double rand = 0.0;
+
+            for (var i = 0; i < 6; i += 1)
+            {
+                rand += random.NextDouble();
+            }
+
+            return (rand / 6) -0.5;
+        }
+
+        private static void TestPerf100000()
+        {
+            const int n = 100000;
+
+            ScatterPlotData[] scatter_data = new ScatterPlotData[n];
+
+            for (int i = 0; i < n; i += 1)
+            {
+                scatter_data[i] = new ScatterPlotData(gaussianRand(), gaussianRand());
+            }
+
+            Specification specification = new Specification
+            {
+                Data = new DataSource()
+                {
+                    Name = nameof(scatter_data)
+                },
+                Layer = new List<LayerSpec>()
+                {
+                    new LayerSpec()
+                    {
+                        Encoding = new LayerEncoding()
+                        {
+                            X = new XClass()
+                            {
+                                Type = StandardType.Quantitative, Field = "X"
+                            },
+                            Y = new YClass()
+                            {
+                                Type = StandardType.Quantitative, Field = "Y"
+                            }
+                        },
+                        Layer = new List<LayerSpec>()
+                        {
+                            new LayerSpec()
+                            {
+                                Mark = BoxPlot.Circle
+                            }
+                        }
+                    }
+                }
+            };
+
+            Chart chart = new Chart($"TestPerf100000",
+                                    specification,
+                                    1906,
+                                    450);
+
+
+
         }
 
         //public static Task<string> Prompt(string message)

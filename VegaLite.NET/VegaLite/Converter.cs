@@ -9,6 +9,7 @@ namespace VegaLite
     {
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {
+            Formatting               = Formatting.Indented,
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
             DateParseHandling        = DateParseHandling.None,
             Converters =
@@ -184,8 +185,11 @@ namespace VegaLite
                 BindingConverter.Singleton,
                 DiscreteHeightUnionConverter.Singleton,
                 DiscreteWidthUnionConverter.Singleton,
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
+                new IsoDateTimeConverter
+                {
+                    DateTimeStyles = DateTimeStyles.AssumeUniversal
+                }
+            }
         };
     }
 }

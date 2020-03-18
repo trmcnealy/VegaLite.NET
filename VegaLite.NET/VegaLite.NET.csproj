@@ -13,8 +13,10 @@
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.3.6</Version>
+    <Version>1.3.10</Version>
     <Platforms>AnyCPU;x64</Platforms>
+    <PackageOutputPath Condition="'$(PACKAGE_CACHE)'!=''">$(PACKAGE_CACHE)</PackageOutputPath>
+    <PackageOutputPath Condition="'$(PACKAGE_CACHE)'==''">$(OutputPath)</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
