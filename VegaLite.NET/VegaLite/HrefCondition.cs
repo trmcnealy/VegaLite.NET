@@ -7,7 +7,7 @@ namespace VegaLite
         public List<ConditionElement>                  ConditionElementArray;
         public ConditionalPredicateValueDefStringClass ConditionalPredicateValueDefStringClass;
 
-        public static implicit operator HrefCondition(List<ConditionElement>                  ConditionElementArray)                   => new HrefCondition { ConditionElementArray                   = ConditionElementArray };
-        public static implicit operator HrefCondition(ConditionalPredicateValueDefStringClass ConditionalPredicateValueDefStringClass) => new HrefCondition { ConditionalPredicateValueDefStringClass = ConditionalPredicateValueDefStringClass };
+        public static implicit operator HrefCondition(List<ConditionElement>                  conditionElementArray)                   => new HrefCondition { ConditionElementArray                   = conditionElementArray };
+        public static implicit operator HrefCondition(ConditionalPredicateValueDefStringClass conditionalPredicateValueDefStringClass) => new HrefCondition { ConditionalPredicateValueDefStringClass = conditionalPredicateValueDefStringClass };
     }
 }

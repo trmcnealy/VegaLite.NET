@@ -24,7 +24,7 @@
         public bool?   Bool;
         public double? Double;
 
-        public static implicit operator Label(bool   Bool)   => new Label { Bool   = Bool };
-        public static implicit operator Label(double Double) => new Label { Double = Double };
+        public static implicit operator Label(bool   @bool)   => new Label { Bool   = @bool };
+        public static implicit operator Label(double @double) => new Label { Double = @double };
     }
 }

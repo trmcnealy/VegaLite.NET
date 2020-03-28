@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalPredicateValueDefTextClass ConditionalPredicateValueDefTextClass;
         public List<ConditionalValueDefText>         ConditionalValueDefTextArray;
 
-        public static implicit operator TextCondition(ConditionalPredicateValueDefTextClass ConditionalPredicateValueDefTextClass) => new TextCondition { ConditionalPredicateValueDefTextClass = ConditionalPredicateValueDefTextClass };
-        public static implicit operator TextCondition(List<ConditionalValueDefText>         ConditionalValueDefTextArray)          => new TextCondition { ConditionalValueDefTextArray          = ConditionalValueDefTextArray };
+        public static implicit operator TextCondition(ConditionalPredicateValueDefTextClass conditionalPredicateValueDefTextClass) => new TextCondition { ConditionalPredicateValueDefTextClass = conditionalPredicateValueDefTextClass };
+        public static implicit operator TextCondition(List<ConditionalValueDefText>         conditionalValueDefTextArray)          => new TextCondition { ConditionalValueDefTextArray          = conditionalValueDefTextArray };
     }
 }

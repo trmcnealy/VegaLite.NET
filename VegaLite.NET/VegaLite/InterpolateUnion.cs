@@ -17,7 +17,7 @@
         public ScaleInterpolate?      Enum;
         public ScaleInterpolateParams ScaleInterpolateParams;
 
-        public static implicit operator InterpolateUnion(ScaleInterpolate       Enum)                   => new InterpolateUnion { Enum                   = Enum };
-        public static implicit operator InterpolateUnion(ScaleInterpolateParams ScaleInterpolateParams) => new InterpolateUnion { ScaleInterpolateParams = ScaleInterpolateParams };
+        public static implicit operator InterpolateUnion(ScaleInterpolate       @enum)                   => new InterpolateUnion { Enum                   = @enum };
+        public static implicit operator InterpolateUnion(ScaleInterpolateParams scaleInterpolateParams) => new InterpolateUnion { ScaleInterpolateParams = scaleInterpolateParams };
     }
 }

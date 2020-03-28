@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalAxisPropertyNumberNull ConditionalAxisPropertyNumberNull;
         public List<double>                      DoubleArray;
 
-        public static implicit operator Dash(ConditionalAxisPropertyNumberNull ConditionalAxisPropertyNumberNull) => new Dash { ConditionalAxisPropertyNumberNull = ConditionalAxisPropertyNumberNull };
-        public static implicit operator Dash(List<double>                      DoubleArray)                       => new Dash { DoubleArray                       = DoubleArray };
+        public static implicit operator Dash(ConditionalAxisPropertyNumberNull conditionalAxisPropertyNumberNull) => new Dash { ConditionalAxisPropertyNumberNull = conditionalAxisPropertyNumberNull };
+        public static implicit operator Dash(List<double>                      doubleArray)                       => new Dash { DoubleArray                       = doubleArray };
     }
 }

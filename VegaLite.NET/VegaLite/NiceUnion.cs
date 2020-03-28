@@ -28,9 +28,9 @@
         public NiceTime? Enum;
         public NiceClass NiceClass;
 
-        public static implicit operator NiceUnion(bool      Bool)      => new NiceUnion { Bool      = Bool };
-        public static implicit operator NiceUnion(double    Double)    => new NiceUnion { Double    = Double };
-        public static implicit operator NiceUnion(NiceTime  Enum)      => new NiceUnion { Enum      = Enum };
-        public static implicit operator NiceUnion(NiceClass NiceClass) => new NiceUnion { NiceClass = NiceClass };
+        public static implicit operator NiceUnion(bool      @bool)      => new NiceUnion { Bool      = @bool };
+        public static implicit operator NiceUnion(double    @double)    => new NiceUnion { Double    = @double };
+        public static implicit operator NiceUnion(NiceTime  @enum)      => new NiceUnion { Enum      = @enum };
+        public static implicit operator NiceUnion(NiceClass niceClass) => new NiceUnion { NiceClass = niceClass };
     }
 }

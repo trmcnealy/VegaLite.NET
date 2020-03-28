@@ -12,8 +12,8 @@ namespace VegaLite
         public RangeEnum?       Enum;
         public HeatmapSignalRef HeatmapSignalRef;
 
-        public static implicit operator HeatmapUnion(List<RangeRaw>   AnythingArray)    => new HeatmapUnion { AnythingArray    = AnythingArray };
-        public static implicit operator HeatmapUnion(RangeEnum        Enum)             => new HeatmapUnion { Enum             = Enum };
-        public static implicit operator HeatmapUnion(HeatmapSignalRef HeatmapSignalRef) => new HeatmapUnion { HeatmapSignalRef = HeatmapSignalRef };
+        public static implicit operator HeatmapUnion(List<RangeRaw>   anythingArray)    => new HeatmapUnion { AnythingArray    = anythingArray };
+        public static implicit operator HeatmapUnion(RangeEnum        @enum)             => new HeatmapUnion { Enum             = @enum };
+        public static implicit operator HeatmapUnion(HeatmapSignalRef heatmapSignalRef) => new HeatmapUnion { HeatmapSignalRef = heatmapSignalRef };
     }
 }

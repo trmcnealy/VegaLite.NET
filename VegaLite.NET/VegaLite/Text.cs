@@ -43,7 +43,7 @@ namespace VegaLite
         public string       String;
         public List<string> StringArray;
 
-        public static implicit operator Text(string       String)      => new Text { String      = String };
-        public static implicit operator Text(List<string> StringArray) => new Text { StringArray = StringArray };
+        public static implicit operator Text(string       @string)      => new Text { String      = @string };
+        public static implicit operator Text(List<string> stringArray) => new Text { StringArray = stringArray };
     }
 }

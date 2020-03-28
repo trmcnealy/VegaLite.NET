@@ -28,7 +28,7 @@
         public Predicate Predicate;
         public string    String;
 
-        public static implicit operator LogicalOperandPredicate(Predicate Predicate) => new LogicalOperandPredicate { Predicate = Predicate };
-        public static implicit operator LogicalOperandPredicate(string    String)    => new LogicalOperandPredicate { String    = String };
+        public static implicit operator LogicalOperandPredicate(Predicate predicate) => new LogicalOperandPredicate { Predicate = predicate };
+        public static implicit operator LogicalOperandPredicate(string    @string)    => new LogicalOperandPredicate { String    = @string };
     }
 }

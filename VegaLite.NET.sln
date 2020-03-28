@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaLite.NET", "VegaLite.NE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaLite.NET.Test", "VegaLite.NET.Test\VegaLite.NET.Test.csproj", "{C7E38315-25C2-4307-9973-098F5B178B5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{79938F66-4A05-4E83-AC07-640BFA8EA992}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,22 +30,6 @@ Global
 		{C7E38315-25C2-4307-9973-098F5B178B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7E38315-25C2-4307-9973-098F5B178B5B}.Release|x64.ActiveCfg = Release|x64
 		{C7E38315-25C2-4307-9973-098F5B178B5B}.Release|x64.Build.0 = Release|x64
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Debug|x64.Build.0 = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Release|x64.ActiveCfg = Release|Any CPU
-		{88EF551F-85B9-4ED0-B45D-EE6CBCFCA191}.Release|x64.Build.0 = Release|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Debug|x64.Build.0 = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Release|x64.ActiveCfg = Release|Any CPU
-		{79938F66-4A05-4E83-AC07-640BFA8EA992}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

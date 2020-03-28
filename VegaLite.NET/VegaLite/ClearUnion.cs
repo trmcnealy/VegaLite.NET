@@ -6,8 +6,8 @@
         public ClearDerivedStream ClearDerivedStream;
         public string             String;
 
-        public static implicit operator ClearUnion(bool               Bool)               => new ClearUnion { Bool               = Bool };
-        public static implicit operator ClearUnion(ClearDerivedStream ClearDerivedStream) => new ClearUnion { ClearDerivedStream = ClearDerivedStream };
-        public static implicit operator ClearUnion(string             String)             => new ClearUnion { String             = String };
+        public static implicit operator ClearUnion(bool               @bool)               => new ClearUnion { Bool               = @bool };
+        public static implicit operator ClearUnion(ClearDerivedStream clearDerivedStream) => new ClearUnion { ClearDerivedStream = clearDerivedStream };
+        public static implicit operator ClearUnion(string             @string)             => new ClearUnion { String             = @string };
     }
 }

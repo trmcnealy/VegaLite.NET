@@ -339,7 +339,7 @@ namespace VegaLite
         [JsonProperty("hconcat", NullValueHandling = NullValueHandling.Ignore)]
         public List<Spec> Hconcat { get; set; }
         
-        public static Specification FromJson(string json) => JsonConvert.DeserializeObject<Specification>(json, VegaLite.Converter.Settings);
+        public static Specification FromJson(string json) => JsonConvert.DeserializeObject<Specification>(json, Converter.Settings);
 
         public override string ToString()
         {

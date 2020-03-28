@@ -5,7 +5,7 @@
         public ConditionalAxisPropertyFontStyleNull ConditionalAxisPropertyFontStyleNull;
         public string                               String;
 
-        public static implicit operator LabelFontStyle(ConditionalAxisPropertyFontStyleNull ConditionalAxisPropertyFontStyleNull) => new LabelFontStyle { ConditionalAxisPropertyFontStyleNull = ConditionalAxisPropertyFontStyleNull };
-        public static implicit operator LabelFontStyle(string                               String)                               => new LabelFontStyle { String                               = String };
+        public static implicit operator LabelFontStyle(ConditionalAxisPropertyFontStyleNull conditionalAxisPropertyFontStyleNull) => new LabelFontStyle { ConditionalAxisPropertyFontStyleNull = conditionalAxisPropertyFontStyleNull };
+        public static implicit operator LabelFontStyle(string                               @string)                               => new LabelFontStyle { String                               = @string };
     }
 }

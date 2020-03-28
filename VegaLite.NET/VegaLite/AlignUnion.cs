@@ -22,7 +22,7 @@
         public LayoutAlign?      Enum;
         public RowColLayoutAlign RowColLayoutAlign;
 
-        public static implicit operator AlignUnion(LayoutAlign       Enum)              => new AlignUnion { Enum              = Enum };
-        public static implicit operator AlignUnion(RowColLayoutAlign RowColLayoutAlign) => new AlignUnion { RowColLayoutAlign = RowColLayoutAlign };
+        public static implicit operator AlignUnion(LayoutAlign       @enum)              => new AlignUnion { Enum              = @enum };
+        public static implicit operator AlignUnion(RowColLayoutAlign rowColLayoutAlign) => new AlignUnion { RowColLayoutAlign = rowColLayoutAlign };
     }
 }

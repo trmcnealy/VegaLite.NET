@@ -5,7 +5,7 @@
         public bool?      Bool;
         public MarkConfig MarkConfig;
 
-        public static implicit operator Box(bool       Bool)       => new Box { Bool       = Bool };
-        public static implicit operator Box(MarkConfig MarkConfig) => new Box { MarkConfig = MarkConfig };
+        public static implicit operator Box(bool       @bool)       => new Box { Bool       = @bool };
+        public static implicit operator Box(MarkConfig markConfig) => new Box { MarkConfig = markConfig };
     }
 }

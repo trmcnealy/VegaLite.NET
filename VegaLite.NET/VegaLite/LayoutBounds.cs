@@ -8,7 +8,7 @@
         public BoundsEnum?     Enum;
         public SignalRef SignalRef;
 
-        public static implicit operator LayoutBounds(BoundsEnum      Enum)            => new LayoutBounds { Enum            = Enum };
-        public static implicit operator LayoutBounds(SignalRef SignalRef) => new LayoutBounds { SignalRef = SignalRef };
+        public static implicit operator LayoutBounds(BoundsEnum      @enum)            => new LayoutBounds { Enum            = @enum };
+        public static implicit operator LayoutBounds(SignalRef signalRef) => new LayoutBounds { SignalRef = signalRef };
     }
 }

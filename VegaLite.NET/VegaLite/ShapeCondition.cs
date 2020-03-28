@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalPredicateMarkPropFieldDefTypeForShapeClass ConditionalPredicateMarkPropFieldDefTypeForShapeClass;
         public List<ConditionalStringValueDef>                       ConditionalStringValueDefArray;
 
-        public static implicit operator ShapeCondition(ConditionalPredicateMarkPropFieldDefTypeForShapeClass ConditionalPredicateMarkPropFieldDefTypeForShapeClass) => new ShapeCondition { ConditionalPredicateMarkPropFieldDefTypeForShapeClass = ConditionalPredicateMarkPropFieldDefTypeForShapeClass };
-        public static implicit operator ShapeCondition(List<ConditionalStringValueDef>                       ConditionalStringValueDefArray)                        => new ShapeCondition { ConditionalStringValueDefArray                        = ConditionalStringValueDefArray };
+        public static implicit operator ShapeCondition(ConditionalPredicateMarkPropFieldDefTypeForShapeClass conditionalPredicateMarkPropFieldDefTypeForShapeClass) => new ShapeCondition { ConditionalPredicateMarkPropFieldDefTypeForShapeClass = conditionalPredicateMarkPropFieldDefTypeForShapeClass };
+        public static implicit operator ShapeCondition(List<ConditionalStringValueDef>                       conditionalStringValueDefArray)                        => new ShapeCondition { ConditionalStringValueDefArray                        = conditionalStringValueDefArray };
     }
 }

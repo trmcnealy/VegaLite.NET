@@ -33,8 +33,11 @@ namespace VegaLite.Test
         [STAThread]
         private static void Main(string[] args)
         {
-            TestMultipleChart();
-            //TestMultipleCharts();
+            //TestPerf100000();
+            //TestChart();
+            TestWebglChart();
+            //TestMultipleChart();
+            //TestSplom();
         }
 
         private static Random random = new Random();
@@ -104,11 +107,106 @@ namespace VegaLite.Test
 
         }
 
+        private static void TestSplom()
+        {
+            //string[] pso_lines = File.ReadAllLines(@"D:\TFS_Sources\Github\Compilation\trmcnealy\JupyterNotebooks\Notebooks\Data\PSO.csv");
+
+            //SplomData[] pso_data = new SplomData[pso_lines.Length - 1];
+
+            //for (int i = 1; i < pso_lines.Length; ++i)
+            //{
+            //    pso_data[i - 1] = new SplomData(pso_lines[i]);
+            //}
+
+            //Specification specification = new Specification
+            //{
+            //    Repeat = new RepeatMapping()
+            //    {
+            //        Row    = new List<string>(){"km", "kF", "kf", "ye", "LF", "Lf"},
+            //        Column = new List<string>(){"km", "kF", "kf", "ye", "LF", "Lf"}
+            //    },
+
+            //    Spec = new SpecClass()
+            //    {
+            //        DataSource = new DataSource()
+            //        {
+            //            Name = "pso_data"
+            //        },
+            //        Transform = new List<Transform>()
+            //        {
+            //            new Transform()
+            //            {
+            //                Filter = new Predicate()
+            //                {
+            //                    Selection = "IterationSelection"
+            //                }
+            //            }
+            //        },
+            //        Mark = BoxPlot.Circle,
+            //        Encoding = new Encoding()
+            //        {
+            //            X = new XClass()
+            //            {
+            //                Type = StandardType.Quantitative,
+            //                Field = new RepeatRef()
+            //                {
+            //                    Repeat = RepeatEnum.Column
+            //                }
+            //            },
+            //            Y = new YClass()
+            //            {
+            //                Type = StandardType.Quantitative,
+            //                Field = new RepeatRef()
+            //                {
+            //                    Repeat = RepeatEnum.Row
+            //                }
+            //            },
+            //            Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
+            //            {
+            //                Type  = StandardType.Nominal,
+            //                Field = "SwarmIndex"
+            //            }
+            //        },
+            //        Selection = new Dictionary<string, SelectionDef>()
+            //        {
+            //            {
+            //                "IterationSelection",
+            //                new SelectionDef()
+            //                {
+            //                    Type   = SelectionDefType.Single,
+            //                    Fields = new List<string>() {"Iteration"},
+            //                    Init   = new Dictionary<string, InitValue>(){{"Iteration",0}},
+            //                    Bind = new Dictionary<string, AnyStream>()
+            //                    {
+            //                        {
+            //                            "Iteration", new AnyBinding()
+            //                            {
+            //                                Input = "range",
+            //                                Min   = 0.0,
+            //                                Max   = 99.0
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //        }        
+            //    }
+            //};
+
+            //Chart<SplomData> chart = new Chart<SplomData>($"Splom",
+            //                                              specification,
+            //                                              1906,
+            //                                              450);
+
+            //chart.ShowInBrowser(pso_data.Length);
+
+        }
+
         //public static Task<string> Prompt(string message)
         //{
         //    return JSRuntime.Current.InvokeAsync<string>("exampleJsFunctions.showPrompt", message);
         //}
-
+        
         private static void TestChart()
         {
             HttpClient client = new HttpClient();
@@ -209,6 +307,8 @@ namespace VegaLite.Test
 
                 string html = chart.GetHtml();
 
+                Console.WriteLine(html);
+
                 //ChartDisplay chartDisplay = new ChartDisplay();
                 ////chartDisplay.Loaded += (sender, e) =>
                 ////                       {
@@ -219,7 +319,123 @@ namespace VegaLite.Test
 
                 //chartDisplay.NavigateTo(new Uri("https://www.microsoft.com"));
 
-                //chart.ShowInBrowser();
+                chart.ShowInBrowser();
+            }
+        }
+
+        private static void TestWebglChart()
+        {
+            HttpClient client = new HttpClient();
+            string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/bar.vl.json").Result;
+
+            WebglChart         chart;
+            Specification vegaLiteSpecification;
+
+            Specification specification = new Specification
+            {
+                Data = new DataSource()
+                {
+                    Name = "vegaViewData"
+                },
+                Encoding = new Encoding()
+                {
+                    Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
+                    {
+                        Type = StandardType.Nominal, Field = "Type"
+                    },
+                    X = new XClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "Day"
+                    },
+                    Y = new YClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "Rate"
+                    }
+                },
+                Layer = new List<LayerSpec>()
+                {
+                    new LayerSpec()
+                    {
+                        Mark = new BoxPlotDefClass()
+                        {
+                            Type = BoxPlot.Line
+                        }
+                    },
+                    new LayerSpec()
+                    {
+                        Mark = new BoxPlotDefClass()
+                        {
+                            Type = BoxPlot.Point
+                        }
+                    }
+                },
+                Config = new Config()
+                {
+                    Legend = new LegendConfig()
+                    {
+                        Orient = LegendOrient.Top
+                    }
+                }
+            };
+
+            //string tempPath = Path.GetTempPath();
+
+            //string dataFile = Path.Combine(tempPath,
+            //                               "data");
+
+            //if(!File.Exists(dataFile))
+            //{
+            //    File.WriteAllBytes(dataFile,
+            //                       Examples.Resource.data);
+            //}
+
+            int start = 12;
+            int count = 1;
+
+            ArraySegment<byte[]> tests = new ArraySegment<byte[]>(ExampleResources,
+                                                                  start,
+                                                                  count);
+
+            for(int i = 0; i < tests.Count; i++)
+            {
+                vegaLiteSpecification = Specification.FromJson(System.Text.Encoding.UTF8.GetString(tests[i],
+                                                                                                   0,
+                                                                                                   tests[i].Length));
+
+                //if (vegaLiteSpecification.DataSource?.Url?.StartsWith("data") == true)
+                //{
+                //    vegaLiteSpecification.DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.DataSource.Url;
+                //}
+                //else if (vegaLiteSpecification.Layer?.Count > 0)
+                //{
+                //    for (int j = tests.Offset; j < vegaLiteSpecification.Layer.Count; j++)
+                //    {
+                //        if (vegaLiteSpecification.Layer[j]?.DataSource?.Url?.StartsWith("data") == true)
+                //        {
+                //            vegaLiteSpecification.Layer[j].DataSource.Url = "https://raw.githubusercontent.com/vega/vega-datasets/master/" + vegaLiteSpecification.Layer[j].DataSource.Url;
+                //        }
+                //    }
+                //}
+
+                chart = new WebglChart(vegaLiteSpecification,
+                                       500,
+                                       500);
+
+                string html = chart.GetHtml();
+
+                Console.WriteLine(html);
+
+                //ChartDisplay chartDisplay = new ChartDisplay();
+                ////chartDisplay.Loaded += (sender, e) =>
+                ////                       {
+                ////                           chartDisplay.webViewControl.NavigateToString("webview loaded");
+                ////                       };
+                //chartDisplay.NavigateToHtmlString(chart.GetHtml());
+                //chartDisplay.ShowDialog();
+
+                //chartDisplay.NavigateTo(new Uri("https://www.microsoft.com"));
+
+                chart.ShowInBrowser();
             }
         }
 

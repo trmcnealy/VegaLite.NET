@@ -5,7 +5,7 @@
         public double? Double;
         public string  String;
 
-        public static implicit operator RangeRange(double Double) => new RangeRange { Double = Double };
-        public static implicit operator RangeRange(string String) => new RangeRange { String = String };
+        public static implicit operator RangeRange(double @double) => new RangeRange { Double = @double };
+        public static implicit operator RangeRange(string @string) => new RangeRange { String = @string };
     }
 }

@@ -15,7 +15,7 @@ namespace VegaLite
         public RepeatMapping RepeatMapping;
         public List<string>  StringArray;
 
-        public static implicit operator RepeatUnion(RepeatMapping RepeatMapping) => new RepeatUnion { RepeatMapping = RepeatMapping };
-        public static implicit operator RepeatUnion(List<string>  StringArray)   => new RepeatUnion { StringArray   = StringArray };
+        public static implicit operator RepeatUnion(RepeatMapping repeatMapping) => new RepeatUnion { RepeatMapping = repeatMapping };
+        public static implicit operator RepeatUnion(List<string>  stringArray)   => new RepeatUnion { StringArray   = stringArray };
     }
 }

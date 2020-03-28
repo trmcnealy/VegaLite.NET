@@ -13,7 +13,7 @@
         public AutoSizeParams AutoSizeParams;
         public AutosizeType?  Enum;
 
-        public static implicit operator Autosize(AutoSizeParams AutoSizeParams) => new Autosize { AutoSizeParams = AutoSizeParams };
-        public static implicit operator Autosize(AutosizeType   Enum)           => new Autosize { Enum           = Enum };
+        public static implicit operator Autosize(AutoSizeParams autoSizeParams) => new Autosize { AutoSizeParams = autoSizeParams };
+        public static implicit operator Autosize(AutosizeType   @enum)           => new Autosize { Enum           = @enum };
     }
 }

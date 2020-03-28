@@ -29,8 +29,8 @@ namespace VegaLite
         public DomainClass DomainClass;
         public Domain?     Enum;
 
-        public static implicit operator DomainUnion(List<Equal> AnythingArray) => new DomainUnion { AnythingArray = AnythingArray };
-        public static implicit operator DomainUnion(DomainClass DomainClass)   => new DomainUnion { DomainClass   = DomainClass };
-        public static implicit operator DomainUnion(Domain      Enum)          => new DomainUnion { Enum          = Enum };
+        public static implicit operator DomainUnion(List<Equal> anythingArray) => new DomainUnion { AnythingArray = anythingArray };
+        public static implicit operator DomainUnion(DomainClass domainClass)   => new DomainUnion { DomainClass   = domainClass };
+        public static implicit operator DomainUnion(Domain      @enum)          => new DomainUnion { Enum          = @enum };
     }
 }

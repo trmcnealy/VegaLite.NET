@@ -13,7 +13,7 @@ namespace VegaLite
             switch (reader.TokenType)
             {
                 case JsonToken.Null:
-                    return new AnchorUnion { };
+                    return new AnchorUnion();
                 case JsonToken.String:
                 case JsonToken.Date:
                     var stringValue = serializer.Deserialize<string>(reader);

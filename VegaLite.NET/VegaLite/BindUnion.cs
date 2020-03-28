@@ -7,7 +7,7 @@ namespace VegaLite
         public Dictionary<string, AnyStream> AnythingMap;
         public SelectionLegendBinding?             Enum;
 
-        public static implicit operator BindUnion(Dictionary<string, AnyStream> AnythingMap) => new BindUnion { AnythingMap = AnythingMap };
-        public static implicit operator BindUnion(SelectionLegendBinding              Enum)        => new BindUnion { Enum        = Enum };
+        public static implicit operator BindUnion(Dictionary<string, AnyStream> anythingMap) => new BindUnion { AnythingMap = anythingMap };
+        public static implicit operator BindUnion(SelectionLegendBinding              @enum)        => new BindUnion { Enum        = @enum };
     }
 }

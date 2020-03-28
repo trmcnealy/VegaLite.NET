@@ -16,7 +16,7 @@
         public ColorLinearGradient ColorLinearGradient;
         public string              String;
 
-        public static implicit operator ColorUnion(ColorLinearGradient ColorLinearGradient) => new ColorUnion { ColorLinearGradient = ColorLinearGradient };
-        public static implicit operator ColorUnion(string              String)              => new ColorUnion { String              = String };
+        public static implicit operator ColorUnion(ColorLinearGradient colorLinearGradient) => new ColorUnion { ColorLinearGradient = colorLinearGradient };
+        public static implicit operator ColorUnion(string              @string)              => new ColorUnion { String              = @string };
     }
 }

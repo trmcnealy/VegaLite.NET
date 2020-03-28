@@ -7,7 +7,7 @@ namespace VegaLite
         public Dictionary<string, InitValue>           AnythingMap;
         public List<Dictionary<string, SelectionInit>> AnythingMapArray;
 
-        public static implicit operator Init(Dictionary<string, InitValue>           AnythingMap)      => new Init { AnythingMap      = AnythingMap };
-        public static implicit operator Init(List<Dictionary<string, SelectionInit>> AnythingMapArray) => new Init { AnythingMapArray = AnythingMapArray };
+        public static implicit operator Init(Dictionary<string, InitValue>           anythingMap)      => new Init { AnythingMap      = anythingMap };
+        public static implicit operator Init(List<Dictionary<string, SelectionInit>> anythingMapArray) => new Init { AnythingMapArray = anythingMapArray };
     }
 }

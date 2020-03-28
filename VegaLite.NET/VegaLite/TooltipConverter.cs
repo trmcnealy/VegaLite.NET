@@ -14,7 +14,7 @@ namespace VegaLite
             switch (reader.TokenType)
             {
                 case JsonToken.Null:
-                    return new Tooltip { };
+                    return new Tooltip();
                 case JsonToken.StartObject:
                     var objectValue = serializer.Deserialize<FieldDefWithConditionStringFieldDefString>(reader);
                     return new Tooltip { FieldDefWithConditionStringFieldDefString = objectValue };

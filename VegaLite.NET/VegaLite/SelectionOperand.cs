@@ -11,7 +11,7 @@
         public Selection Selection;
         public string    String;
 
-        public static implicit operator SelectionOperand(Selection Selection) => new SelectionOperand { Selection = Selection };
-        public static implicit operator SelectionOperand(string    String)    => new SelectionOperand { String    = String };
+        public static implicit operator SelectionOperand(Selection selection) => new SelectionOperand { Selection = selection };
+        public static implicit operator SelectionOperand(string    @string)    => new SelectionOperand { String    = @string };
     }
 }

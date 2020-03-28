@@ -7,7 +7,7 @@ namespace VegaLite
         public List<OrderFieldDef> OrderFieldDefArray;
         public OrderFieldDefClass  OrderFieldDefClass;
 
-        public static implicit operator Order(List<OrderFieldDef> OrderFieldDefArray) => new Order { OrderFieldDefArray = OrderFieldDefArray };
-        public static implicit operator Order(OrderFieldDefClass  OrderFieldDefClass) => new Order { OrderFieldDefClass = OrderFieldDefClass };
+        public static implicit operator Order(List<OrderFieldDef> orderFieldDefArray) => new Order { OrderFieldDefArray = orderFieldDefArray };
+        public static implicit operator Order(OrderFieldDefClass  orderFieldDefClass) => new Order { OrderFieldDefClass = orderFieldDefClass };
     }
 }

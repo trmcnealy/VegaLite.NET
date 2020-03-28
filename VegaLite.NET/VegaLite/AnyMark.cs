@@ -11,7 +11,7 @@
         public BoxPlotDefClass BoxPlotDefClass;
         public BoxPlot?        Enum;
 
-        public static implicit operator AnyMark(BoxPlotDefClass BoxPlotDefClass) => new AnyMark { BoxPlotDefClass = BoxPlotDefClass };
-        public static implicit operator AnyMark(BoxPlot         Enum)            => new AnyMark { Enum            = Enum };
+        public static implicit operator AnyMark(BoxPlotDefClass boxPlotDefClass) => new AnyMark { BoxPlotDefClass = boxPlotDefClass };
+        public static implicit operator AnyMark(BoxPlot         @enum)            => new AnyMark { Enum            = @enum };
     }
 }

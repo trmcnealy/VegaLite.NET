@@ -11,8 +11,8 @@ namespace VegaLite
         public CategorySignalRef CategorySignalRef;
         public RangeEnum?        Enum;
 
-        public static implicit operator CategoryUnion(List<RangeRaw>    AnythingArray)     => new CategoryUnion { AnythingArray     = AnythingArray };
-        public static implicit operator CategoryUnion(CategorySignalRef CategorySignalRef) => new CategoryUnion { CategorySignalRef = CategorySignalRef };
-        public static implicit operator CategoryUnion(RangeEnum         Enum)              => new CategoryUnion { Enum              = Enum };
+        public static implicit operator CategoryUnion(List<RangeRaw>    anythingArray)     => new CategoryUnion { AnythingArray     = anythingArray };
+        public static implicit operator CategoryUnion(CategorySignalRef categorySignalRef) => new CategoryUnion { CategorySignalRef = categorySignalRef };
+        public static implicit operator CategoryUnion(RangeEnum         @enum)              => new CategoryUnion { Enum              = @enum };
     }
 }

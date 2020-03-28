@@ -5,7 +5,7 @@
         public double?       Double;
         public ExtentExtent? Enum;
 
-        public static implicit operator BoxPlotDefExtent(double       Double) => new BoxPlotDefExtent { Double = Double };
-        public static implicit operator BoxPlotDefExtent(ExtentExtent Enum)   => new BoxPlotDefExtent { Enum   = Enum };
+        public static implicit operator BoxPlotDefExtent(double       @double) => new BoxPlotDefExtent { Double = @double };
+        public static implicit operator BoxPlotDefExtent(ExtentExtent @enum)   => new BoxPlotDefExtent { Enum   = @enum };
     }
 }

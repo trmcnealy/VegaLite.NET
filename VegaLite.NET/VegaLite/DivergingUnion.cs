@@ -12,8 +12,8 @@ namespace VegaLite
         public DivergingSignalRef DivergingSignalRef;
         public RangeEnum?         Enum;
 
-        public static implicit operator DivergingUnion(List<RangeRaw>     AnythingArray)      => new DivergingUnion { AnythingArray      = AnythingArray };
-        public static implicit operator DivergingUnion(DivergingSignalRef DivergingSignalRef) => new DivergingUnion { DivergingSignalRef = DivergingSignalRef };
-        public static implicit operator DivergingUnion(RangeEnum          Enum)               => new DivergingUnion { Enum               = Enum };
+        public static implicit operator DivergingUnion(List<RangeRaw>     anythingArray)      => new DivergingUnion { AnythingArray      = anythingArray };
+        public static implicit operator DivergingUnion(DivergingSignalRef divergingSignalRef) => new DivergingUnion { DivergingSignalRef = divergingSignalRef };
+        public static implicit operator DivergingUnion(RangeEnum          @enum)               => new DivergingUnion { Enum               = @enum };
     }
 }

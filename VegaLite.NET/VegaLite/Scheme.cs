@@ -19,7 +19,7 @@
         public SchemeParams SchemeParams;
         public string       String;
 
-        public static implicit operator Scheme(SchemeParams SchemeParams) => new Scheme { SchemeParams = SchemeParams };
-        public static implicit operator Scheme(string       String)       => new Scheme { String       = String };
+        public static implicit operator Scheme(SchemeParams schemeParams) => new Scheme { SchemeParams = schemeParams };
+        public static implicit operator Scheme(string       @string)       => new Scheme { String       = @string };
     }
 }

@@ -10,11 +10,11 @@ namespace VegaLite
         public double?     Double;
         public string      String;
 
-        public static implicit operator InitValue(List<Equal> AnythingArray) => new InitValue { AnythingArray = AnythingArray };
-        public static implicit operator InitValue(bool        Bool)          => new InitValue { Bool          = Bool };
-        public static implicit operator InitValue(DateTime    DateTime)      => new InitValue { DateTime      = DateTime };
-        public static implicit operator InitValue(double      Double)        => new InitValue { Double        = Double };
-        public static implicit operator InitValue(string      String)        => new InitValue { String        = String };
+        public static implicit operator InitValue(List<Equal> anythingArray) => new InitValue { AnythingArray = anythingArray };
+        public static implicit operator InitValue(bool        @bool)          => new InitValue { Bool          = @bool };
+        public static implicit operator InitValue(DateTime    dateTime)      => new InitValue { DateTime      = dateTime };
+        public static implicit operator InitValue(double      @double)        => new InitValue { Double        = @double };
+        public static implicit operator InitValue(string      @string)        => new InitValue { String        = @string };
         public                          bool IsNull                          => AnythingArray == null && Bool == null && DateTime == null && Double == null && String == null;
     }
 }

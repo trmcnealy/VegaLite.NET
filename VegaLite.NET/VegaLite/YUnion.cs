@@ -5,7 +5,7 @@
         public double?      Double;
         public HeightValue? Enum;
 
-        public static implicit operator YUnion(double      Double) => new YUnion { Double = Double };
-        public static implicit operator YUnion(HeightValue Enum)   => new YUnion { Enum   = Enum };
+        public static implicit operator YUnion(double      @double) => new YUnion { Double = @double };
+        public static implicit operator YUnion(HeightValue @enum)   => new YUnion { Enum   = @enum };
     }
 }

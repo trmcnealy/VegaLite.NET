@@ -12,10 +12,7 @@
     <PackageReference Include="Microsoft.Web.WebView2" Version="0.9.430" />
     <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.2.2" />
     <PackageReference Include="NSwag.Core" Version="13.2.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\VegaLite.NET\VegaLite.NET.csproj" />
+    <PackageReference Include="VegaLite.NET" Version="1.3.17" />
   </ItemGroup>
 
   <ItemGroup>

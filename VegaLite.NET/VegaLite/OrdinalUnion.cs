@@ -11,8 +11,8 @@ namespace VegaLite
         public RangeEnum?       Enum;
         public OrdinalSignalRef OrdinalSignalRef;
 
-        public static implicit operator OrdinalUnion(List<RangeRaw>   AnythingArray)    => new OrdinalUnion { AnythingArray    = AnythingArray };
-        public static implicit operator OrdinalUnion(RangeEnum        Enum)             => new OrdinalUnion { Enum             = Enum };
-        public static implicit operator OrdinalUnion(OrdinalSignalRef OrdinalSignalRef) => new OrdinalUnion { OrdinalSignalRef = OrdinalSignalRef };
+        public static implicit operator OrdinalUnion(List<RangeRaw>   anythingArray)    => new OrdinalUnion { AnythingArray    = anythingArray };
+        public static implicit operator OrdinalUnion(RangeEnum        @enum)             => new OrdinalUnion { Enum             = @enum };
+        public static implicit operator OrdinalUnion(OrdinalSignalRef ordinalSignalRef) => new OrdinalUnion { OrdinalSignalRef = ordinalSignalRef };
     }
 }

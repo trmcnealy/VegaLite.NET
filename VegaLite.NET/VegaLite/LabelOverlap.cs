@@ -31,7 +31,7 @@
         public bool?             Bool;
         public LabelOverlapEnum? Enum;
 
-        public static implicit operator LabelOverlap(bool             Bool) => new LabelOverlap { Bool = Bool };
-        public static implicit operator LabelOverlap(LabelOverlapEnum Enum) => new LabelOverlap { Enum = Enum };
+        public static implicit operator LabelOverlap(bool             @bool) => new LabelOverlap { Bool = @bool };
+        public static implicit operator LabelOverlap(LabelOverlapEnum @enum) => new LabelOverlap { Enum = @enum };
     }
 }

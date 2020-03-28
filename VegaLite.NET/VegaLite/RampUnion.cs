@@ -12,8 +12,8 @@ namespace VegaLite
         public RangeEnum?     Enum;
         public RampSignalRef  RampSignalRef;
 
-        public static implicit operator RampUnion(List<RangeRaw> AnythingArray) => new RampUnion { AnythingArray = AnythingArray };
-        public static implicit operator RampUnion(RangeEnum      Enum)          => new RampUnion { Enum          = Enum };
-        public static implicit operator RampUnion(RampSignalRef  RampSignalRef) => new RampUnion { RampSignalRef = RampSignalRef };
+        public static implicit operator RampUnion(List<RangeRaw> anythingArray) => new RampUnion { AnythingArray = anythingArray };
+        public static implicit operator RampUnion(RangeEnum      @enum)          => new RampUnion { Enum          = @enum };
+        public static implicit operator RampUnion(RampSignalRef  rampSignalRef) => new RampUnion { RampSignalRef = rampSignalRef };
     }
 }

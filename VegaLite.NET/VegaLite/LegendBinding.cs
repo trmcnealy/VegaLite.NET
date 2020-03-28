@@ -14,7 +14,7 @@
         public LegendBindingEnum?  Enum;
         public LegendStreamBinding LegendStreamBinding;
 
-        public static implicit operator LegendBinding(LegendBindingEnum   Enum)                => new LegendBinding { Enum                = Enum };
-        public static implicit operator LegendBinding(LegendStreamBinding LegendStreamBinding) => new LegendBinding { LegendStreamBinding = LegendStreamBinding };
+        public static implicit operator LegendBinding(LegendBindingEnum   @enum)                => new LegendBinding { Enum                = @enum };
+        public static implicit operator LegendBinding(LegendStreamBinding legendStreamBinding) => new LegendBinding { LegendStreamBinding = legendStreamBinding };
     }
 }

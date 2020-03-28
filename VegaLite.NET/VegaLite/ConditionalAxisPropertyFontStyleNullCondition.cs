@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalPredicateValueDefFontStyleNull       ConditionalPredicateValueDefFontStyleNull;
         public List<ConditionalPredicateValueDefFontStyleNull> ConditionalPredicateValueDefFontStyleNullArray;
 
-        public static implicit operator ConditionalAxisPropertyFontStyleNullCondition(ConditionalPredicateValueDefFontStyleNull       ConditionalPredicateValueDefFontStyleNull)      => new ConditionalAxisPropertyFontStyleNullCondition { ConditionalPredicateValueDefFontStyleNull      = ConditionalPredicateValueDefFontStyleNull };
-        public static implicit operator ConditionalAxisPropertyFontStyleNullCondition(List<ConditionalPredicateValueDefFontStyleNull> ConditionalPredicateValueDefFontStyleNullArray) => new ConditionalAxisPropertyFontStyleNullCondition { ConditionalPredicateValueDefFontStyleNullArray = ConditionalPredicateValueDefFontStyleNullArray };
+        public static implicit operator ConditionalAxisPropertyFontStyleNullCondition(ConditionalPredicateValueDefFontStyleNull       conditionalPredicateValueDefFontStyleNull)      => new ConditionalAxisPropertyFontStyleNullCondition { ConditionalPredicateValueDefFontStyleNull      = conditionalPredicateValueDefFontStyleNull };
+        public static implicit operator ConditionalAxisPropertyFontStyleNullCondition(List<ConditionalPredicateValueDefFontStyleNull> conditionalPredicateValueDefFontStyleNullArray) => new ConditionalAxisPropertyFontStyleNullCondition { ConditionalPredicateValueDefFontStyleNullArray = conditionalPredicateValueDefFontStyleNullArray };
     }
 }

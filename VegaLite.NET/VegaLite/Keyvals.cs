@@ -7,7 +7,7 @@ namespace VegaLite
         public List<object>   AnythingArray;
         public ImputeSequence ImputeSequence;
 
-        public static implicit operator Keyvals(List<object>   AnythingArray)  => new Keyvals { AnythingArray  = AnythingArray };
-        public static implicit operator Keyvals(ImputeSequence ImputeSequence) => new Keyvals { ImputeSequence = ImputeSequence };
+        public static implicit operator Keyvals(List<object>   anythingArray)  => new Keyvals { AnythingArray  = anythingArray };
+        public static implicit operator Keyvals(ImputeSequence imputeSequence) => new Keyvals { ImputeSequence = imputeSequence };
     }
 }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>VegaLite</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Timothy R. McNealy</Authors>
     <PackageIcon>nindra.png</PackageIcon>
     <PackageIconUrl />
@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.3.10</Version>
+    <Version>1.3.17</Version>
     <Platforms>AnyCPU;x64</Platforms>
     <PackageOutputPath Condition="'$(PACKAGE_CACHE)'!=''">$(PACKAGE_CACHE)</PackageOutputPath>
     <PackageOutputPath Condition="'$(PACKAGE_CACHE)'==''">$(OutputPath)</PackageOutputPath>
@@ -32,5 +32,24 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Scripts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Scripts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Scripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Scripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&#xA;rd /s /q C:\Users\tehgo\.nuget\packages\vegalite.net" />
+  </Target>
 
 </Project>

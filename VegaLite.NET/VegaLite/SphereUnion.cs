@@ -8,7 +8,7 @@
         public bool?       Bool;
         public SphereClass SphereClass;
 
-        public static implicit operator SphereUnion(bool        Bool)        => new SphereUnion { Bool        = Bool };
-        public static implicit operator SphereUnion(SphereClass SphereClass) => new SphereUnion { SphereClass = SphereClass };
+        public static implicit operator SphereUnion(bool        @bool)        => new SphereUnion { Bool        = @bool };
+        public static implicit operator SphereUnion(SphereClass sphereClass) => new SphereUnion { SphereClass = sphereClass };
     }
 }

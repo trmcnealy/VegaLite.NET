@@ -14,7 +14,7 @@
         public ArgmDef            ArgmDef;
         public NonArgAggregateOp? Enum;
 
-        public static implicit operator Aggregate(ArgmDef           ArgmDef) => new Aggregate { ArgmDef = ArgmDef };
-        public static implicit operator Aggregate(NonArgAggregateOp Enum)    => new Aggregate { Enum    = Enum };
+        public static implicit operator Aggregate(ArgmDef           argmDef) => new Aggregate { ArgmDef = argmDef };
+        public static implicit operator Aggregate(NonArgAggregateOp @enum)    => new Aggregate { Enum    = @enum };
     }
 }

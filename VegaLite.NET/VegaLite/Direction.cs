@@ -8,7 +8,7 @@
         public Orientation?    Enum;
         public SignalRef SignalRef;
 
-        public static implicit operator Direction(Orientation     Enum)            => new Direction { Enum            = Enum };
-        public static implicit operator Direction(SignalRef SignalRef) => new Direction { SignalRef = SignalRef };
+        public static implicit operator Direction(Orientation     @enum)            => new Direction { Enum            = @enum };
+        public static implicit operator Direction(SignalRef signalRef) => new Direction { SignalRef = signalRef };
     }
 }

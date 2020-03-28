@@ -8,9 +8,9 @@ namespace VegaLite
         public SortOrder?            Enum;
         public SortEncodingSortField SortEncodingSortField;
 
-        public static implicit operator SortArray(List<Equal>           AnythingArray)         => new SortArray { AnythingArray         = AnythingArray };
-        public static implicit operator SortArray(SortOrder             Enum)                  => new SortArray { Enum                  = Enum };
-        public static implicit operator SortArray(SortEncodingSortField SortEncodingSortField) => new SortArray { SortEncodingSortField = SortEncodingSortField };
+        public static implicit operator SortArray(List<Equal>           anythingArray)         => new SortArray { AnythingArray         = anythingArray };
+        public static implicit operator SortArray(SortOrder             @enum)                  => new SortArray { Enum                  = @enum };
+        public static implicit operator SortArray(SortEncodingSortField sortEncodingSortField) => new SortArray { SortEncodingSortField = sortEncodingSortField };
         public                          bool IsNull                                            => AnythingArray == null && SortEncodingSortField == null && Enum == null;
     }
 }

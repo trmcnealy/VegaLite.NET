@@ -13,7 +13,7 @@ namespace VegaLite
             switch (reader.TokenType)
             {
                 case JsonToken.Null:
-                    return new BoolBinParams { };
+                    return new BoolBinParams();
                 case JsonToken.Boolean:
                     var boolValue = serializer.Deserialize<bool>(reader);
                     return new BoolBinParams { Bool = boolValue };

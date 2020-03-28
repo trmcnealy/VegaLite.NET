@@ -2,16 +2,20 @@
 
 namespace VegaLite
 {
-    /// <summary>
+    /// <summary ValueDef="{
+    /// condition: {value: ...},
+    /// field: ...,
+    /// ...
+    /// }">
     /// Color of the marks – either fill or stroke color based on  the `filled` property of mark
     /// definition.
     /// By default, `color` represents fill color for `"area"`, `"bar"`, `"tick"`,
     /// `"text"`, `"trail"`, `"circle"`, and `"square"` / stroke color for `"line"` and
     /// `"point"`.
-    ///
+    /// 
     /// __Default value:__ If undefined, the default color depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `color` property.
-    ///
+    /// 
     /// _Note:_
     /// 1) For fine-grained control over both fill and stroke colors of the marks, please use the
     /// `fill` and `stroke` channels. The `fill` or `stroke` encodings have higher precedence
@@ -19,27 +23,22 @@ namespace VegaLite
     /// specified.
     /// 2) See the scale documentation for more information about customizing [color
     /// scheme](https://vega.github.io/vega-lite/docs/scale.html#scheme).
-    ///
+    /// 
     /// Fill color of the marks.
     /// __Default value:__ If undefined, the default color depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `color` property.
-    ///
+    /// 
     /// _Note:_ The `fill` encoding has higher precedence than `color`, thus may override the
     /// `color` encoding if conflicting encodings are specified.
-    ///
+    /// 
     /// Stroke color of the marks.
     /// __Default value:__ If undefined, the default color depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `color` property.
-    ///
+    /// 
     /// _Note:_ The `stroke` encoding has higher precedence than `color`, thus may override the
     /// `color` encoding if conflicting encodings are specified.
-    ///
-    /// A FieldDef with Condition<ValueDef>
-    /// {
-    /// condition: {value: ...},
-    /// field: ...,
-    /// ...
-    /// }
+    /// 
+    /// A FieldDef with Condition
     /// </summary>
     public class DefWithConditionMarkPropFieldDefGradientStringNull
     {

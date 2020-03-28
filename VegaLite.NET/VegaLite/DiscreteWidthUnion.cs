@@ -10,7 +10,7 @@
         public DiscreteWidthClass DiscreteWidthClass;
         public double?            Double;
 
-        public static implicit operator DiscreteWidthUnion(DiscreteWidthClass DiscreteWidthClass) => new DiscreteWidthUnion { DiscreteWidthClass = DiscreteWidthClass };
-        public static implicit operator DiscreteWidthUnion(double             Double)             => new DiscreteWidthUnion { Double             = Double };
+        public static implicit operator DiscreteWidthUnion(DiscreteWidthClass discreteWidthClass) => new DiscreteWidthUnion { DiscreteWidthClass = discreteWidthClass };
+        public static implicit operator DiscreteWidthUnion(double             @double)             => new DiscreteWidthUnion { Double             = @double };
     }
 }

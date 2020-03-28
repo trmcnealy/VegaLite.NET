@@ -2,17 +2,16 @@
 
 namespace VegaLite
 {
-    /// <summary>
-    /// A URL to load upon mouse click.
-    ///
-    /// The URL of an image mark.
-    ///
-    /// A FieldDef with Condition<ValueDef>
-    /// {
+    /// <summary ValueDef="{
     /// condition: {value: ...},
     /// field: ...,
     /// ...
-    /// }
+    /// }">
+    /// A URL to load upon mouse click.
+    /// 
+    /// The URL of an image mark.
+    /// 
+    /// A FieldDef with Condition
     /// </summary>
     public class HrefClass
     {

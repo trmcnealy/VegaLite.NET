@@ -5,8 +5,8 @@
         public ConditionalAxisPropertyColorNull ConditionalAxisPropertyColorNull;
         public string                           String;
 
-        public static implicit operator Color(ConditionalAxisPropertyColorNull ConditionalAxisPropertyColorNull) => new Color { ConditionalAxisPropertyColorNull = ConditionalAxisPropertyColorNull };
-        public static implicit operator Color(string                           String)                           => new Color { String                           = String };
+        public static implicit operator Color(ConditionalAxisPropertyColorNull conditionalAxisPropertyColorNull) => new Color { ConditionalAxisPropertyColorNull = conditionalAxisPropertyColorNull };
+        public static implicit operator Color(string                           @string)                           => new Color { String                           = @string };
         public                          bool IsNull                                                              => ConditionalAxisPropertyColorNull == null && String == null;
     }
 }

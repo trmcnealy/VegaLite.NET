@@ -159,8 +159,8 @@ namespace VegaLite
 
             content.AppendLine($"{____}</table>\n");
 
-            content.AppendLine(RequireJavaScriptFunction(____,
-                                                         charts.ToArray()));
+            //content.AppendLine(RequireJavaScriptFunction(____,
+            //                                             charts.ToArray()));
 
             content.AppendLine("</div>\n");
 
@@ -170,9 +170,7 @@ namespace VegaLite
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string GetHtml()
         {
-            return new HtmlString("<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\"/>\n" + "</head>\n<body>\n" + GetHtmlContent() + "</body>\n</html>").ToString();
-
-            //return new HtmlString(GetHtmlContent()).ToString();
+            return new HtmlString(HtmlTemplate(GetHtmlContent())).ToString();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

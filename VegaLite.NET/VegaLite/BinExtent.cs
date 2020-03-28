@@ -10,7 +10,7 @@ namespace VegaLite
         public BinExtentClass BinExtentClass;
         public List<double>   DoubleArray;
 
-        public static implicit operator BinExtent(BinExtentClass BinExtentClass) => new BinExtent { BinExtentClass = BinExtentClass };
-        public static implicit operator BinExtent(List<double>   DoubleArray)    => new BinExtent { DoubleArray    = DoubleArray };
+        public static implicit operator BinExtent(BinExtentClass binExtentClass) => new BinExtent { BinExtentClass = binExtentClass };
+        public static implicit operator BinExtent(List<double>   doubleArray)    => new BinExtent { DoubleArray    = doubleArray };
     }
 }

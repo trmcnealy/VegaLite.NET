@@ -2,15 +2,14 @@
 
 namespace VegaLite
 {
-    /// <summary>
-    /// Text of the `text` mark.
-    ///
-    /// A FieldDef with Condition<ValueDef>
-    /// {
+    /// <summary ValueDef="{
     /// condition: {value: ...},
     /// field: ...,
     /// ...
-    /// }
+    /// }">
+    /// Text of the `text` mark.
+    /// 
+    /// A FieldDef with Condition
     /// </summary>
     public class DefWithConditionStringFieldDefText
     {

@@ -10,7 +10,7 @@
         public DiscreteHeightClass DiscreteHeightClass;
         public double?             Double;
 
-        public static implicit operator DiscreteHeightUnion(DiscreteHeightClass DiscreteHeightClass) => new DiscreteHeightUnion { DiscreteHeightClass = DiscreteHeightClass };
-        public static implicit operator DiscreteHeightUnion(double              Double)              => new DiscreteHeightUnion { Double              = Double };
+        public static implicit operator DiscreteHeightUnion(DiscreteHeightClass discreteHeightClass) => new DiscreteHeightUnion { DiscreteHeightClass = discreteHeightClass };
+        public static implicit operator DiscreteHeightUnion(double              @double)              => new DiscreteHeightUnion { Double              = @double };
     }
 }

@@ -13,7 +13,7 @@ namespace VegaLite
 
         /// <summary>
         /// The step value between sequence entries.
-        /// __Default value:__ `1` or `-1` if `stop < start`
+        /// __Default value:__ `1` or `-1` if `stop  start`
         /// </summary>
         [JsonProperty("step", NullValueHandling = NullValueHandling.Ignore)]
         public double? Step { get; set; }

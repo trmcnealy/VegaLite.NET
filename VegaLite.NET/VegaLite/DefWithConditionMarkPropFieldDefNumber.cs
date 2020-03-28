@@ -2,43 +2,42 @@
 
 namespace VegaLite
 {
-    /// <summary>
+    /// <summary ValueDef="{
+    /// condition: {value: ...},
+    /// field: ...,
+    /// ...
+    /// }">
     /// Fill opacity of the marks.
-    ///
+    /// 
     /// __Default value:__ If undefined, the default opacity depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `fillOpacity`
     /// property.
-    ///
+    /// 
     /// Opacity of the marks.
-    ///
+    /// 
     /// __Default value:__ If undefined, the default opacity depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `opacity` property.
-    ///
+    /// 
     /// Size of the mark.
     /// - For `"point"`, `"square"` and `"circle"`, – the symbol size, or pixel area of the mark.
     /// - For `"bar"` and `"tick"` – the bar and tick's size.
     /// - For `"text"` – the text's font size.
     /// - Size is unsupported for `"line"`, `"area"`, and `"rect"`. (Use `"trail"` instead of
     /// line with varying size)
-    ///
+    /// 
     /// Stroke opacity of the marks.
-    ///
+    /// 
     /// __Default value:__ If undefined, the default opacity depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `strokeOpacity`
     /// property.
-    ///
+    /// 
     /// Stroke width of the marks.
-    ///
+    /// 
     /// __Default value:__ If undefined, the default stroke width depends on [mark
     /// config](https://vega.github.io/vega-lite/docs/config.html#mark)'s `strokeWidth`
     /// property.
-    ///
-    /// A FieldDef with Condition<ValueDef>
-    /// {
-    /// condition: {value: ...},
-    /// field: ...,
-    /// ...
-    /// }
+    /// 
+    /// A FieldDef with Condition
     /// </summary>
     public class DefWithConditionMarkPropFieldDefNumber
     {

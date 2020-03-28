@@ -13,7 +13,7 @@ namespace VegaLite
             switch (reader.TokenType)
             {
                 case JsonToken.Null:
-                    return new SelectionInit { };
+                    return new SelectionInit();
                 case JsonToken.Integer:
                 case JsonToken.Float:
                     var doubleValue = serializer.Deserialize<double>(reader);

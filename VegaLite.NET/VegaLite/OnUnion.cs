@@ -5,7 +5,7 @@
         public OnDerivedStream OnDerivedStream;
         public string          String;
 
-        public static implicit operator OnUnion(OnDerivedStream OnDerivedStream) => new OnUnion { OnDerivedStream = OnDerivedStream };
-        public static implicit operator OnUnion(string          String)          => new OnUnion { String          = String };
+        public static implicit operator OnUnion(OnDerivedStream onDerivedStream) => new OnUnion { OnDerivedStream = onDerivedStream };
+        public static implicit operator OnUnion(string          @string)          => new OnUnion { String          = @string };
     }
 }

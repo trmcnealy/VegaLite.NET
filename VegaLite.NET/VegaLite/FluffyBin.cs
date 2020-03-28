@@ -6,9 +6,9 @@
         public bool?     Bool;
         public BinEnum?  Enum;
 
-        public static implicit operator FluffyBin(BinParams BinParams) => new FluffyBin { BinParams = BinParams };
-        public static implicit operator FluffyBin(bool      Bool)      => new FluffyBin { Bool      = Bool };
-        public static implicit operator FluffyBin(BinEnum   Enum)      => new FluffyBin { Enum      = Enum };
+        public static implicit operator FluffyBin(BinParams binParams) => new FluffyBin { BinParams = binParams };
+        public static implicit operator FluffyBin(bool      @bool)      => new FluffyBin { Bool      = @bool };
+        public static implicit operator FluffyBin(BinEnum   @enum)      => new FluffyBin { Enum      = @enum };
         public                          bool IsNull                    => Bool == null && BinParams == null && Enum == null;
     }
 }

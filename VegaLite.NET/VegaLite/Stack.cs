@@ -30,8 +30,8 @@
         public bool?        Bool;
         public StackOffset? Enum;
 
-        public static implicit operator Stack(bool        Bool) => new Stack { Bool = Bool };
-        public static implicit operator Stack(StackOffset Enum) => new Stack { Enum = Enum };
+        public static implicit operator Stack(bool        @bool) => new Stack { Bool = @bool };
+        public static implicit operator Stack(StackOffset @enum) => new Stack { Enum = @enum };
         public                          bool IsNull             => Bool == null && Enum == null;
     }
 }

@@ -13,7 +13,7 @@
         public double?      Double;
         public PaddingClass PaddingClass;
 
-        public static implicit operator Padding(double       Double)       => new Padding { Double       = Double };
-        public static implicit operator Padding(PaddingClass PaddingClass) => new Padding { PaddingClass = PaddingClass };
+        public static implicit operator Padding(double       @double)       => new Padding { Double       = @double };
+        public static implicit operator Padding(PaddingClass paddingClass) => new Padding { PaddingClass = paddingClass };
     }
 }

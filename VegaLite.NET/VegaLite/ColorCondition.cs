@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalPredicateValueDefGradientStringNullClass ConditionalPredicateValueDefGradientStringNullClass;
         public List<ConditionalValueDefGradientStringNull>         ConditionalValueDefGradientStringNullArray;
 
-        public static implicit operator ColorCondition(ConditionalPredicateValueDefGradientStringNullClass ConditionalPredicateValueDefGradientStringNullClass) => new ColorCondition { ConditionalPredicateValueDefGradientStringNullClass = ConditionalPredicateValueDefGradientStringNullClass };
-        public static implicit operator ColorCondition(List<ConditionalValueDefGradientStringNull>         ConditionalValueDefGradientStringNullArray)          => new ColorCondition { ConditionalValueDefGradientStringNullArray          = ConditionalValueDefGradientStringNullArray };
+        public static implicit operator ColorCondition(ConditionalPredicateValueDefGradientStringNullClass conditionalPredicateValueDefGradientStringNullClass) => new ColorCondition { ConditionalPredicateValueDefGradientStringNullClass = conditionalPredicateValueDefGradientStringNullClass };
+        public static implicit operator ColorCondition(List<ConditionalValueDefGradientStringNull>         conditionalValueDefGradientStringNullArray)          => new ColorCondition { ConditionalValueDefGradientStringNullArray          = conditionalValueDefGradientStringNullArray };
     }
 }

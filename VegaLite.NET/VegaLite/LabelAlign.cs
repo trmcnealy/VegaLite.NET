@@ -5,7 +5,7 @@
         public ConditionalAxisPropertyNumberNullClass ConditionalAxisPropertyNumberNullClass;
         public Align?                                 Enum;
 
-        public static implicit operator LabelAlign(ConditionalAxisPropertyNumberNullClass ConditionalAxisPropertyNumberNullClass) => new LabelAlign { ConditionalAxisPropertyNumberNullClass = ConditionalAxisPropertyNumberNullClass };
-        public static implicit operator LabelAlign(Align                                  Enum)                                   => new LabelAlign { Enum                                   = Enum };
+        public static implicit operator LabelAlign(ConditionalAxisPropertyNumberNullClass conditionalAxisPropertyNumberNullClass) => new LabelAlign { ConditionalAxisPropertyNumberNullClass = conditionalAxisPropertyNumberNullClass };
+        public static implicit operator LabelAlign(Align                                  @enum)                                   => new LabelAlign { Enum                                   = @enum };
     }
 }

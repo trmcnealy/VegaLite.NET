@@ -8,7 +8,7 @@
         public BinParams BinParams;
         public bool?     Bool;
 
-        public static implicit operator TransformBin(BinParams BinParams) => new TransformBin { BinParams = BinParams };
-        public static implicit operator TransformBin(bool      Bool)      => new TransformBin { Bool      = Bool };
+        public static implicit operator TransformBin(BinParams binParams) => new TransformBin { BinParams = binParams };
+        public static implicit operator TransformBin(bool      @bool)      => new TransformBin { Bool      = @bool };
     }
 }

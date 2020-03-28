@@ -6,8 +6,8 @@
         public double?  Double;
         public string   String;
 
-        public static implicit operator Lt(DateTime DateTime) => new Lt { DateTime = DateTime };
-        public static implicit operator Lt(double   Double)   => new Lt { Double   = Double };
-        public static implicit operator Lt(string   String)   => new Lt { String   = String };
+        public static implicit operator Lt(DateTime dateTime) => new Lt { DateTime = dateTime };
+        public static implicit operator Lt(double   @double)   => new Lt { Double   = @double };
+        public static implicit operator Lt(string   @string)   => new Lt { String   = @string };
     }
 }

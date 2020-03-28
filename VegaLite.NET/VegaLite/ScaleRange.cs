@@ -32,7 +32,7 @@ namespace VegaLite
         public List<RangeRange> AnythingArray;
         public RangeEnum?       Enum;
 
-        public static implicit operator ScaleRange(List<RangeRange> AnythingArray) => new ScaleRange { AnythingArray = AnythingArray };
-        public static implicit operator ScaleRange(RangeEnum        Enum)          => new ScaleRange { Enum          = Enum };
+        public static implicit operator ScaleRange(List<RangeRange> anythingArray) => new ScaleRange { AnythingArray = anythingArray };
+        public static implicit operator ScaleRange(RangeEnum        @enum)          => new ScaleRange { Enum          = @enum };
     }
 }

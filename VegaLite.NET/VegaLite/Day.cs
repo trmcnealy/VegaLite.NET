@@ -14,7 +14,7 @@
         public double? Double;
         public string  String;
 
-        public static implicit operator Day(double Double) => new Day { Double = Double };
-        public static implicit operator Day(string String) => new Day { String = String };
+        public static implicit operator Day(double @double) => new Day { Double = @double };
+        public static implicit operator Day(string @string) => new Day { String = @string };
     }
 }

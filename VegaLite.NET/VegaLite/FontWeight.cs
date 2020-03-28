@@ -34,7 +34,7 @@
         public double?           Double;
         public FontWeightEnum? Enum;
 
-        public static implicit operator FontWeight(double           Double) => new FontWeight { Double = Double };
-        public static implicit operator FontWeight(FontWeightEnum Enum)   => new FontWeight { Enum   = Enum };
+        public static implicit operator FontWeight(double           @double) => new FontWeight { Double = @double };
+        public static implicit operator FontWeight(FontWeightEnum @enum)   => new FontWeight { Enum   = @enum };
     }
 }

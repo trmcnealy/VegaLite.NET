@@ -15,7 +15,7 @@
         public double?     Double;
         public ExtentEnum? Enum;
 
-        public static implicit operator BoxplotExtent(double     Double) => new BoxplotExtent { Double = Double };
-        public static implicit operator BoxplotExtent(ExtentEnum Enum)   => new BoxplotExtent { Enum   = Enum };
+        public static implicit operator BoxplotExtent(double     @double) => new BoxplotExtent { Double = @double };
+        public static implicit operator BoxplotExtent(ExtentEnum @enum)   => new BoxplotExtent { Enum   = @enum };
     }
 }

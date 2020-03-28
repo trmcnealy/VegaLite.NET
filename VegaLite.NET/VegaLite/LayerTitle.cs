@@ -11,8 +11,8 @@ namespace VegaLite
         public List<string> StringArray;
         public TitleParams  TitleParams;
 
-        public static implicit operator LayerTitle(string       String)      => new LayerTitle { String      = String };
-        public static implicit operator LayerTitle(List<string> StringArray) => new LayerTitle { StringArray = StringArray };
-        public static implicit operator LayerTitle(TitleParams  TitleParams) => new LayerTitle { TitleParams = TitleParams };
+        public static implicit operator LayerTitle(string       @string)      => new LayerTitle { String      = @string };
+        public static implicit operator LayerTitle(List<string> stringArray) => new LayerTitle { StringArray = stringArray };
+        public static implicit operator LayerTitle(TitleParams  titleParams) => new LayerTitle { TitleParams = titleParams };
     }
 }

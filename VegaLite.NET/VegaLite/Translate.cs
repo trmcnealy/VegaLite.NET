@@ -36,7 +36,7 @@
         public bool?  Bool;
         public string String;
 
-        public static implicit operator Translate(bool   Bool)   => new Translate { Bool   = Bool };
-        public static implicit operator Translate(string String) => new Translate { String = String };
+        public static implicit operator Translate(bool   @bool)   => new Translate { Bool   = @bool };
+        public static implicit operator Translate(string @string) => new Translate { String = @string };
     }
 }

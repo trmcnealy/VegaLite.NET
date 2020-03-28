@@ -8,8 +8,8 @@
         public TitleAnchorEnum? Enum;
         public SignalRef  SignalRef;
 
-        public static implicit operator AnchorUnion(TitleAnchorEnum Enum)            => new AnchorUnion { Enum            = Enum };
-        public static implicit operator AnchorUnion(SignalRef SignalRef) => new AnchorUnion { SignalRef = SignalRef };
+        public static implicit operator AnchorUnion(TitleAnchorEnum @enum)            => new AnchorUnion { Enum            = @enum };
+        public static implicit operator AnchorUnion(SignalRef signalRef) => new AnchorUnion { SignalRef = signalRef };
         public                          bool IsNull                                  => SignalRef == null && Enum == null;
     }
 }

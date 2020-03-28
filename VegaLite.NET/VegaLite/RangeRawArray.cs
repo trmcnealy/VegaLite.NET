@@ -5,7 +5,7 @@
         public double?         Double;
         public SignalRef SignalRef;
 
-        public static implicit operator RangeRawArray(double          Double)          => new RangeRawArray { Double          = Double };
-        public static implicit operator RangeRawArray(SignalRef SignalRef) => new RangeRawArray { SignalRef = SignalRef };
+        public static implicit operator RangeRawArray(double          @double)          => new RangeRawArray { Double          = @double };
+        public static implicit operator RangeRawArray(SignalRef signalRef) => new RangeRawArray { SignalRef = signalRef };
     }
 }

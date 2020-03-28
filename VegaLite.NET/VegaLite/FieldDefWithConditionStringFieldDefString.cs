@@ -2,13 +2,12 @@
 
 namespace VegaLite
 {
-    /// <summary>
-    /// A FieldDef with Condition<ValueDef>
-    /// {
+    /// <summary ValueDef="{
     /// condition: {value: ...},
     /// field: ...,
     /// ...
-    /// }
+    /// }">
+    /// A FieldDef with Condition
     /// </summary>
     public class FieldDefWithConditionStringFieldDefString
     {

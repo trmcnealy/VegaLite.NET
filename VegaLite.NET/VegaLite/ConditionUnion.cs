@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalDef                  ConditionalDef;
         public List<ConditionalNumberValueDef> ConditionalNumberValueDefArray;
 
-        public static implicit operator ConditionUnion(ConditionalDef                  ConditionalDef)                 => new ConditionUnion { ConditionalDef                 = ConditionalDef };
-        public static implicit operator ConditionUnion(List<ConditionalNumberValueDef> ConditionalNumberValueDefArray) => new ConditionUnion { ConditionalNumberValueDefArray = ConditionalNumberValueDefArray };
+        public static implicit operator ConditionUnion(ConditionalDef                  conditionalDef)                 => new ConditionUnion { ConditionalDef                 = conditionalDef };
+        public static implicit operator ConditionUnion(List<ConditionalNumberValueDef> conditionalNumberValueDefArray) => new ConditionUnion { ConditionalNumberValueDefArray = conditionalNumberValueDefArray };
     }
 }

@@ -25,7 +25,7 @@ namespace VegaLite
         public Dictionary<string, AnyStream> AnythingMap;
         public LegendBindingEnum?               Enum;
 
-        public static implicit operator Binding(Dictionary<string, AnyStream> AnythingMap) => new Binding { AnythingMap = AnythingMap };
-        public static implicit operator Binding(LegendBindingEnum                Enum)        => new Binding { Enum        = Enum };
+        public static implicit operator Binding(Dictionary<string, AnyStream> anythingMap) => new Binding { AnythingMap = anythingMap };
+        public static implicit operator Binding(LegendBindingEnum                @enum)        => new Binding { Enum        = @enum };
     }
 }

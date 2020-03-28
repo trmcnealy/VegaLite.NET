@@ -26,7 +26,7 @@
         public RepeatRef RepeatRef;
         public string    String;
 
-        public static implicit operator Field(RepeatRef RepeatRef) => new Field { RepeatRef = RepeatRef };
-        public static implicit operator Field(string    String)    => new Field { String    = String };
+        public static implicit operator Field(RepeatRef repeatRef) => new Field { RepeatRef = repeatRef };
+        public static implicit operator Field(string    @string)    => new Field { String    = @string };
     }
 }

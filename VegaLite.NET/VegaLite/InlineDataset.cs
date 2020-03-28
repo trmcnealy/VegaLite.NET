@@ -14,8 +14,8 @@ namespace VegaLite
         public Dictionary<string, object> AnythingMap;
         public string                     String;
 
-        public static implicit operator InlineDataset(List<InlineDatasetElement> AnythingArray) => new InlineDataset { AnythingArray = AnythingArray };
-        public static implicit operator InlineDataset(Dictionary<string, object> AnythingMap)   => new InlineDataset { AnythingMap   = AnythingMap };
-        public static implicit operator InlineDataset(string                     String)        => new InlineDataset { String        = String };
+        public static implicit operator InlineDataset(List<InlineDatasetElement> anythingArray) => new InlineDataset { AnythingArray = anythingArray };
+        public static implicit operator InlineDataset(Dictionary<string, object> anythingMap)   => new InlineDataset { AnythingMap   = anythingMap };
+        public static implicit operator InlineDataset(string                     @string)        => new InlineDataset { String        = @string };
     }
 }

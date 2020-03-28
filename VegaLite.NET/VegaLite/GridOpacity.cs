@@ -5,7 +5,7 @@
         public ConditionalAxisPropertyNumberNullClass ConditionalAxisPropertyNumberNullClass;
         public double?                                Double;
 
-        public static implicit operator GridOpacity(ConditionalAxisPropertyNumberNullClass ConditionalAxisPropertyNumberNullClass) => new GridOpacity { ConditionalAxisPropertyNumberNullClass = ConditionalAxisPropertyNumberNullClass };
-        public static implicit operator GridOpacity(double                                 Double)                                 => new GridOpacity { Double                                 = Double };
+        public static implicit operator GridOpacity(ConditionalAxisPropertyNumberNullClass conditionalAxisPropertyNumberNullClass) => new GridOpacity { ConditionalAxisPropertyNumberNullClass = conditionalAxisPropertyNumberNullClass };
+        public static implicit operator GridOpacity(double                                 @double)                                 => new GridOpacity { Double                                 = @double };
     }
 }

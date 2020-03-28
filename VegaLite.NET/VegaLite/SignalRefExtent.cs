@@ -7,7 +7,7 @@ namespace VegaLite
         public List<RangeRawArray> AnythingArray;
         public SignalRef     SignalRef;
 
-        public static implicit operator SignalRefExtent(List<RangeRawArray> AnythingArray)   => new SignalRefExtent { AnythingArray   = AnythingArray };
-        public static implicit operator SignalRefExtent(SignalRef     SignalRef) => new SignalRefExtent { SignalRef = SignalRef };
+        public static implicit operator SignalRefExtent(List<RangeRawArray> anythingArray)   => new SignalRefExtent { AnythingArray   = anythingArray };
+        public static implicit operator SignalRefExtent(SignalRef     signalRef) => new SignalRefExtent { SignalRef = signalRef };
     }
 }

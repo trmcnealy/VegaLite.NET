@@ -11,7 +11,7 @@
         public double? Double;
         public string  String;
 
-        public static implicit operator Month(double Double) => new Month { Double = Double };
-        public static implicit operator Month(string String) => new Month { String = String };
+        public static implicit operator Month(double @double) => new Month { Double = @double };
+        public static implicit operator Month(string @string) => new Month { String = @string };
     }
 }

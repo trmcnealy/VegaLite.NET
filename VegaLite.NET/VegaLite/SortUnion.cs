@@ -41,9 +41,9 @@ namespace VegaLite
         public EncodingSortField EncodingSortField;
         public Sort?             Enum;
 
-        public static implicit operator SortUnion(List<Equal>       AnythingArray)     => new SortUnion { AnythingArray     = AnythingArray };
-        public static implicit operator SortUnion(EncodingSortField EncodingSortField) => new SortUnion { EncodingSortField = EncodingSortField };
-        public static implicit operator SortUnion(Sort              Enum)              => new SortUnion { Enum              = Enum };
+        public static implicit operator SortUnion(List<Equal>       anythingArray)     => new SortUnion { AnythingArray     = anythingArray };
+        public static implicit operator SortUnion(EncodingSortField encodingSortField) => new SortUnion { EncodingSortField = encodingSortField };
+        public static implicit operator SortUnion(Sort              @enum)              => new SortUnion { Enum              = @enum };
         public                          bool IsNull                                    => AnythingArray == null && EncodingSortField == null && Enum == null;
     }
 }

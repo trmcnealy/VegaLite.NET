@@ -7,7 +7,7 @@ namespace VegaLite
         public ConditionalPredicateValueDefColorNull       ConditionalPredicateValueDefColorNull;
         public List<ConditionalPredicateValueDefColorNull> ConditionalPredicateValueDefColorNullArray;
 
-        public static implicit operator ConditionalAxisPropertyColorNullCondition(ConditionalPredicateValueDefColorNull       ConditionalPredicateValueDefColorNull)      => new ConditionalAxisPropertyColorNullCondition { ConditionalPredicateValueDefColorNull      = ConditionalPredicateValueDefColorNull };
-        public static implicit operator ConditionalAxisPropertyColorNullCondition(List<ConditionalPredicateValueDefColorNull> ConditionalPredicateValueDefColorNullArray) => new ConditionalAxisPropertyColorNullCondition { ConditionalPredicateValueDefColorNullArray = ConditionalPredicateValueDefColorNullArray };
+        public static implicit operator ConditionalAxisPropertyColorNullCondition(ConditionalPredicateValueDefColorNull       conditionalPredicateValueDefColorNull)      => new ConditionalAxisPropertyColorNullCondition { ConditionalPredicateValueDefColorNull      = conditionalPredicateValueDefColorNull };
+        public static implicit operator ConditionalAxisPropertyColorNullCondition(List<ConditionalPredicateValueDefColorNull> conditionalPredicateValueDefColorNullArray) => new ConditionalAxisPropertyColorNullCondition { ConditionalPredicateValueDefColorNullArray = conditionalPredicateValueDefColorNullArray };
     }
 }

@@ -5,8 +5,8 @@
         public DateTime DateTime;
         public double?  Double;
 
-        public static implicit operator PurpleRange(DateTime DateTime) => new PurpleRange { DateTime = DateTime };
-        public static implicit operator PurpleRange(double   Double)   => new PurpleRange { Double   = Double };
+        public static implicit operator PurpleRange(DateTime dateTime) => new PurpleRange { DateTime = dateTime };
+        public static implicit operator PurpleRange(double   @double)   => new PurpleRange { Double   = @double };
         public                          bool IsNull                    => DateTime == null && Double == null;
     }
 }

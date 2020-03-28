@@ -7,8 +7,8 @@ namespace VegaLite
         public string       String;
         public List<string> StringArray;
 
-        public static implicit operator PurpleText(string       String)      => new PurpleText { String      = String };
-        public static implicit operator PurpleText(List<string> StringArray) => new PurpleText { StringArray = StringArray };
+        public static implicit operator PurpleText(string       @string)      => new PurpleText { String      = @string };
+        public static implicit operator PurpleText(List<string> stringArray) => new PurpleText { StringArray = stringArray };
         public                          bool IsNull                          => StringArray == null && String == null;
     }
 }

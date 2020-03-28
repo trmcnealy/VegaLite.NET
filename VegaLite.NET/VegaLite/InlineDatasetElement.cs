@@ -9,9 +9,9 @@ namespace VegaLite
         public double?                    Double;
         public string                     String;
 
-        public static implicit operator InlineDatasetElement(Dictionary<string, object> AnythingMap) => new InlineDatasetElement { AnythingMap = AnythingMap };
-        public static implicit operator InlineDatasetElement(bool                       Bool)        => new InlineDatasetElement { Bool        = Bool };
-        public static implicit operator InlineDatasetElement(double                     Double)      => new InlineDatasetElement { Double      = Double };
-        public static implicit operator InlineDatasetElement(string                     String)      => new InlineDatasetElement { String      = String };
+        public static implicit operator InlineDatasetElement(Dictionary<string, object> anythingMap) => new InlineDatasetElement { AnythingMap = anythingMap };
+        public static implicit operator InlineDatasetElement(bool                       @bool)        => new InlineDatasetElement { Bool        = @bool };
+        public static implicit operator InlineDatasetElement(double                     @double)      => new InlineDatasetElement { Double      = @double };
+        public static implicit operator InlineDatasetElement(string                     @string)      => new InlineDatasetElement { String      = @string };
     }
 }
