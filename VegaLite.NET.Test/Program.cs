@@ -26,6 +26,10 @@ using NSwag.CodeGeneration.CSharp;
 using Formatting = Newtonsoft.Json.Formatting;
 using WriteState = Newtonsoft.Json.WriteState;
 
+using VegaLite.Schema;
+
+using Encoding = VegaLite.Schema.Encoding;
+
 namespace VegaLite.Test
 {
     internal class Program
@@ -35,7 +39,9 @@ namespace VegaLite.Test
         {
             //TestPerf100000();
             //TestChart();
-            TestWebglChart();
+            TestArrowChart();
+            //TestWebglChart();
+            //TestChartDatasets();
             //TestMultipleChart();
             //TestSplom();
         }
@@ -47,12 +53,12 @@ namespace VegaLite.Test
         {
             double rand = 0.0;
 
-            for (var i = 0; i < 6; i += 1)
+            for(int i = 0; i < 6; i += 1)
             {
                 rand += random.NextDouble();
             }
 
-            return (rand / 6) -0.5;
+            return rand / 6 - 0.5;
         }
 
         private static void TestPerf100000()
@@ -61,9 +67,10 @@ namespace VegaLite.Test
 
             ScatterPlotData[] scatter_data = new ScatterPlotData[n];
 
-            for (int i = 0; i < n; i += 1)
+            for(int i = 0; i < n; i += 1)
             {
-                scatter_data[i] = new ScatterPlotData(gaussianRand(), gaussianRand());
+                scatter_data[i] = new ScatterPlotData(gaussianRand(),
+                                                      gaussianRand());
             }
 
             Specification specification = new Specification
@@ -102,111 +109,128 @@ namespace VegaLite.Test
                                     specification,
                                     1906,
                                     450);
-
-
-
         }
 
         private static void TestSplom()
         {
-            //string[] pso_lines = File.ReadAllLines(@"D:\TFS_Sources\Github\Compilation\trmcnealy\JupyterNotebooks\Notebooks\Data\PSO.csv");
+            string[] pso_lines = File.ReadAllLines(@"D:\TFS_Sources\Github\Compilation\trmcnealy\JupyterNotebooks\Notebooks\Data\PSO.csv");
 
-            //SplomData[] pso_data = new SplomData[pso_lines.Length - 1];
+            SplomData[] pso_data = new SplomData[pso_lines.Length - 1];
 
-            //for (int i = 1; i < pso_lines.Length; ++i)
-            //{
-            //    pso_data[i - 1] = new SplomData(pso_lines[i]);
-            //}
+            for(int i = 1; i < pso_lines.Length; ++i)
+            {
+                pso_data[i - 1] = new SplomData(pso_lines[i]);
+            }
 
-            //Specification specification = new Specification
-            //{
-            //    Repeat = new RepeatMapping()
-            //    {
-            //        Row    = new List<string>(){"km", "kF", "kf", "ye", "LF", "Lf"},
-            //        Column = new List<string>(){"km", "kF", "kf", "ye", "LF", "Lf"}
-            //    },
+            Specification specification = new Specification
+            {
+                Repeat = new RepeatMapping()
+                {
+                    Row = new List<string>()
+                    {
+                        "km",
+                        "kF",
+                        "kf",
+                        "ye",
+                        "LF",
+                        "Lf"
+                    },
+                    Column = new List<string>()
+                    {
+                        "km",
+                        "kF",
+                        "kf",
+                        "ye",
+                        "LF",
+                        "Lf"
+                    }
+                },
+                Spec = new SpecClass()
+                {
+                    DataSource = new DataSource()
+                    {
+                        Name = "pso_data"
+                    },
+                    Transform = new List<Transform>()
+                    {
+                        new Transform()
+                        {
+                            Filter = new Predicate()
+                            {
+                                Selection = "IterationSelection"
+                            }
+                        }
+                    },
+                    Mark = BoxPlot.Circle,
+                    Encoding = new Encoding()
+                    {
+                        X = new XClass()
+                        {
+                            Type = StandardType.Quantitative,
+                            Field = new RepeatRef()
+                            {
+                                Repeat = RepeatEnum.Column
+                            }
+                        },
+                        Y = new YClass()
+                        {
+                            Type = StandardType.Quantitative,
+                            Field = new RepeatRef()
+                            {
+                                Repeat = RepeatEnum.Row
+                            }
+                        },
+                        Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
+                        {
+                            Type = StandardType.Nominal, Field = "SwarmIndex"
+                        }
+                    },
+                    Selection = new Dictionary<string, SelectionDef>()
+                    {
+                        {
+                            "IterationSelection", new SelectionDef()
+                            {
+                                Type = SelectionDefType.Single,
+                                Fields = new List<string>()
+                                {
+                                    "Iteration"
+                                },
+                                Init = new Dictionary<string, InitValue>()
+                                {
+                                    {
+                                        "Iteration", 0
+                                    }
+                                },
+                                Bind = new Dictionary<string, AnyStream>()
+                                {
+                                    {
+                                        "Iteration", new AnyBinding()
+                                        {
+                                            Input = "range",
+                                            Min   = 0.0,
+                                            Max   = 99.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
 
-            //    Spec = new SpecClass()
-            //    {
-            //        DataSource = new DataSource()
-            //        {
-            //            Name = "pso_data"
-            //        },
-            //        Transform = new List<Transform>()
-            //        {
-            //            new Transform()
-            //            {
-            //                Filter = new Predicate()
-            //                {
-            //                    Selection = "IterationSelection"
-            //                }
-            //            }
-            //        },
-            //        Mark = BoxPlot.Circle,
-            //        Encoding = new Encoding()
-            //        {
-            //            X = new XClass()
-            //            {
-            //                Type = StandardType.Quantitative,
-            //                Field = new RepeatRef()
-            //                {
-            //                    Repeat = RepeatEnum.Column
-            //                }
-            //            },
-            //            Y = new YClass()
-            //            {
-            //                Type = StandardType.Quantitative,
-            //                Field = new RepeatRef()
-            //                {
-            //                    Repeat = RepeatEnum.Row
-            //                }
-            //            },
-            //            Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
-            //            {
-            //                Type  = StandardType.Nominal,
-            //                Field = "SwarmIndex"
-            //            }
-            //        },
-            //        Selection = new Dictionary<string, SelectionDef>()
-            //        {
-            //            {
-            //                "IterationSelection",
-            //                new SelectionDef()
-            //                {
-            //                    Type   = SelectionDefType.Single,
-            //                    Fields = new List<string>() {"Iteration"},
-            //                    Init   = new Dictionary<string, InitValue>(){{"Iteration",0}},
-            //                    Bind = new Dictionary<string, AnyStream>()
-            //                    {
-            //                        {
-            //                            "Iteration", new AnyBinding()
-            //                            {
-            //                                Input = "range",
-            //                                Min   = 0.0,
-            //                                Max   = 99.0
-            //                            }
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }        
-            //    }
-            //};
-
-            //Chart<SplomData> chart = new Chart<SplomData>($"Splom",
-            //                                              specification,
-            //                                              1906,
-            //                                              450);
+            Chart<SplomData> chart = new Chart<SplomData>($"Splom",
+                                                          specification,
+                                                          1906,
+                                                          450);
 
             //chart.ShowInBrowser(pso_data.Length);
-
         }
 
         //public static Task<string> Prompt(string message)
         //{
         //    return JSRuntime.Current.InvokeAsync<string>("exampleJsFunctions.showPrompt", message);
         //}
-        
+
         private static void TestChart()
         {
             HttpClient client = new HttpClient();
@@ -323,12 +347,459 @@ namespace VegaLite.Test
             }
         }
 
+        private static void TestArrowChart()
+        {
+            Specification vegaLiteSpecification = new Specification
+            {
+                Data = new DataSource()
+                {
+                    Name = "vegaViewData",
+                    Url  = "https://raw.githubusercontent.com/trmcnealy/JupyterNotebooks/master/Notebooks/Data/PSO.arrow",
+                    Format = new DataFormat()
+                    {
+                        Type = "arrow"
+                    }
+                },
+                Mark = BoxPlot.Circle,
+                Encoding = new Encoding()
+                {
+                    Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
+                    {
+                        Type = StandardType.Nominal,
+                        Field = "SwarmIndex",
+                        Scale = new Scale()
+                        {
+                            Scheme = ColorThemes.Cyclical.Sinebow
+                        }
+                    },
+                    X = new XClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "Particle0Position"
+                    },
+                    Y = new YClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "Particle1Position"
+                    }
+                },
+                Config = new Config()
+                {
+                    Legend = new LegendConfig()
+                    {
+                        Orient = LegendOrient.Top
+                    }
+                }
+            };
+
+            ArrowChart chart = new ArrowChart(vegaLiteSpecification,
+                                              500,
+                                              500);
+
+            string html = chart.GetHtml();
+
+            Console.WriteLine(html);
+
+            chart.ShowInBrowser();
+        }
+
+        private static void TestChartDatasets()
+        {
+            Specification specification = new Specification
+            {
+                Datasets = new Dictionary<string, InlineDataset>()
+                {
+                    {
+                        "sepalLength", new List<InlineDatasetElement>()
+                        {
+                            5.1,
+                            4.9,
+                            4.7,
+                            4.6,
+                            5,
+                            5.4,
+                            4.6,
+                            5,
+                            4.4,
+                            4.9,
+                            5.4,
+                            4.8,
+                            4.8,
+                            4.3,
+                            5.8,
+                            5.7,
+                            5.4,
+                            5.1,
+                            5.7,
+                            5.1,
+                            5.4,
+                            5.1,
+                            4.6,
+                            5.1,
+                            4.8,
+                            5,
+                            5,
+                            5.2,
+                            5.2,
+                            4.7,
+                            4.8,
+                            5.4,
+                            5.2,
+                            5.5,
+                            4.9,
+                            5,
+                            5.5,
+                            4.9,
+                            4.4,
+                            5.1,
+                            5,
+                            4.5,
+                            4.4,
+                            5,
+                            5.1,
+                            4.8,
+                            5.1,
+                            4.6,
+                            5.3,
+                            5,
+                            7,
+                            6.4,
+                            6.9,
+                            5.5,
+                            6.5,
+                            5.7,
+                            6.3,
+                            4.9,
+                            6.6,
+                            5.2,
+                            5,
+                            5.9,
+                            6,
+                            6.1,
+                            5.6,
+                            6.7,
+                            5.6,
+                            5.8,
+                            6.2,
+                            5.6,
+                            5.9,
+                            6.1,
+                            6.3,
+                            6.1,
+                            6.4,
+                            6.6,
+                            6.8,
+                            6.7,
+                            6,
+                            5.7,
+                            5.5,
+                            5.5,
+                            5.8,
+                            6,
+                            5.4,
+                            6,
+                            6.7,
+                            6.3,
+                            5.6,
+                            5.5,
+                            5.5,
+                            6.1,
+                            5.8,
+                            5,
+                            5.6,
+                            5.7,
+                            5.7,
+                            6.2,
+                            5.1,
+                            5.7,
+                            6.3,
+                            5.8,
+                            7.1,
+                            6.3,
+                            6.5,
+                            7.6,
+                            4.9,
+                            7.3,
+                            6.7,
+                            7.2,
+                            6.5,
+                            6.4,
+                            6.8,
+                            5.7,
+                            5.8,
+                            6.4,
+                            6.5,
+                            7.7,
+                            7.7,
+                            6,
+                            6.9,
+                            5.6,
+                            7.7,
+                            6.3,
+                            6.7,
+                            7.2,
+                            6.2,
+                            6.1,
+                            6.4,
+                            7.2,
+                            7.4,
+                            7.9,
+                            6.4,
+                            6.3,
+                            6.1,
+                            7.7,
+                            6.3,
+                            6.4,
+                            6,
+                            6.9,
+                            6.7,
+                            6.9,
+                            5.8,
+                            6.8,
+                            6.7,
+                            6.7,
+                            6.3,
+                            6.5,
+                            6.2,
+                            5.9
+                        }
+                    },
+                    {
+                        "sepalWidth", new List<InlineDatasetElement>()
+                        {
+                            3.5,
+                            3,
+                            3.2,
+                            3.1,
+                            3.6,
+                            3.9,
+                            3.4,
+                            3.4,
+                            2.9,
+                            3.1,
+                            3.7,
+                            3.4,
+                            3,
+                            3,
+                            4,
+                            4.4,
+                            3.9,
+                            3.5,
+                            3.8,
+                            3.8,
+                            3.4,
+                            3.7,
+                            3.6,
+                            3.3,
+                            3.4,
+                            3,
+                            3.4,
+                            3.5,
+                            3.4,
+                            3.2,
+                            3.1,
+                            3.4,
+                            4.1,
+                            4.2,
+                            3.1,
+                            3.2,
+                            3.5,
+                            3.6,
+                            3,
+                            3.4,
+                            3.5,
+                            2.3,
+                            3.2,
+                            3.5,
+                            3.8,
+                            3,
+                            3.8,
+                            3.2,
+                            3.7,
+                            3.3,
+                            3.2,
+                            3.2,
+                            3.1,
+                            2.3,
+                            2.8,
+                            2.8,
+                            3.3,
+                            2.4,
+                            2.9,
+                            2.7,
+                            2,
+                            3,
+                            2.2,
+                            2.9,
+                            2.9,
+                            3.1,
+                            3,
+                            2.7,
+                            2.2,
+                            2.5,
+                            3.2,
+                            2.8,
+                            2.5,
+                            2.8,
+                            2.9,
+                            3,
+                            2.8,
+                            3,
+                            2.9,
+                            2.6,
+                            2.4,
+                            2.4,
+                            2.7,
+                            2.7,
+                            3,
+                            3.4,
+                            3.1,
+                            2.3,
+                            3,
+                            2.5,
+                            2.6,
+                            3,
+                            2.6,
+                            2.3,
+                            2.7,
+                            3,
+                            2.9,
+                            2.9,
+                            2.5,
+                            2.8,
+                            3.3,
+                            2.7,
+                            3,
+                            2.9,
+                            3,
+                            3,
+                            2.5,
+                            2.9,
+                            2.5,
+                            3.6,
+                            3.2,
+                            2.7,
+                            3,
+                            2.5,
+                            2.8,
+                            3.2,
+                            3,
+                            3.8,
+                            2.6,
+                            2.2,
+                            3.2,
+                            2.8,
+                            2.8,
+                            2.7,
+                            3.3,
+                            3.2,
+                            2.8,
+                            3,
+                            2.8,
+                            3,
+                            2.8,
+                            3.8,
+                            2.8,
+                            2.8,
+                            2.6,
+                            3,
+                            3.4,
+                            3.1,
+                            3,
+                            3.1,
+                            3.1,
+                            3.1,
+                            2.7,
+                            3.2,
+                            3.3,
+                            3,
+                            2.5,
+                            3,
+                            3.4,
+                            3
+                        }
+                    }
+                },
+                Encoding = new Encoding()
+                {
+                    X = new XClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "X"
+                    },
+                    Y = new YClass()
+                    {
+                        Type = StandardType.Quantitative, Field = "Y"
+                    }
+                },
+                Config = new Config()
+                {
+                    Legend = new LegendConfig()
+                    {
+                        Orient = LegendOrient.Top
+                    }
+                },
+                Layer = new List<LayerSpec>()
+                {
+                    new LayerSpec()
+                    {
+                        DataSource = new DataSource()
+                        {
+                            Name = "sepalLength"
+                        },
+                        Mark = BoxPlot.Circle,
+                        Transform = new List<Transform>()
+                        {
+                            new Transform()
+                            {
+                                Window = new List<WindowFieldDef>()
+                                {
+                                    new WindowFieldDef()
+                                    {
+                                        Op    = Op.Values,
+                                        Field = "sepalLength",
+                                        As    = "X"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    new LayerSpec()
+                    {
+                        DataSource = new DataSource()
+                        {
+                            Name = "sepalWidth"
+                        },
+                        Mark = BoxPlot.Circle,
+                        Transform = new List<Transform>()
+                        {
+                            new Transform()
+                            {
+                                Window = new List<WindowFieldDef>()
+                                {
+                                    new WindowFieldDef()
+                                    {
+                                        Op    = Op.Values,
+                                        Field = "sepalWidth",
+                                        As    = "Y"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            Chart chart = new Chart(specification,
+                                    500,
+                                    500);
+
+            chart.ShowInBrowser();
+        }
+
         private static void TestWebglChart()
         {
             HttpClient client = new HttpClient();
             string     data   = client.GetStringAsync("https://raw.githubusercontent.com/vega/vega-lite/master/examples/specs/bar.vl.json").Result;
 
-            WebglChart         chart;
+            WebglChart    chart;
             Specification vegaLiteSpecification;
 
             Specification specification = new Specification

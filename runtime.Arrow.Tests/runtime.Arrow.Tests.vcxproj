@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Versioning.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="runtime.Arrow.Tests\main.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DC0C8DF6-95C1-4D8C-ADAA-12C43811F022}</ProjectGuid>
+    <RootSolutionDir>..\..\VegaLite.NET\</RootSolutionDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>clang</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>clang</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(RootSolutionDir)..\BuildTools\Clang.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(TargetName)</TargetName>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(TargetName)</TargetName>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CompileAs />
+      <UndefinePreprocessorDefinitions>_MSC_VER</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_WINNT_IGNORE_VOID;DEBUG;_DEBUG;WIN64;_WIN64;_WINDOWS;_GNU_SOURCE;_USE_MATH_DEFINES;MBCS;_MBCS</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalIncludeDirectories>../../BuildTools;./;C:/AssemblyCache/Arrow/include;C:/POSIX/mingw64/lib/glib-2.0/include;C:/POSIX/mingw64/include/glib-2.0;D:/TFS_Sources/Github/Compilation/trmcnealy/VegaLite.NET/runtime.Arrow;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include;C:/POSIX/mingw64/include/freetype2</AdditionalIncludeDirectories>
+      <ExceptionHandling />
+      <AdditionalOptions>-shared -gfull -gcodeview -Xcuda-ptxas -O0 -Xcuda-ptxas -w -Xcuda-ptxas --device-debug -w -O0 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.1 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DiagnosticsFormat />
+      <MultiProcessorCompilation />
+      <InlineFunctionExpansion />
+      <IntrinsicFunctions />
+      <FavorSizeOrSpeed />
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations />
+      <StringPooling />
+      <MinimalRebuild />
+      <ControlFlowGuard />
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <EnableEnhancedInstructionSet />
+      <FloatingPointModel />
+      <DisableLanguageExtensions />
+      <ConformanceMode />
+      <ForceConformanceInForLoopScope />
+      <EnforceTypeConversionRules />
+      <RuntimeTypeInfo />
+      <ExpandAttributedSource />
+      <BrowseInformation />
+      <CallingConvention />
+      <OmitDefaultLibName />
+      <ErrorReporting />
+      <SDLCheck />
+      <Optimization />
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <SuppressStartupBanner />
+      <WarningLevel />
+      <TreatWarningAsError />
+      <WholeProgramOptimization />
+      <TreatWChar_tAsBuiltInType />
+      <UseFullPaths />
+      <StrictAliasing />
+      <CLanguageStandard>
+      </CLanguageStandard>
+      <CppLanguageStandard>
+      </CppLanguageStandard>
+      <MSCompatibility>
+      </MSCompatibility>
+      <MSExtensions>true</MSExtensions>
+      <UseShortEnums />
+      <PrecompiledHeaderCompileAs />
+      <Verbose />
+      <UndefineAllPreprocessorDefinitions />
+      <ShowIncludes />
+      <DataLevelLinking />
+      <PositionIndependentCode />
+      <PrecompiledHeaderOutputFileDirectory />
+      <ObjectFileName>$(IntPosixDir)%(filename).obj</ObjectFileName>
+      <RuntimeLibrary />
+      <PrecompiledHeader />
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>
+      </GenerateDebugInformation>
+      <LinkErrorReporting />
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <SuppressStartupBanner />
+      <AdditionalDependencies>C:/AssemblyCache/Arrow/lib/libarrow.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_cuda.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_dataset.dll.a,C:/AssemblyCache/Arrow/lib/libparquet.dll.a</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries />
+      <ManifestFile />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <ProgramDatabaseFile />
+      <OptimizeReferences />
+      <EnableCOMDATFolding />
+      <ProfileGuidedDatabase />
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <TargetMachine />
+      <CLRUnmanagedCodeCheck />
+      <CLRSupportLastError />
+      <TypeLibraryResourceID />
+      <OutputFile>$(OutPosixDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck />
+      <PreprocessorDefinitions>-D_WIN64 -D_WINDOWS -D_GNU_SOURCE -D_USE_MATH_DEFINES</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <AdditionalIncludeDirectories>C:/AssemblyCache/Trilinos/include</AdditionalIncludeDirectories>
+      <AdditionalOptions>--target=x86_64-w64-windows-gnu-coff %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderOutputFileDirectory />
+      <PrecompiledHeaderCompileAs />
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck />
+      <PreprocessorDefinitions>-D_WIN64 -D_WINDOWS -D_GNU_SOURCE -D_USE_MATH_DEFINES</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:/AssemblyCache/Trilinos/include</AdditionalIncludeDirectories>
+      <AdditionalOptions>--target=x86_64-w64-windows-gnu-coff %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderOutputFileDirectory />
+      <PrecompiledHeaderCompileAs />
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <CompileAs />
+      <UndefinePreprocessorDefinitions>_MSC_VER</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_WINNT_IGNORE_VOID;NDEBUG;_NDEBUG;WIN64;_WIN64;_WINDOWS;_GNU_SOURCE;_USE_MATH_DEFINES;_MBCS</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalIncludeDirectories>../../BuildTools;./;C:/AssemblyCache/Arrow/include;C:/POSIX/mingw64/lib/glib-2.0/include;C:/POSIX/mingw64/include/glib-2.0;D:/TFS_Sources/Github/Compilation/trmcnealy/VegaLite.NET/runtime.Arrow;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include;C:/POSIX/mingw64/include/freetype2</AdditionalIncludeDirectories>
+      <ExceptionHandling />
+      <AdditionalOptions>-shared -Xcuda-ptxas -w -w -O3 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.1 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DiagnosticsFormat />
+      <MultiProcessorCompilation />
+      <InlineFunctionExpansion />
+      <IntrinsicFunctions />
+      <FavorSizeOrSpeed />
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations />
+      <StringPooling />
+      <MinimalRebuild />
+      <ControlFlowGuard />
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <EnableEnhancedInstructionSet />
+      <FloatingPointModel />
+      <DisableLanguageExtensions />
+      <ConformanceMode />
+      <ForceConformanceInForLoopScope />
+      <EnforceTypeConversionRules />
+      <RuntimeTypeInfo />
+      <ExpandAttributedSource />
+      <BrowseInformation />
+      <CallingConvention />
+      <OmitDefaultLibName />
+      <ErrorReporting />
+      <SDLCheck />
+      <Optimization />
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <SuppressStartupBanner />
+      <WarningLevel />
+      <TreatWarningAsError />
+      <WholeProgramOptimization />
+      <TreatWChar_tAsBuiltInType />
+      <UseFullPaths />
+      <StrictAliasing />
+      <CLanguageStandard>
+      </CLanguageStandard>
+      <CppLanguageStandard>
+      </CppLanguageStandard>
+      <MSCompatibility>
+      </MSCompatibility>
+      <MSExtensions>true</MSExtensions>
+      <UseShortEnums />
+      <PrecompiledHeaderCompileAs />
+      <Verbose />
+      <UndefineAllPreprocessorDefinitions />
+      <ShowIncludes />
+      <DataLevelLinking />
+      <PositionIndependentCode />
+      <PrecompiledHeaderOutputFileDirectory />
+      <ObjectFileName>$(IntPosixDir)%(filename).obj</ObjectFileName>
+      <RuntimeLibrary />
+      <PrecompiledHeader />
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>
+      </GenerateDebugInformation>
+      <LinkErrorReporting />
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <SuppressStartupBanner />
+      <AdditionalDependencies>C:/AssemblyCache/Arrow/lib/libarrow.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_cuda.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_dataset.dll.a,C:/AssemblyCache/Arrow/lib/libparquet.dll.a</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries />
+      <ManifestFile />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <ProgramDatabaseFile />
+      <OptimizeReferences />
+      <EnableCOMDATFolding />
+      <ProfileGuidedDatabase />
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <TargetMachine />
+      <CLRUnmanagedCodeCheck />
+      <CLRSupportLastError />
+      <TypeLibraryResourceID />
+      <OutputFile>$(OutPosixDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(RootSolutionDir)..\BuildTools\Clang.targets" />
+  <Target Name="Link">
+    <CallTarget Targets="ClangLink" />
+  </Target>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

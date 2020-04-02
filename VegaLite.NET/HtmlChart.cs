@@ -1,20 +1,21 @@
 ﻿// ReSharper disable InconsistentNaming
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+
+using VegaLite.Schema;
 
 namespace VegaLite
 {
     internal static class HtmlChart
     {
-        public delegate string RequireJavaScriptDelegate<TChart>(string          base_indent,
-                                                                 params TChart[] charts);
-
         public static string VegaUrl      = "https://cdn.jsdelivr.net/npm/vega?noext";
         public static string VegaLiteUrl  = "https://cdn.jsdelivr.net/npm/vega-lite?noext";
         public static string VegaEmbedUrl = "https://cdn.jsdelivr.net/npm/vega-embed?noext";
-        public static string VegaWebglUrl = "https://unpkg.com/vega-webgl-renderer/build/vega-webgl-renderer";
+        public static string VegaWebglUrl = "https://cdn.jsdelivr.net/npm/vega-loader-arrow?noext";
         public static string D3ColorUrl   = "https://d3js.org/d3-color.v1.min";
 
         internal static readonly Func<int, string> indent = amount => string.Empty.PadLeft(amount * 4,
@@ -38,6 +39,22 @@ namespace VegaLite
 
         //http://localhost:15514/variables/csharp/dataset_b767d0e57e604a76be3ba865eeb45f71
 
+        private static readonly Func<string, string, string, string> HtmlTemplateFunc = (uid,
+                                                                                         title,
+                                                                                         content) =>
+                                                                                        {
+                                                                                            string html = $"{________}<div id=\"{uid}\">{LE}"                        +
+                                                                                                          $"{____________}<h1>{title}</h1>{LE}"                      +
+                                                                                                          $"{____________}<div id=\"vis-{uid}\" class=\"view\">{LE}" +
+                                                                                                          $"{____________}<script language=\"javascript\">{LE}"      +
+                                                                                                          content                                                    +
+                                                                                                          $"{____________}</script>{LE}"                             +
+                                                                                                          $"</div>{LE}"                                              +
+                                                                                                          $"{________}</div>{LE}";
+
+                                                                                            return html;
+                                                                                        };
+
         public static string ElementContentTemplate(Guid   id,
                                                     string title,
                                                     Chart  chart)
@@ -45,20 +62,19 @@ namespace VegaLite
             string uid = id.ToString().Replace("-",
                                                "");
 
-            string html = $"{________}<div id=\"{uid}\">{LE}"                        +
-                          $"{____________}<h1>{title}</h1>{LE}"                      +
-                          $"{____________}<div id=\"vis-{uid}\" class=\"view\">{LE}" +
-                          $"{____________}<script language=\"javascript\">{LE}"      +
-                          Scripts.RequireJS                                          +
-                          Scripts.RequireVegaLite                                    +
-                          Scripts.RequireVegaLiteSvg.Replace("_ID_",
-                                                             uid).Replace("_VEGALITE_SPEC_",
-                                                                          chart.Specification.ToJson()) +
-                          $"{____________}</script>{LE}"                                                +
-                          $"</div>{LE}"                                                                 +
-                          $"{________}</div>{LE}";
+            string content = Scripts.RequireVegaLiteSvg;
 
-            return html;
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
         }
 
         public static string WebglElementContentTemplate(Guid       id,
@@ -68,20 +84,19 @@ namespace VegaLite
             string uid = id.ToString().Replace("-",
                                                "");
 
-            string html = $"{________}<div id=\"{uid}\">{LE}"                        +
-                          $"{____________}<h1>{title}</h1>{LE}"                      +
-                          $"{____________}<div id=\"vis-{uid}\" class=\"view\">{LE}" +
-                          $"{____________}<script language=\"javascript\">{LE}"      +
-                          Scripts.RequireJS                                          +
-                          Scripts.RequireVegaLite                                    +
-                          Scripts.RequireVegaLiteWebgl.Replace("_ID_",
-                                                               uid).Replace("_VEGALITE_SPEC_",
-                                                                            chart.Specification.ToJson()) +
-                          $"{____________}</script>{LE}"                                                  +
-                          $"</div>{LE}"                                                                   +
-                          $"{________}</div>{LE}";
+            string content = Scripts.RequireVegaLiteWebgl;
 
-            return html;
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
         }
 
         public static string DataElementContentTemplate<T>(Guid     id,
@@ -89,53 +104,126 @@ namespace VegaLite
                                                            int      rows,
                                                            int      columns,
                                                            Chart<T> chart)
+            where T : IEnumerable
         {
             string uid = id.ToString().Replace("-",
                                                "");
 
-            string html = $"{________}<div id=\"{uid}\">{LE}"                        +
-                          $"{____________}<h1>{title}</h1>{LE}"                      +
-                          $"{____________}<div id=\"vis-{uid}\" class=\"view\">{LE}" +
-                          $"{____________}<script language=\"javascript\">{LE}"      +
-                          Scripts.RequireJS                                          +
-                          Scripts.RequireVegaLite                                    +
-                          Scripts.RequireVegaLiteData.Replace("_ID_",
-                                                              uid).Replace("_DATASET_",
-                                                                           chart.DataSetName).Replace("_VEGALITE_SPEC_",
-                                                                                                      chart.Specification.ToJson()) +
-                          $"{____________}</script>{LE}"                                                                            +
-                          $"</div>{LE}"                                                                                             +
-                          $"{________}</div>{LE}";
+            string content = Scripts.RequireVegaLiteDataBuffered;
 
-            return html;
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_DATASET_",
+                                      chart.DataSetName);
+
+            content = content.Replace("_ROWS_",
+                                      $"{rows}");
+
+            content = content.Replace("_COLUMNS_",
+                                      $"{columns}");
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
         }
 
-        public static string DataBufferedElementContentTemplate<T>(Guid          id,
-                                                                   string        title,
-                                                                   int           rows,
-                                                                   int           columns,
-                                                                   WebglChart<T> chart)
+        public static string WebglDataElementContentTemplate<T>(Guid          id,
+                                                                string        title,
+                                                                int           rows,
+                                                                int           columns,
+                                                                WebglChart<T> chart)
+            where T : IEnumerable
         {
             string uid = id.ToString().Replace("-",
                                                "");
 
-            string html = $"{________}<div id=\"{uid}\">{LE}"                        +
-                          $"{____________}<h1>{title}</h1>{LE}"                      +
-                          $"{____________}<div id=\"vis-{uid}\" class=\"view\">{LE}" +
-                          $"{____________}<script language=\"javascript\">{LE}"      +
-                          Scripts.RequireJS                                          +
-                          Scripts.RequireVegaLite                                    +
-                          Scripts.RequireVegaLiteDataBuffered.Replace("_ID_",
-                                                                      uid).Replace("_DATASET_",
-                                                                                   chart.DataSetName).Replace("_ROWS_",
-                                                                                                              $"{rows}").Replace("_COLUMNS_",
-                                                                                                                                 $"{columns}").Replace("_VEGALITE_SPEC_",
-                                                                                                                                                       chart.Specification.ToJson()) +
-                          $"{____________}</script>{LE}"                                                                                                                             +
-                          $"</div>{LE}"                                                                                                                                              +
-                          $"{________}</div>{LE}";
+            string content = Scripts.RequireVegaLiteDataBuffered;
 
-            return html;
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_DATASET_",
+                                      chart.DataSetName);
+
+            content = content.Replace("_ROWS_",
+                                      $"{rows}");
+
+            content = content.Replace("_COLUMNS_",
+                                      $"{columns}");
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
+        }
+
+        public static string ArrowElementContentTemplate(Guid   id,
+                                                         string title,
+                                                         Chart  chart)
+        {
+            string uid = id.ToString().Replace("-",
+                                               "");
+
+            string content = Scripts.RequireVegaLiteWebgl;
+
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_DATASET_",
+                                      chart.DataSetName);
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
+        }
+
+        public static string ArrowDataElementContentTemplate<T>(Guid     id,
+                                                                string   title,
+                                                                int      rows,
+                                                                int      columns,
+                                                                Chart<T> chart)
+            where T : IEnumerable
+        {
+            string uid = id.ToString().Replace("-",
+                                               "");
+
+            string content = Scripts.RequireVegaLiteDataBuffered;
+
+            content = content.Replace("_ID_",
+                                      uid);
+
+            content = content.Replace("_DATASET_",
+                                      chart.DataSetName);
+
+            content = content.Replace("_ROWS_",
+                                      $"{rows}");
+
+            content = content.Replace("_COLUMNS_",
+                                      $"{columns}");
+
+            content = content.Replace("_VEGALITE_SPEC_",
+                                      chart.Specification.ToJson());
+
+            content = Scripts.RequireJS + Scripts.RequireVegaLite + content;
+
+            return HtmlTemplateFunc(uid,
+                                    title,
+                                    content);
         }
 
         public static string HtmlTemplate(string content)

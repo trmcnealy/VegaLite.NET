@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
+using System.Collections;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
+
+using VegaLite.Schema;
 
 using static VegaLite.HtmlChart;
 
 namespace VegaLite
 {
     public class Chart<TDataLayout>
+        where TDataLayout : IEnumerable
     {
         public Guid Id
         {
@@ -92,6 +93,8 @@ namespace VegaLite
         //    Specification = new Specification();
         //}
 
+        #region Constructors
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected Chart(Guid? id)
         {
@@ -107,7 +110,7 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Specification vegaLiteSpecification,
-                     Guid?         id = null)
+                     Guid?                id = null)
             : this(id)
         {
             Specification = vegaLiteSpecification;
@@ -136,8 +139,8 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Specification vegaLiteSpecification,
-                     string        datasetName,
-                     Guid?         id = null)
+                     string               datasetName,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    id)
         {
@@ -145,9 +148,9 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string        title,
+        public Chart(string               title,
                      Specification vegaLiteSpecification,
-                     Guid?         id = null)
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    id)
         {
@@ -155,10 +158,10 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string        title,
+        public Chart(string               title,
                      Specification vegaLiteSpecification,
-                     string        datasetName,
-                     Guid?         id = null)
+                     string               datasetName,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    datasetName,
                    id)
@@ -167,11 +170,11 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string        title,
+        public Chart(string               title,
                      Specification vegaLiteSpecification,
-                     int           width,
-                     int           height,
-                     Guid?         id = null)
+                     int                  width,
+                     int                  height,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    id)
         {
@@ -181,12 +184,12 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string        title,
+        public Chart(string               title,
                      Specification vegaLiteSpecification,
-                     string        datasetName,
-                     int           width,
-                     int           height,
-                     Guid?         id = null)
+                     string               datasetName,
+                     int                  width,
+                     int                  height,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    datasetName,
                    id)
@@ -198,9 +201,9 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Specification vegaLiteSpecification,
-                     int           width,
-                     int           height,
-                     Guid?         id = null)
+                     int                  width,
+                     int                  height,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    id)
         {
@@ -211,10 +214,10 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Specification vegaLiteSpecification,
-                     string        datasetName,
-                     int           width,
-                     int           height,
-                     Guid?         id = null)
+                     string               datasetName,
+                     int                  width,
+                     int                  height,
+                     Guid?                id = null)
             : this(vegaLiteSpecification,
                    datasetName,
                    id)
@@ -226,7 +229,7 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Specification SetupSpec(Func<Guid, Specification> specFunc,
-                                               out Guid                  id)
+                                                      out Guid                         id)
         {
             id = Guid.NewGuid();
 
@@ -243,7 +246,7 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Func<Guid, Specification> specFunc,
-                     string                    datasetName)
+                     string                           datasetName)
             : this(SetupSpec(specFunc,
                              out Guid id),
                    datasetName,
@@ -252,7 +255,7 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string                    title,
+        public Chart(string                           title,
                      Func<Guid, Specification> specFunc)
             : this(title,
                    SetupSpec(specFunc,
@@ -262,9 +265,9 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string                    title,
+        public Chart(string                           title,
                      Func<Guid, Specification> specFunc,
-                     string                    datasetName)
+                     string                           datasetName)
             : this(title,
                    SetupSpec(specFunc,
                              out Guid id),
@@ -274,10 +277,10 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string                    title,
+        public Chart(string                           title,
                      Func<Guid, Specification> specFunc,
-                     int                       width,
-                     int                       height)
+                     int                              width,
+                     int                              height)
             : this(title,
                    SetupSpec(specFunc,
                              out Guid id),
@@ -288,11 +291,11 @@ namespace VegaLite
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Chart(string                    title,
+        public Chart(string                           title,
                      Func<Guid, Specification> specFunc,
-                     string                    datasetName,
-                     int                       width,
-                     int                       height)
+                     string                           datasetName,
+                     int                              width,
+                     int                              height)
             : this(title,
                    SetupSpec(specFunc,
                              out Guid id),
@@ -305,8 +308,8 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Func<Guid, Specification> specFunc,
-                     int                       width,
-                     int                       height)
+                     int                              width,
+                     int                              height)
             : this(SetupSpec(specFunc,
                              out Guid id),
                    width,
@@ -317,9 +320,9 @@ namespace VegaLite
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Chart(Func<Guid, Specification> specFunc,
-                     string                    datasetName,
-                     int                       width,
-                     int                       height)
+                     string                           datasetName,
+                     int                              width,
+                     int                              height)
             : this(SetupSpec(specFunc,
                              out Guid id),
                    datasetName,
@@ -328,6 +331,8 @@ namespace VegaLite
                    id)
         {
         }
+
+        #endregion
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()

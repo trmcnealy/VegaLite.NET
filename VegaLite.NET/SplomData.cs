@@ -1,46 +1,60 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
+using Apache.Arrow.Types;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace VegaLite.Test
+using VegaLite.Schema;
+
+namespace VegaLite
 {
-    public struct SplomData
+    public struct SplomData : IEnumerable<float>
     {
+        [ArrowProperty(ArrowTypeId.Int32, "Iteration")]
         [JsonProperty("Iteration",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int Iteration { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Int32, "SwarmIndex")]
         [JsonProperty("SwarmIndex",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int SwarmIndex { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Int32, "Particle")]
         [JsonProperty("Particle",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int Particle { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "km")]
         [JsonProperty("km",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float km { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "kF")]
         [JsonProperty("kF",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float kF { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "kf")]
         [JsonProperty("kf",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float kf { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "ye")]
         [JsonProperty("ye",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float ye { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "LF")]
         [JsonProperty("LF",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float LF { get; set; }
-
+        
+        [ArrowProperty(ArrowTypeId.Float, "Lf")]
         [JsonProperty("Lf",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float Lf { get; set; }
@@ -91,6 +105,24 @@ namespace VegaLite.Test
             index++;
             Lf = float.Parse(columns[index]);
         }
+
+        public IEnumerator<float> GetEnumerator()
+        {
+            yield return Iteration;
+            yield return SwarmIndex;
+            yield return Particle;
+            yield return km;
+            yield return kF;
+            yield return kf;
+            yield return ye;
+            yield return LF;
+            yield return Lf;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public sealed class SplomChart : Chart<SplomData>
@@ -123,7 +155,12 @@ namespace VegaLite.Test
             {
                 DataSource = new DataSource()
                 {
-                    Name = $"dataset_{id.ToString().Replace("-", "")}"
+                    Name = $"dataset_{id.ToString().Replace("-", "")}",
+                    Url = "",
+                    Format = new DataFormat()
+                    {
+                        Type = "arrow"
+                    }
                 },
                 Transform = new List<Transform>()
                 {
@@ -156,12 +193,17 @@ namespace VegaLite.Test
                     },
                     Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
                     {
-                        Type  = StandardType.Nominal,
-                        Field = "SwarmIndex",
-                        Scale = new Scale()
+                        Condition = new ConditionalPredicateValueDefGradientStringNullClass()
                         {
-                            Scheme = ColorThemes.Cyclical.Sinebow
-                        }
+                            Type = StandardType.Nominal,
+                            Selection = "Brush",
+                            Field = "SwarmIndex",
+                            Scale = new Scale()
+                            {
+                                Scheme = ColorThemes.Cyclical.Sinebow
+                            }
+                        },
+                        Value = "grey"
                     },
                     Opacity = new DefWithConditionMarkPropFieldDefNumber()
                     {
@@ -174,6 +216,13 @@ namespace VegaLite.Test
                 },
                 Selection = new Dictionary<string, SelectionDef>()
                 {
+                    {
+                        "Brush", new SelectionDef()
+                        {
+                            Type = SelectionDefType.Interval,
+                            Resolve = SelectionResolution.Union
+                        }
+                    },
                     {
                         "Select", new SelectionDef()
                         {
@@ -217,6 +266,8 @@ namespace VegaLite.Test
         };
 
         public SplomData[] DataSet { get; }
+
+        #region Constructors
 
         public SplomChart(SplomData[] data)
             : base((id) =>
@@ -329,5 +380,7 @@ namespace VegaLite.Test
         {
             DataSet = data;
         }
+
+        #endregion
     }
 }

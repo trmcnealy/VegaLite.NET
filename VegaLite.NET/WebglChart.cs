@@ -7,6 +7,8 @@ using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
 
+using VegaLite.Schema;
+
 using static VegaLite.HtmlChart;
 
 namespace VegaLite
@@ -100,6 +102,8 @@ namespace VegaLite
         //    Id            = Guid.NewGuid();
         //    Specification = new Specification();
         //}
+
+        #region Constructors
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected WebglChart(Guid? id)
@@ -337,6 +341,8 @@ namespace VegaLite
                    id)
         {
         }
+
+        #endregion
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -7,11 +8,14 @@ using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Html;
 using Microsoft.DotNet.Interactive.Formatting;
 
+using VegaLite.Schema;
+
 using static VegaLite.HtmlChart;
 
 namespace VegaLite
 {
     public class WebglChart<TDataLayout>
+        where TDataLayout : IEnumerable
     {
         public Guid Id
         {
@@ -91,6 +95,8 @@ namespace VegaLite
         //    Id            = Guid.NewGuid();
         //    Specification = new Specification();
         //}
+
+        #region Constructors
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected WebglChart(Guid? id)
@@ -329,6 +335,8 @@ namespace VegaLite
         {
         }
 
+        #endregion
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
@@ -341,18 +349,18 @@ namespace VegaLite
         {
             if(columns == -1)
             {
-                return DataBufferedElementContentTemplate(Id,
-                                                          Title,
-                                                          rows,
-                                                          typeof(TDataLayout).GetProperties().Length,
-                                                          this);
+                return WebglDataElementContentTemplate(Id,
+                                                       Title,
+                                                       rows,
+                                                       typeof(TDataLayout).GetProperties().Length,
+                                                       this);
             }
 
-            return DataBufferedElementContentTemplate(Id,
-                                                      Title,
-                                                      rows,
-                                                      columns,
-                                                      this);
+            return WebglDataElementContentTemplate(Id,
+                                                   Title,
+                                                   rows,
+                                                   columns,
+                                                   this);
         }
 
         private static bool registered = false;
