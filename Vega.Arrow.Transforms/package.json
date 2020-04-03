@@ -6,6 +6,7 @@
     "license": "MIT",
     "private": true,
     "scripts": {
+        "clean": "npm run prebuild",
         "build": "tsc --build tsconfig.json",
         "rollup": "rollup -c rollup.config.js",
         "prebuild": "rimraf build && mkdir build",

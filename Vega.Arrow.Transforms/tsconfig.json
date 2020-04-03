@@ -5,8 +5,8 @@
         "moduleResolution": "Node",
 
         "declaration": true,
-        //"declarationMap": true,
-        //"sourceMap": true,
+        "declarationMap": true,
+        "sourceMap": true,
 
         "skipLibCheck": true,
 
@@ -16,7 +16,7 @@
         "strict": true,
         "preserveConstEnums": true,
         "noEmitOnError": true,
-        "importHelpers": true,
+        "importHelpers": false,
         "resolveJsonModule": true,
         "isolatedModules": false,
 
