@@ -21,6 +21,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Scripts\ArrowTransforms\node_modules\**" />
+    <EmbeddedResource Remove="Scripts\ArrowTransforms\node_modules\**" />
+    <None Remove="Scripts\ArrowTransforms\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="VegaLite.NET.csproj.DotSettings" />
     <None Include="..\..\trmcnealy.github.io\assets\nindra.png">
       <Pack>True</Pack>

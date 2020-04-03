@@ -106,7 +106,7 @@ namespace VegaLite {
         ///function VegaLiteScript_ID_() {
         ///    const vlSpec_ID_ = _VEGALITE_SPEC_;
         ///
-        ///    RequireVegaLiteData(&quot;_ID_&quot;, vlSpec_ID_, &quot;svg&quot;, &quot;_DATASET_&quot;);
+        ///    RequireVegaLiteData(&quot;_ID_&quot;, vlSpec_ID_, &quot;_RENDER_&quot;, &quot;_DATASET_&quot;);
         ///}
         ///
         ///window.addEventListener(&quot;vega-lite-loaded&quot;, function (e) {
@@ -149,7 +149,8 @@ namespace VegaLite {
         ///
         ///window.addEventListener(&quot;vega-lite-loaded&quot;, function(e) {
         ///    VegaLiteScript_ID_();
-        ///}, false);.
+        ///}, false);
+        ///.
         /// </summary>
         internal static string RequireVegaLiteSvg {
             get {
@@ -167,7 +168,8 @@ namespace VegaLite {
         ///
         ///window.addEventListener(&quot;vega-lite-loaded&quot;, function(e) {
         ///    VegaLiteScript_ID_();
-        ///}, false);.
+        ///}, false);
+        ///.
         /// </summary>
         internal static string RequireVegaLiteWebgl {
             get {

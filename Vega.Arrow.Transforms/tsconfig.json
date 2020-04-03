@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ES2015",
+        "moduleResolution": "Node",
+
+        "declaration": true,
+        //"declarationMap": true,
+        //"sourceMap": true,
+
+        "skipLibCheck": true,
+
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+
+        "strict": true,
+        "preserveConstEnums": true,
+        "noEmitOnError": true,
+        "importHelpers": true,
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+
+        "lib": [ "es6", "dom" ],
+
+        "incremental": true,
+
+        "outDir": "build"
+    },
+    "files": [ "index.ts" ],
+    "include": [
+        "src/**/*.ts"
+    ]
+}
