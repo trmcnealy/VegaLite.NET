@@ -1,0 +1,50 @@
+//export class Slice {
+
+//    private _begin: number;
+
+//    get begin() {
+//        return this._begin;
+//    }
+
+//    set begin(value: number) {
+//        this._begin = value;
+//    }
+
+//    private _end: number;
+
+//    get end() {
+//        return this._end;
+//    }
+
+//    set end(value: number) {
+//        this._end = value;
+//    }
+
+//    constructor(begin: number, end: number) {
+//        this._begin = begin;
+//        this._end = end;
+//    }
+//}
+
+
+
+//transforms["arrow-transform"] = ArrowTransform;
+
+
+// TODO
+//Map 
+//    hours = (function () {
+//        const arr = [];
+//        for (const x of rainfall.getColumn('date')) {
+//            arr.push(x.getHours())
+//        }
+//        return arr;
+//    }())
+//Scan
+//    (function () {
+//        const vec = rainfall.getColumn('precipitation')
+//        let highIdx = 0;
+//        rainfall.scan((idx) => { highIdx = vec.get(idx) > vec.get(highIdx) ? idx : highIdx; })
+//        const row = rainfall.get(highIdx)
+//        return `${row.date} => ${row.precipitation} inches`
+//    }())

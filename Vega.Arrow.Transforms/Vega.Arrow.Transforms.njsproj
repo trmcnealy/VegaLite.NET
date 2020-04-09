@@ -40,12 +40,18 @@
     <Content Include="rollup.config.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
+    <TypeScriptCompile Include="src\arrow-transform.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Slice">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\main.ts" />
+    <None Include="src\main" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

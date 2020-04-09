@@ -35,5 +35,5 @@
         Values,
         Variance,
         Variancep
-    };
+    }
 }

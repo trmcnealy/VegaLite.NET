@@ -1,33 +1,60 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Node",
+        "build": true,
 
-        "declaration": true,
-        "declarationMap": true,
-        "sourceMap": true,
+        "removeComments": true,
+
+        //"typeRoots": [
+        //    "./node_modules/vega-lite/build/src"
+        //],
+
+        //"types": [ "compile" ],
+
+        //"allowJs": true,
+        //"generateCpuProfile": "cpuprofile",
+        //"maxNodeModuleJsDepth": 10,
+
+        //"inlineSources": true,
+        //"inlineSourceMap": true,
+
+        "target": "ES6",
+        "module": "ES6",
+        "moduleResolution": "node",
+
+        //"isolatedModules": true,
+
+        "preserveConstEnums": true,
+        //"declaration": true,
+        //"declarationMap": true,
+        //"sourceMap": true,
+
+        //"emitDecoratorMetadata": true,
+
+        //"noEmit": true,
+        "strict": false,
+        //"strictBindCallApply": false,
+        //"strictFunctionTypes": false,
+        //"strictPropertyInitialization": false,
+        //"strictNullChecks": false,
 
         "skipLibCheck": true,
-
+        "skipDefaultLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        //"resolveJsonModule": true,
 
-        "strict": true,
-        "preserveConstEnums": true,
-        "noEmitOnError": true,
-        "resolveJsonModule": true,
-        "isolatedModules": false,
-        "importHelpers": false,
-
-        "lib": [ "DOM", "ESNext.Array", "ES2017.TypedArrays", "ES2016.Array.Include", "ESNext" ],
-
-        "incremental": true,
-
+        //"lib": [ "ESNext.Array", "ES2017.TypedArrays", "ES2016.Array.Include", "ESNext" ],
         "outDir": "build"
+        //"outFile": "build/vega-arrow-transforms.js"
     },
-    "files": [ "index.ts" ],
+    "files": [
+        "index.ts"
+    ],
     "include": [
-        "src/**/*.ts"
+        "src",
+        "node_modules/vega-lite/build/src"
+    ],
+    "exclude": [
+        //"node_modules"
     ]
 }

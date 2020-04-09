@@ -49,18 +49,25 @@ int main(int argc, char* argv[])
         read_options.column_names.push_back("Particle");
         read_options.column_names.push_back("Particle0Position");
         read_options.column_names.push_back("Particle0Velocity");
+        read_options.column_names.push_back("Particle0Residual");
         read_options.column_names.push_back("Particle1Position");
         read_options.column_names.push_back("Particle1Velocity");
+        read_options.column_names.push_back("Particle1Residual");
         read_options.column_names.push_back("Particle2Position");
         read_options.column_names.push_back("Particle2Velocity");
+        read_options.column_names.push_back("Particle2Residual");
         read_options.column_names.push_back("Particle3Position");
         read_options.column_names.push_back("Particle3Velocity");
+        read_options.column_names.push_back("Particle3Residual");
         read_options.column_names.push_back("Particle4Position");
         read_options.column_names.push_back("Particle4Velocity");
+        read_options.column_names.push_back("Particle4Residual");
         read_options.column_names.push_back("Particle5Position");
         read_options.column_names.push_back("Particle5Velocity");
+        read_options.column_names.push_back("Particle5Residual");
         read_options.column_names.push_back("Particle6Position");
         read_options.column_names.push_back("Particle6Velocity");
+        read_options.column_names.push_back("Particle6Residual");
     }
 
     arrow::csv::ParseOptions parse_options = arrow::csv::ParseOptions::Defaults();
@@ -71,37 +78,51 @@ int main(int argc, char* argv[])
         convert_options.column_types["SwarmIndex"]        = arrow::uint32();
         convert_options.column_types["Particle"]          = arrow::uint32();
         convert_options.column_types["Particle0Position"] = arrow::float32();
-        convert_options.column_types["Particle0Velocity"] = arrow::float64();
+        convert_options.column_types["Particle0Velocity"] = arrow::float32();
+        convert_options.column_types["Particle0Residual"] = arrow::float32();
         convert_options.column_types["Particle1Position"] = arrow::float32();
-        convert_options.column_types["Particle1Velocity"] = arrow::float64();
+        convert_options.column_types["Particle1Velocity"] = arrow::float32();        
+        convert_options.column_types["Particle1Residual"] = arrow::float32();
         convert_options.column_types["Particle2Position"] = arrow::float32();
-        convert_options.column_types["Particle2Velocity"] = arrow::float64();
+        convert_options.column_types["Particle2Velocity"] = arrow::float32();
+        convert_options.column_types["Particle2Residual"] = arrow::float32();
         convert_options.column_types["Particle3Position"] = arrow::float32();
-        convert_options.column_types["Particle3Velocity"] = arrow::float64();
+        convert_options.column_types["Particle3Velocity"] = arrow::float32();
+        convert_options.column_types["Particle3Residual"] = arrow::float32();
         convert_options.column_types["Particle4Position"] = arrow::float32();
-        convert_options.column_types["Particle4Velocity"] = arrow::float64();
+        convert_options.column_types["Particle4Velocity"] = arrow::float32();
+        convert_options.column_types["Particle4Residual"] = arrow::float32();
         convert_options.column_types["Particle5Position"] = arrow::float32();
-        convert_options.column_types["Particle5Velocity"] = arrow::float64();
-        convert_options.column_types["Particle6Position"] = arrow::float64();
-        convert_options.column_types["Particle6Velocity"] = arrow::float64();
+        convert_options.column_types["Particle5Velocity"] = arrow::float32();
+        convert_options.column_types["Particle5Residual"] = arrow::float32();
+        convert_options.column_types["Particle6Position"] = arrow::float32();
+        convert_options.column_types["Particle6Velocity"] = arrow::float32();
+        convert_options.column_types["Particle6Residual"] = arrow::float32();
 
         convert_options.include_columns = {"Iteration",
                                            "SwarmIndex",
                                            "Particle",
                                            "Particle0Position",
                                            "Particle0Velocity",
+                                           "Particle0Residual",
                                            "Particle1Position",
                                            "Particle1Velocity",
+                                           "Particle1Residual",
                                            "Particle2Position",
                                            "Particle2Velocity",
+                                           "Particle2Residual",
                                            "Particle3Position",
                                            "Particle3Velocity",
+                                           "Particle3Residual",
                                            "Particle4Position",
                                            "Particle4Velocity",
+                                           "Particle4Residual",
                                            "Particle5Position",
                                            "Particle5Velocity",
+                                           "Particle5Residual",
                                            "Particle6Position",
-                                           "Particle6Velocity"};
+                                           "Particle6Velocity",
+                                           "Particle6Residual"};
     }
 
     std::shared_ptr<arrow::csv::TableReader> reader;
@@ -151,41 +172,53 @@ int main(int argc, char* argv[])
         arrow::field("SwarmIndex", arrow::uint32()),
         arrow::field("Particle", arrow::uint32()),
         arrow::field("Particle0Position", arrow::float32()),
-        // arrow::field("Particle0Velocity",  arrow::float64()),
+        arrow::field("Particle0Residual", arrow::float32()),
+        // arrow::field("Particle0Velocity",  arrow::float32()),
         arrow::field("Particle1Position", arrow::float32()),
-        // arrow::field("Particle1Velocity",  arrow::float64()),
+        arrow::field("Particle1Residual", arrow::float32()),
+        // arrow::field("Particle1Velocity",  arrow::float32()),
         arrow::field("Particle2Position", arrow::float32()),
-        // arrow::field("Particle2Velocity",  arrow::float64()),
+        arrow::field("Particle2Residual", arrow::float32()),
+        // arrow::field("Particle2Velocity",  arrow::float32()),
         arrow::field("Particle3Position", arrow::float32()),
-        // arrow::field("Particle3Velocity",  arrow::float64()),
+        arrow::field("Particle3Residual", arrow::float32()),
+        // arrow::field("Particle3Velocity",  arrow::float32()),
         arrow::field("Particle4Position", arrow::float32()),
-        // arrow::field("Particle4Velocity",  arrow::float64()),
+        arrow::field("Particle4Residual", arrow::float32()),
+        // arrow::field("Particle4Velocity",  arrow::float32()),
         arrow::field("Particle5Position", arrow::float32()),
-        // arrow::field("Particle5Velocity",  arrow::float64()),
-        // arrow::field("Particle6Position",  arrow::float64()),
-        // arrow::field("Particle6Velocity",  arrow::float64())
+        arrow::field("Particle5Residual", arrow::float32()),
+        // arrow::field("Particle5Velocity",  arrow::float32()),
+        // arrow::field("Particle6Position",  arrow::float32()),
+        // arrow::field("Particle6Velocity",  arrow::float32())
     });
 
     auto Iteration_array         = buildArray<arrow::UInt32Array>(table, "Iteration");
     auto SwarmIndex_array        = buildArray<arrow::UInt32Array>(table, "SwarmIndex");
     auto Particle_array          = buildArray<arrow::UInt32Array>(table, "Particle");
     auto Particle0Position_array = buildArray<arrow::FloatArray>(table, "Particle0Position");
+    auto Particle0Residual_array = buildArray<arrow::FloatArray>(table, "Particle0Residual");
     auto Particle1Position_array = buildArray<arrow::FloatArray>(table, "Particle1Position");
+    auto Particle1Residual_array = buildArray<arrow::FloatArray>(table, "Particle1Residual");
     auto Particle2Position_array = buildArray<arrow::FloatArray>(table, "Particle2Position");
+    auto Particle2Residual_array = buildArray<arrow::FloatArray>(table, "Particle2Residual");
     auto Particle3Position_array = buildArray<arrow::FloatArray>(table, "Particle3Position");
+    auto Particle3Residual_array = buildArray<arrow::FloatArray>(table, "Particle3Residual");
     auto Particle4Position_array = buildArray<arrow::FloatArray>(table, "Particle4Position");
+    auto Particle4Residual_array = buildArray<arrow::FloatArray>(table, "Particle4Residual");
     auto Particle5Position_array = buildArray<arrow::FloatArray>(table, "Particle5Position");
+    auto Particle5Residual_array = buildArray<arrow::FloatArray>(table, "Particle5Residual");
 
     auto data_table = arrow::Table::Make(schema,
                                          {Iteration_array,
                                           SwarmIndex_array,
                                           Particle_array,
-                                          Particle0Position_array,
-                                          Particle1Position_array,
-                                          Particle2Position_array,
-                                          Particle3Position_array,
-                                          Particle4Position_array,
-                                          Particle5Position_array});
+                                          Particle0Position_array, Particle0Residual_array,
+                                          Particle1Position_array, Particle1Residual_array,
+                                          Particle2Position_array, Particle2Residual_array,
+                                          Particle3Position_array, Particle3Residual_array,
+                                          Particle4Position_array, Particle4Residual_array,
+                                          Particle5Position_array, Particle5Residual_array});
 
     std::cout << data_table->GetColumnByName("Particle0Position")->num_chunks() << std::endl;
 

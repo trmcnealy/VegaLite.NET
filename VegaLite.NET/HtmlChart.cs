@@ -18,6 +18,8 @@ namespace VegaLite
         public static string VegaWebglUrl = "https://cdn.jsdelivr.net/npm/vega-loader-arrow?noext";
         public static string D3ColorUrl   = "https://d3js.org/d3-color.v1.min";
 
+        public static string EChartsUrl = "https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js";
+
         internal static readonly Func<int, string> indent = amount => string.Empty.PadLeft(amount * 4,
                                                                                            '\u0020');
 

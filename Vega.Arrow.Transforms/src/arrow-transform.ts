@@ -1,0 +1,126 @@
+
+import { predicate as ArrowPredicate } from "apache-arrow";
+
+import {
+    Transform,
+    isFilter,
+    //isLoess,
+    //isSample,
+    //isWindow,
+    //isJoinAggregate,
+    //isFlatten,
+    //isCalculate,
+    //isBin,
+    //isImpute,
+    //isTimeUnit,
+    isAggregate,
+    //isStack,
+    //isFold,
+    //isLookup,
+    //isDensity,
+    //isQuantile,
+    //isRegression
+} from "vega-lite/build/src/transform";
+
+import {
+    isFieldPredicate,
+    isFieldEqualPredicate,
+    FieldEqualPredicate,
+    isFieldLTPredicate,
+    FieldLTPredicate,
+    isFieldGTPredicate,
+    FieldGTPredicate,
+    isFieldLTEPredicate,
+    FieldLTEPredicate,
+    isFieldGTEPredicate,
+    FieldGTEPredicate,
+    isFieldOneOfPredicate,
+    //FieldOneOfPredicate,
+    isFieldValidPredicate,
+    //FieldValidPredicate,
+    isFieldRangePredicate,
+    //FieldRangePredicate
+} from "vega-lite/build/src/predicate";
+
+export class Transforms2Arrow {
+
+    static convert(table: any, transforms: Transform[]): any {
+
+        for (const transform of transforms) {
+
+            if (isFilter(transform)) {
+
+                //"datum.b2 > 60"
+                if (typeof transform.filter === "string") {
+                    //transform.filter.replace(/==/g, "=").replace(/datum\./g, "")
+                } else if (isFieldPredicate(typeof transform.filter)) {
+
+                    if (isFieldEqualPredicate(typeof transform.filter)) {
+
+                        const fieldPredicate = transform.filter as FieldEqualPredicate;
+                        const field = fieldPredicate.field;
+                        const op = fieldPredicate.equal;
+
+                        return Array.from(table.filter(ArrowPredicate.col(field).eq(op)));
+                    } else if (isFieldLTPredicate(typeof transform.filter)) {
+
+                        const fieldPredicate = transform.filter as FieldLTPredicate;
+                        const field = fieldPredicate.field;
+                        const op = fieldPredicate.lt;
+
+                        return Array.from(table.filter(ArrowPredicate.col(field).lt(op)));
+                    } else if (isFieldGTPredicate(typeof transform.filter)) {
+
+                        const fieldPredicate = transform.filter as FieldGTPredicate;
+                        const field = fieldPredicate.field;
+                        const op = fieldPredicate.gt;
+
+                        return Array.from(table.filter(ArrowPredicate.col(field).gt(op)));
+                    } else if (isFieldLTEPredicate(typeof transform.filter)) {
+
+                        const fieldPredicate = transform.filter as FieldLTEPredicate;
+                        const field = fieldPredicate.field;
+                        const op = fieldPredicate.lte;
+
+                        return Array.from(table.filter(ArrowPredicate.col(field).le(op)));
+                    } else if (isFieldGTEPredicate(typeof transform.filter)) {
+
+                        const fieldPredicate = transform.filter as FieldGTEPredicate;
+                        const field = fieldPredicate.field;
+                        const op = fieldPredicate.gte;
+
+                        return Array.from(table.filter(ArrowPredicate.col(field).ge(op)));
+                    } else if (isFieldOneOfPredicate(typeof transform.filter)) {
+
+                    } else if (isFieldValidPredicate(typeof transform.filter)) {
+
+                    } else if (isFieldRangePredicate(typeof transform.filter)) {
+
+                    }
+
+                }
+
+            }
+            //else if (isAggregate(transform)) {
+
+            //    for (const aggregate of transform.aggregate) {
+
+            //        //const translated_op = this.translate_op(aggregate.op);
+
+            //        if (aggregate.field !== undefined) {
+
+            //        }
+
+            //    }
+
+            //    if (transform.groupby !== undefined) {
+
+            //        //for (const group of transform.groupby) {
+            //        //}
+            //    }
+            //}
+        }
+
+        return Array.from(table);
+    }
+}
