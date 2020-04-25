@@ -1,55 +1,7 @@
 ﻿
-    // we can only support a small subset of aggregate operations with our current approach
-    //static agg_op_mappings = {
-    //    argmax: "",
-    //    argmin: "",
-    //    average: "",
-    //    count: "",
-    //    distinct: "",
-    //    product: "",
-    //    max: "",
-    //    mean: "",
-    //    median: "",
-    //    min: "",
-    //    missing: "",
-    //    q1: "",
-    //    q3: "",
-    //    ci0: "",
-    //    ci1: "",
-    //    stderr: "",
-    //    stdev: "",
-    //    stdevp: "",
-    //    sum: "",
-    //    valid: "",
-    //    values: "",
-    //    variance: "",
-    //    variancep: ""
-    //};
-
-    //static predicate_mappings = {
-    //    " == ": "eq",
-    //    "equal": "eq",
-    //    " > ": "le"
-
-    //};
-
-    //private static translate_op(op: string): string {
-    //    return this.agg_op_mappings[op] || op;
-    //}
-
-    //private static translate_predicate_op(op: string): string {
-    //    return this.predicate_mappings[op] || op;
-    //}
-    
-    
-    
-    
-    
-    import { Transform, ingest, inherits, transforms } from "vega";
+import { Transform, ingest, inherits, transforms } from "vega";
 
 import { Table } from "apache-arrow";
-
-//arrow.predicate.col('precipitation').eq(0)
 
 export default function ArrowTransform(params) {
     Transform.call(this, [], params);
@@ -114,6 +66,7 @@ prototype.transform = async function(_, pulse) {
     }
 
 //results.forEach(ingest);
+
     for (var result in results) {
         ingest(result);
     }
@@ -126,3 +79,47 @@ prototype.transform = async function(_, pulse) {
 
     return out;
 };
+
+
+
+// we can only support a small subset of aggregate operations with our current approach
+//static agg_op_mappings = {
+//    argmax: "",
+//    argmin: "",
+//    average: "",
+//    count: "",
+//    distinct: "",
+//    product: "",
+//    max: "",
+//    mean: "",
+//    median: "",
+//    min: "",
+//    missing: "",
+//    q1: "",
+//    q3: "",
+//    ci0: "",
+//    ci1: "",
+//    stderr: "",
+//    stdev: "",
+//    stdevp: "",
+//    sum: "",
+//    valid: "",
+//    values: "",
+//    variance: "",
+//    variancep: ""
+//};
+
+//static predicate_mappings = {
+//    " == ": "eq",
+//    "equal": "eq",
+//    " > ": "le"
+
+//};
+
+//private static translate_op(op: string): string {
+//    return this.agg_op_mappings[op] || op;
+//}
+
+//private static translate_predicate_op(op: string): string {
+//    return this.predicate_mappings[op] || op;
+//}

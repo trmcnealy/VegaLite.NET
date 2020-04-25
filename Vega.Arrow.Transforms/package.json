@@ -22,12 +22,8 @@
     },
     "dependencies": {
         "apache-arrow": "^0.16.0",
-        "vega-typings": "^0.3.45",
-        "vega-lite": "^4.10.1"
-    },
-    "peerdependencies": {
-        "apache-arrow": "^0.16.0",
-        "vega-lite": "^4.10.1"
+        "vega": "^5.9.2",
+        "thrift": "^0.13.0"
     },
     "devDependencies": {
         "typescript": "^3.8.3",
@@ -42,7 +38,8 @@
         "@rollup/plugin-inject": "^4.0.1",
         "@rollup/plugin-typescript": "^4.0.0",
         "@rollup/plugin-commonjs": "^11.0.2",
-        "@rollup/plugin-node-resolve": "^7.1.1"
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "vega-typings": "0.15.3"
     },
     "main": "build/vega-arrow-transforms.js",
     "unpkg": "build/vega-arrow-transforms.min.js",

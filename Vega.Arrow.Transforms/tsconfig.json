@@ -10,7 +10,7 @@
 
         //"types": [ "compile" ],
 
-        //"allowJs": true,
+        "allowJs": true,
         //"generateCpuProfile": "cpuprofile",
         //"maxNodeModuleJsDepth": 10,
 

@@ -57,7 +57,7 @@
       <LanguageStandard>stdcpp14</LanguageStandard>
       <AdditionalIncludeDirectories>../../BuildTools;./;C:/AssemblyCache/Arrow/include;C:/POSIX/mingw64/lib/glib-2.0/include;C:/POSIX/mingw64/include/glib-2.0;D:/TFS_Sources/Github/Compilation/trmcnealy/VegaLite.NET/runtime.Arrow;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include;C:/POSIX/mingw64/include/freetype2</AdditionalIncludeDirectories>
       <ExceptionHandling />
-      <AdditionalOptions>-shared -gfull -gcodeview -Xcuda-ptxas -O0 -Xcuda-ptxas -w -Xcuda-ptxas --device-debug -w -O0 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.1 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
+      <AdditionalOptions>-shared -gfull -gcodeview -Xcuda-ptxas -O0 -Xcuda-ptxas -w -Xcuda-ptxas --device-debug -w -O0 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.2 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <DiagnosticsFormat />
@@ -198,7 +198,7 @@
       <LanguageStandard>stdcpp14</LanguageStandard>
       <AdditionalIncludeDirectories>../../BuildTools;./;C:/AssemblyCache/Arrow/include;C:/POSIX/mingw64/lib/glib-2.0/include;C:/POSIX/mingw64/include/glib-2.0;D:/TFS_Sources/Github/Compilation/trmcnealy/VegaLite.NET/runtime.Arrow;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include;C:/POSIX/mingw64/include/freetype2</AdditionalIncludeDirectories>
       <ExceptionHandling />
-      <AdditionalOptions>-shared -Xcuda-ptxas -w -w -O3 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.1 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
+      <AdditionalOptions>-shared -Xcuda-ptxas -w -w -O3 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.2 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <DiagnosticsFormat />

@@ -18,17 +18,8 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using Newtonsoft.Json.Serialization;
 
-using NJsonSchema.CodeGeneration.CSharp;
-
-using NSwag;
-using NSwag.CodeGeneration.CSharp;
-
-using Formatting = Newtonsoft.Json.Formatting;
-using WriteState = Newtonsoft.Json.WriteState;
 
 using VegaLite.Schema;
-
-using Encoding = VegaLite.Schema.Encoding;
 
 namespace VegaLite.Test
 {
@@ -37,9 +28,18 @@ namespace VegaLite.Test
         [STAThread]
         private static void Main(string[] args)
         {
+            string json = File.ReadAllText(@"D:\TFS_Sources\Github\Compilation\Vega\ToTypeScript\v5.9.2.json");
+
+            XmlDocument doc = JsonConvert.DeserializeXmlNode(json, "VegaSchema");
+
+            using(StreamWriter sw = new StreamWriter(@"D:\TFS_Sources\Github\Compilation\Vega\ToTypeScript\v5.9.2.xml"))
+            {
+                doc.Save(sw);
+            }
+
             //TestPerf100000();
             //TestChart();
-            TestArrowChart();
+            //TestArrowChart();
             //TestWebglChart();
             //TestChartDatasets();
             //TestMultipleChart();
@@ -162,7 +162,7 @@ namespace VegaLite.Test
                         }
                     },
                     Mark = BoxPlot.Circle,
-                    Encoding = new Encoding()
+                    Encoding = new Schema.Encoding()
                     {
                         X = new XClass()
                         {
@@ -245,7 +245,7 @@ namespace VegaLite.Test
                 {
                     Name = "vegaViewData"
                 },
-                Encoding = new Encoding()
+                Encoding = new Schema.Encoding()
                 {
                     Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
                     {
@@ -361,7 +361,7 @@ namespace VegaLite.Test
                     }
                 },
                 Mark = BoxPlot.Circle,
-                Encoding = new Encoding()
+                Encoding = new Schema.Encoding()
                 {
                     Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
                     {
@@ -718,7 +718,7 @@ namespace VegaLite.Test
                         }
                     }
                 },
-                Encoding = new Encoding()
+                Encoding = new Schema.Encoding()
                 {
                     X = new XClass()
                     {
@@ -808,7 +808,7 @@ namespace VegaLite.Test
                 {
                     Name = "vegaViewData"
                 },
-                Encoding = new Encoding()
+                Encoding = new Schema.Encoding()
                 {
                     Color = new DefWithConditionMarkPropFieldDefGradientStringNull()
                     {

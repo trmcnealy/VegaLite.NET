@@ -42,6 +42,7 @@ import {
     //FieldRangePredicate
 } from "vega-lite/build/src/predicate";
 
+
 export class Transforms2Arrow {
 
     static convert(table: any, transforms: Transform[]): any {

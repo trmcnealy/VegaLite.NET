@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <Import Project="..\Versioning.props" />
 
   <PropertyGroup>
@@ -12,9 +12,9 @@
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.8.0" />
     <PackageReference Include="Antlr4BuildTasks" Version="3.0.0" />
-    <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.2.2" />
-    <PackageReference Include="NSwag.Core" Version="13.2.2" />
-    <PackageReference Include="VegaLite.NET" Version="1.3.22" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.13" />
+    <PackageReference Include="VegaLite.NET" Version="$(VEGALITE_VERSION)" />
   </ItemGroup>
 
   <ItemGroup>

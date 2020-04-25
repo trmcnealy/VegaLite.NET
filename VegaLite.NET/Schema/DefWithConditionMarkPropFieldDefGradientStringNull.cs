@@ -244,7 +244,7 @@ namespace VegaLite.Schema
         /// - When using with [`aggregate`](https://vega.github.io/vega-lite/docs/aggregate.html),
         /// the `type` property refers to the post-aggregation data type. For example, we can
         /// calculate count `distinct` of a categorical field `"cat"` using `{"aggregate":
-        /// "distinct", "field": "cat", "type": "quantitative"}`. The `"type"` of the aggregate
+        /// "distinct", "field": "cat", "selection": "quantitative"}`. The `"type"` of the aggregate
         /// output is `"quantitative"`.
         /// - Secondary channels (e.g., `x2`, `y2`, `xError`, `yError`) do not have `type` as they
         /// have exactly the same type as their primary channels (e.g., `x`, `y`).
