@@ -55,9 +55,9 @@
       <UndefinePreprocessorDefinitions>_MSC_VER</UndefinePreprocessorDefinitions>
       <PreprocessorDefinitions>HAVE_WINNT_IGNORE_VOID;DEBUG;_DEBUG;WIN64;_WIN64;_WINDOWS;_GNU_SOURCE;_USE_MATH_DEFINES;MBCS;_MBCS</PreprocessorDefinitions>
       <LanguageStandard>stdcpp14</LanguageStandard>
-      <AdditionalIncludeDirectories>../../BuildTools;./;C:/AssemblyCache/Arrow/include;C:/POSIX/mingw64/lib/glib-2.0/include;C:/POSIX/mingw64/include/glib-2.0;D:/TFS_Sources/Github/Compilation/trmcnealy/VegaLite.NET/runtime.Arrow;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include;C:/POSIX/mingw64/include/freetype2</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../BuildTools;C:/AssemblyCache/Eigen/include;./;$(CUSP_PATH);$(CUDA_PATH)/include;$(CUDNN_PATH)/include</AdditionalIncludeDirectories>
       <ExceptionHandling />
-      <AdditionalOptions>-shared -gfull -gcodeview -Xcuda-ptxas -O0 -Xcuda-ptxas -w -Xcuda-ptxas --device-debug -w -O0 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -femulated-tls -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.2 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp</AdditionalOptions>
+      <AdditionalOptions>-Xcuda-ptxas -w -w -O3 -std=c++14 -fcaret-diagnostics -fdiagnostics-show-template-tree -fcolor-diagnostics -fdiagnostics-parseable-fixits -fdiagnostics-format=msvc --target=x86_64-w64-windows-gnu-coff -fno-signed-char -fpermissive -ftls-model=global-dynamic -fcxx-exceptions -march=core-avx2 -mtune=core-avx2 -fno-trapping-math -fno-signed-zeros -ftemplate-backtrace-limit=0 -ferror-limit=10 -fvectorize -fslp-vectorize --cuda-path=C:/POSIX/usr/local/cuda-10.2 --cuda-gpu-arch=sm_52 -x cuda -Wa,-mbig-obj -fopenmp=libomp -Xclang -flto-visibility-public-std </AdditionalOptions>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <DiagnosticsFormat />
@@ -123,7 +123,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <SuppressStartupBanner />
-      <AdditionalDependencies>C:/AssemblyCache/Arrow/lib/libarrow.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_cuda.dll.a,C:/AssemblyCache/Arrow/lib/libarrow_dataset.dll.a,C:/AssemblyCache/Arrow/lib/libparquet.dll.a</AdditionalDependencies>
+      <AdditionalDependencies>-Bdynamic,-lkokkoscore.dll,-lkokkoscontainers.dll,-Bstatic,-lteuchoscore,-lkokkoskernels</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries />
       <ManifestFile />
       <EnableUAC />

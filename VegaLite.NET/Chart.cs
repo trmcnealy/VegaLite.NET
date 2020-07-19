@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 using Microsoft.AspNetCore.Html;
-using Microsoft.DotNet.Interactive.Formatting;
+using Microsoft.DotNet.Interactive;
 
 using static VegaLite.HtmlChart;
 
@@ -18,25 +18,25 @@ namespace VegaLite
     {
         public Guid Id
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get;
         }
 
         public string Title
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get;
         }
 
         public Schema.Specification Specification
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get;
         }
 
         public string DataSetName
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get
             {
                 if(!string.IsNullOrEmpty(Specification.Data?.Name))
@@ -62,37 +62,26 @@ namespace VegaLite
 
         public double? Width
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get { return Specification.Width?.Double; }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             set { Specification.Width = value; }
         }
 
         public double? Height
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get { return Specification.Height?.Double; }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             set { Specification.Height = value; }
         }
 
         public Schema.InlineDataset? Data
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             get { return Specification.Data?.Values; }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             set { Specification.Data.Values = value; }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static Chart()
-        {
-            Formatter<Chart>.Register((chart,
-                                       writer) =>
-                                      {
-                                          writer.Write(chart.ToString());
-                                      },
-                                      HtmlFormatter.MimeType);
         }
 
         //private Chart()
@@ -103,7 +92,7 @@ namespace VegaLite
 
         #region Constructors
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         protected Chart(Guid? id)
         {
             if(id == null)
@@ -116,7 +105,7 @@ namespace VegaLite
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Schema.Specification vegaLiteSpecification,
                      Guid?                id = null)
             : this(id)
@@ -145,7 +134,7 @@ namespace VegaLite
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Schema.Specification vegaLiteSpecification,
                      string               datasetName,
                      Guid?                id = null)
@@ -155,7 +144,7 @@ namespace VegaLite
             Specification.Data.Name = datasetName;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string               title,
                      Schema.Specification vegaLiteSpecification,
                      Guid?                id = null)
@@ -165,7 +154,7 @@ namespace VegaLite
             Title = title;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string               title,
                      Schema.Specification vegaLiteSpecification,
                      string               datasetName,
@@ -177,7 +166,7 @@ namespace VegaLite
             Title = title;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string               title,
                      Schema.Specification vegaLiteSpecification,
                      int                  width,
@@ -191,7 +180,7 @@ namespace VegaLite
             Height = height;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string               title,
                      Schema.Specification vegaLiteSpecification,
                      string               datasetName,
@@ -207,7 +196,7 @@ namespace VegaLite
             Height = height;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Schema.Specification vegaLiteSpecification,
                      int                  width,
                      int                  height,
@@ -220,7 +209,7 @@ namespace VegaLite
             Height = height;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Schema.Specification vegaLiteSpecification,
                      string               datasetName,
                      int                  width,
@@ -235,7 +224,7 @@ namespace VegaLite
             Height = height;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         private static Schema.Specification SetupSpec(Func<Guid, Schema.Specification> specFunc,
                                                       out Guid                         id)
         {
@@ -244,7 +233,7 @@ namespace VegaLite
             return specFunc(id);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Func<Guid, Schema.Specification> specFunc)
             : this(SetupSpec(specFunc,
                              out Guid id),
@@ -252,7 +241,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Func<Guid, Schema.Specification> specFunc,
                      string                           datasetName)
             : this(SetupSpec(specFunc,
@@ -262,7 +251,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string                           title,
                      Func<Guid, Schema.Specification> specFunc)
             : this(title,
@@ -272,7 +261,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string                           title,
                      Func<Guid, Schema.Specification> specFunc,
                      string                           datasetName)
@@ -284,7 +273,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string                           title,
                      Func<Guid, Schema.Specification> specFunc,
                      int                              width,
@@ -298,7 +287,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(string                           title,
                      Func<Guid, Schema.Specification> specFunc,
                      string                           datasetName,
@@ -314,7 +303,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Func<Guid, Schema.Specification> specFunc,
                      int                              width,
                      int                              height)
@@ -326,7 +315,7 @@ namespace VegaLite
         {
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public Chart(Func<Guid, Schema.Specification> specFunc,
                      string                           datasetName,
                      int                              width,
@@ -342,13 +331,13 @@ namespace VegaLite
 
         #endregion
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override string ToString()
         {
             return GetHtml();
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public string GetHtmlContent()
         {
             return ElementContentTemplate(Id,
@@ -356,13 +345,13 @@ namespace VegaLite
                                           this);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public string GetHtml()
         {
             return new HtmlString(HtmlTemplate(GetHtmlContent())).ToString();
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public void ShowInBrowser()
         {
             string tempPath = Path.GetTempPath();

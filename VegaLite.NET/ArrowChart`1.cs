@@ -589,9 +589,9 @@ namespace VegaLite
     {
         //public static Apache.Arrow.Schema Schema
         //{
-        //    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         //    get;
-        //    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         //    set;
         //}
 
@@ -803,7 +803,7 @@ namespace VegaLite
 
         #endregion
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public new string GetHtmlContent(int rows    = 1,
                                          int columns = -1)
         {
@@ -825,7 +825,7 @@ namespace VegaLite
 
         private static bool registered = false;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public new string GetHtml(int rows = 1)
         {
             if(!registered)

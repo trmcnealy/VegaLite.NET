@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-using Apache.Arrow.Types;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -14,47 +12,39 @@ namespace VegaLite
 {
     public struct SplomData : IEnumerable<float>
     {
-        [ArrowProperty(ArrowTypeId.Int32, "Iteration")]
+        
         [JsonProperty("Iteration",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int Iteration { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Int32, "SwarmIndex")]
         [JsonProperty("SwarmIndex",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int SwarmIndex { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Int32, "Particle")]
         [JsonProperty("Particle",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public int Particle { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "km")]
         [JsonProperty("km",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float km { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "kF")]
         [JsonProperty("kF",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float kF { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "kf")]
         [JsonProperty("kf",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float kf { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "ye")]
         [JsonProperty("ye",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float ye { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "LF")]
         [JsonProperty("LF",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float LF { get; set; }
         
-        [ArrowProperty(ArrowTypeId.Float, "Lf")]
         [JsonProperty("Lf",
                       NamingStrategyType = typeof(DefaultNamingStrategy))]
         public float Lf { get; set; }

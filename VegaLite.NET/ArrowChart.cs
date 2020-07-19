@@ -194,7 +194,7 @@ namespace VegaLite
 
         #endregion
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public new string GetHtmlContent()
         {
             return ArrowElementContentTemplate(Id,
@@ -202,13 +202,13 @@ namespace VegaLite
                                                this);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public new string GetHtml()
         {
             return new HtmlString(HtmlTemplate(GetHtmlContent())).ToString();
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public new void ShowInBrowser()
         {
             string tempPath = Path.GetTempPath();

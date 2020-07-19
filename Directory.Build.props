@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <RootSolutionDir Condition="'$(RootSolutionDir)'==''">$(MSBuildThisFileDirectory)</RootSolutionDir>
+    <!--<BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'==''">$(RootSolutionDir)bin\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)'==''">$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>-->
+    <OutputPath Condition="'$(OutputPath)'=='' and '$(OutputType)'!='Exe'">$(RootSolutionDir)bin\$(Configuration)\</OutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' and '$(OutputType)'=='Exe'">$(RootSolutionDir)bin\$(MSBuildProjectName)\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>0649;0169;0414</NoWarn>
+  </PropertyGroup>
+
+</Project>
