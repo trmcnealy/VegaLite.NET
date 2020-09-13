@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Label="UserMacros">
-    <PACKAGE_VERSION>1.3.22</PACKAGE_VERSION>
-  </PropertyGroup>
-  <PropertyGroup Label="UserMacros">
-    <VEGALITE_VERSION>$(PACKAGE_VERSION)</VEGALITE_VERSION>
-    <RUNTIME_VEGALITE_VERSION>$(PACKAGE_VERSION)</RUNTIME_VEGALITE_VERSION>
-  </PropertyGroup>
-  <ItemGroup>
-    <BuildMacro Include="VEGALITE_VERSION">
-      <Value>$(VEGALITE_VERSION)</Value>
-    </BuildMacro>
-    <BuildMacro Include="RUNTIME_VEGALITE_VERSION">
-      <Value>$(RUNTIME_VEGALITE_VERSION)</Value>
-    </BuildMacro>
-  </ItemGroup>
+  
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), GlobalVersioning.props))\GlobalVersioning.props" />
+
 </Project>
