@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <Import Project="..\Versioning.props" />
+  <Import Project="$([MSBuild]::GetPathOfFileAbove(GlobalVersioning.props))" />
 
   <PropertyGroup>
     <UseWPF>true</UseWPF>

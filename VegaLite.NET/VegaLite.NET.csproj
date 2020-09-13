@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\Versioning.props" />
+  <Import Project="$([MSBuild]::GetPathOfFileAbove(GlobalVersioning.props))" />
 
   <PropertyGroup>
+    <Version>$(VEGALITE_VERSION)</Version>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>VegaLite</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -14,7 +15,6 @@
     <RepositoryUrl>https://github.com/trmcnealy/VegaLite.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/trmcnealy/VegaLite.NET</PackageProjectUrl>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>$(VEGALITE_VERSION)</Version>
     <Platforms>AnyCPU;x64</Platforms>
     <PackageOutputPath Condition="'$(PACKAGE_CACHE)'!=''">$(PACKAGE_CACHE)</PackageOutputPath>
     <PackageOutputPath Condition="'$(PACKAGE_CACHE)'==''">$(OutputPath)</PackageOutputPath>
@@ -33,7 +33,7 @@
 
   <ItemGroup>
     <None Remove="VegaLite.NET.csproj.DotSettings" />
-    <None Include="..\..\trmcnealy.github.io\assets\nindra.png">
+    <None Include="..\..\trmcnealy.github.io\Assets\nindra.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
