@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "apache-arrow": "^0.16.0",
-        "vega": "^5.9.2",
+        "vega": "^5.17.3",
         "thrift": "^0.13.0"
     },
     "devDependencies": {
